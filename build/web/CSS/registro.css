@@ -1,0 +1,243 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+
+}
+body{
+    background-color:  #000;
+}
+header{
+    
+    color: white;
+    align-content: center;
+    align-items: center;
+    padding: 7px;
+    display: flex;
+    padding: 15px 7%;
+    justify-content: space-between;
+}
+header a{
+    color:  white;
+    text-decoration: none;
+    margin-right: 19px;
+}
+
+.Registro{
+    border-radius: 10px;
+    border: none;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    width: 300px;
+    height: 35px;
+    background: #000814;
+
+    color: white;
+}
+.Registro tipo{
+    width: 100px;
+    height: 35px;
+    width:  130px; border:none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; border-radius: 10px;
+}
+.div1{
+    position: absolute;
+    margin-bottom: 50%;
+    width: 31%;
+    top: 22%;
+    bottom: 0;
+    margin: 0;
+    left: 10%;
+    border-radius: 9px;
+    border: 2px gray;
+    background-color: rgba(0, 0, 0, .08);
+    height: 68%;
+    padding: 20px;
+    color: #afb2b8;
+}
+h1{
+    font-size: 20px;
+}
+
+.img1{
+    margin-right: 0px;
+    margin-left: 900px;
+    width: 450px;
+    height:480px;
+    margin-top:60px;
+}
+.link{
+    font-size: 14px;
+    margin-right: 19px;
+    padding: 3px;
+}
+.link:hover{
+    background-color: #311B93;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 2px;
+    transition: .6s;
+}
+
+.imglogo{
+    width: 40px;
+    height: 40px;
+}
+.imgRegis{
+    position: absolute;
+    width: 55%;
+    height: 69%;
+    top: 17%;
+    right: 4%;
+    left: auto;
+}
+
+#btnRegis:hover{
+    background-color: #A17EFB;
+    transition: .7s;
+}
+#btnRegis{
+    margin-top: 25px;
+    margin-bottom:  20px;
+}
+
+
+
+
+/** **/
+.div2{
+    position: absolute;
+    margin-bottom: 20%;
+    width: 30%;
+    top: 27%;
+    bottom: 0;
+    margin: 0;
+    left: 30%;
+    border-radius: 9px;
+    border: 2px gray;
+    background:  white;
+    height: 30%;
+    padding: 25px;
+    color: black;
+    font-size: 27px;
+}
+
+.footer1{
+    align-items:  flex-start;
+    float: left;
+    padding-left: 170px;
+}
+.footer2{
+    align-items:   flex-end;
+    float: right;
+    padding-right: 170px;
+}
+
+
+
+
+/* ".inherited-styles-for-exported-element" is a generated class for the inherited styles of the exported element, feel free to rename it. */
+
+.inherited-styles-for-exported-element {
+    color: #333;
+    font-family: CerebriSans-Regular, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    font-size: 100%;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, .08);
+    box-sizing: border-box;
+    left: 0;
+    padding: 10% 7%;
+    position: absolute;
+    width: 100%;
+    top: 99%;
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+    footer {
+        padding: 5rem 3rem;
+    }
+}
+
+.inner {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 60em;
+}
+
+@media screen and (min-width: 768px) {
+    .inner {
+        flex-direction: row;
+    }
+}
+
+.inner ul {
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.inner a {
+    color: rgba(0, 0, 0, .5);
+    text-decoration: none;
+}
+
+.inner li {
+    color: #afb2b8;
+    margin-bottom: .5em;
+}
+
+@media screen and (min-width: 768px) {
+    .inner ul {
+        flex: 1;
+        margin: 0 2em;
+    }
+}
+
+.inner ul p {
+    color: #333;
+    margin-top: 0;
+}
+
+.inner>:first-child {
+    margin-bottom: 1.5em;
+    margin-right: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .inner>:first-child {
+        display: block;
+        margin-right: 3em;
+        text-align: center;
+    }
+}
+
+.inner>:first-child img {
+    width: 40px;
+}
+
+.inner>:first-child p {
+    color: rgba(0, 0, 0, .5);
+    font-size: .7em;
+    margin-bottom: 0;
+}
+
+.inner a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+    .inner>:first-child img {
+        width: 70px;
+    }
+}

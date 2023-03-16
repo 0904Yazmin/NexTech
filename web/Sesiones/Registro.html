@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Regístrate | Copernicus System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../CSS/registro.css" rel="stylesheet" type="text/css"/>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        </style>
+        <link rel="shorcut icon" href="../Img/logos/LogoNexTech.png">
+   
+    </head>
+    <body>
+        <header>
+            <a href="../index.html" class="link" ><img src="../Img/logos/LogoCopernicus.png" alt="LogoCS" class="imglogo"/></a> <a href="../index.html" class="link" ><h1>Copernicus System</h1></a>
+            <nav>
+                <ul>
+                    <p>Iniciar sesión como:</p>
+                    <a href="Login.jsp" class="link" >Estudiante</a>
+                    <a href="Login.jsp" class="link" >Docente</a>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="div1">
+            <center>
+                <form name="form" action="Info.jsp" method="post" > <!-- la pagina redirigira al inicio de sesion index.htm -->
+                    <div class="Principal">
+                        <h1>Registrate</h1>
+                        <input class="Registro" type="text" id="TxtNombre" name="TxtUsu" placeholder="Ingrese su Nombre" required>
+                        <p><input class="Registro" type="email" id="TxtCorreo" name="TxtMail" placeholder="Ingrese su correo" required>
+                        <p><input class="Registro" type="password" id="TxtPass" name="TxtPass" placeholder="Ingrese su contraseña" required><br> <br>
+                        <p> Únete a Copernicus System como:
+                            <select class="Registro tipo" id="SelectUsu" name="SelectUsu" >
+                                <option>Seleccionar</option>
+                                <option value="Alumno" >Alumno</option>
+                                <option value="Docente" >Docente</option>
+                                <option value="Independiente" >Independiente</option>
+                            </select>
+
+                        <p><input class="Registro" type="submit" id="btnRegis" name="btnRegis" value="Registrarse" onclick="valida()"></p>
+                        <p>Ya tengo una cuenta   <a href="Login.jsp">Iniciar Sesión </a></p>
+                    </div>
+                </form>
+            </center>
+        </div>
+        <div class="tierra">
+            <iframe src='https://my.spline.design/tierracopy-260d91b029384b94b13d1fcc9e173690/' frameborder='0' width='100%' height='800'></iframe>
+        </div>
+    </body>
+    <footer>
+        <div class="footer1">
+            <p>
+                Copernicus System
+            </p>
+            <p>
+                
+            </p>
+        </div>
+        <div class="footer2">
+            <p>Equipo 6 Tuna tech</p>
+            <p>Integrantes</p>
+           
+            <p> Reyes Barquera Yazmin</p>
+        </div>
+    </footer>
+    <script>
+        function validaVacio() {
+            var nombre = document.getElementById("TxtNombre").value;
+            var mail = document.getElementById("TxtCorreo").value;
+            var pswd = document.getElementById("TxtPass").value;
+            var tipo = document.getElementById("SelectUsu").value;
+
+            if (nombre === "" && mail === "" && pswd === "" && tipo === "") {
+                alert("No dejes los campos vacios");
+                return false;
+            }
+        }
+        function valida() {
+            // Ninguno campo vacìo
+            if (!validaVacio())
+                return false;
+            // Contraseña coinicide
+
+            document.prof.submit();
+        }
+    </script>
+</html>
