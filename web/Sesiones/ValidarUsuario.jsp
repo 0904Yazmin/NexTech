@@ -27,14 +27,14 @@
         bd.conectar();
         int num = 0;
 
-        String strQry = "Select * from Estudiante where correo_usuario='" + usuario + "'and pass_usuario = '" + pswd + "'";
+        String strQry = "Select * from Usuario where correo_usu='" + usuario + "'and pass_usu = '" + pswd + "'";
         ResultSet DatosUsu = bd.consulta(strQry);
         if (DatosUsu.next()) {
             HttpSession miSessiondelUsuario = (HttpSession) request.getSession();
-            int idPersona = DatosUsu.getInt("id_usuario");
-            String nombre = DatosUsu.getString("nom_usuario");
-            String tipo = DatosUsu.getString("tipo_usuario");
-            miSessiondelUsuario.setAttribute("id_usuario", idPersona);
+            int idPersona = DatosUsu.getInt("id_usu");
+            String nombre = DatosUsu.getString("nombre_usu");
+            String tipo = DatosUsu.getString("tipo_usu");
+            miSessiondelUsuario.setAttribute("id_usu", idPersona);
             miSessiondelUsuario.setAttribute("Nombre del alumno", nombre);
             String grado = DatosUsu.getString(7);
 
@@ -55,9 +55,9 @@
                     break;
                 case "Independiente":
                     if (grado == null) {
-                        response.sendRedirect("../Indep/jsp_I/ExamD_Grado.jsp");
+                        response.sendRedirect("../Jsp/Otros/ExamD_Grado.jsp");
                     } else {
-                        response.sendRedirect("../Indep/jsp_I/Menu_I.jsp");
+                        response.sendRedirect("../Menu_nav/bienvenido.jsp");
                     }
                     break;
             }

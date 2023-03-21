@@ -1,0 +1,177 @@
+*{
+    /*font-family: 'Mulish', sans-serif;*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+header{
+    background-color:  #000814;
+    color: white;
+    height: 73px;
+    position: fixed;
+    margin: 0;
+    margin-top: 0;
+    padding: 19px 7%;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    z-index: 100;
+}
+header a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+.imglogo{
+    width: 35px;
+    height: 35px;
+    margin-right: 14px;
+}
+body{
+    background-color:  #171717;
+}
+
+.cuadro3{
+    width: 60%;
+    height: 45vh;
+    position: absolute;
+    top: 25%; left: 20%;
+    display: flex;
+    border-radius: 8px;
+    background: none;
+}
+.newClass{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    padding: 50px;
+    width: 50%;
+    height: 100%;
+    color: black;
+    line-height: 30px;
+    background-color:  #F8F8F8;
+}
+.div_clave{
+    padding: 50px; padding-top: 80px;
+    width: 50%;
+    height: 100%;
+    color: white;
+    background-color:   #150B28;
+}
+
+h1,h2{
+    font-weight: 600;
+}
+.div_clave h1{
+    font-size: 38px;
+}
+a{
+    text-decoration: none;
+    transition: .4s;
+}
+a:hover{
+    color:  #212529; background-color:  #525151;
+    transition: .5s;
+}
+#BotonCopiar{
+    cursor:  pointer;
+    padding: 2px;
+    border: none;
+    background-color:  #F8F8F8;
+    border-radius: 3px; 
+    display: flex;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+.cuadro4{
+    width: 35%;
+    height: 53vh;
+    position: absolute;
+    top: 25%; left: 32%;
+    border-radius: 4px;
+    background:  #F8F8F8;
+    color: black;
+    padding: 26px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.ingresarCode h1{
+    color: black;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.p2{
+    display: flex;
+    padding-bottom: 25px;
+}
+#btnLogin{
+    border: none;
+    background-color:  #acacac;
+    padding: 7px;
+    border-radius: 6px;
+    margin-top: 15px;
+    transition: .6s;
+    cursor: pointer;
+}
+#btnLogin:hover{
+    background-color:  #0C1821;
+    color: white; transition: .7s;
+}
+
+#logoCS{
+    width: 35px; height: 35px; 
+    margin-right: 18px;
+}
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background: none;
+}
+
+.form-group {
+    position: relative;
+    margin: 12px 0;
+}
+
+.form-group input {
+    padding: 10px 12px;
+    width: 355px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: #acacac solid 2px;
+    background-color: transparent;
+    color: black;
+    transition: 0.15s all ease;
+}
+
+.form-group input:focus {
+    border-color: #eee;
+}
+
+.form-group input::placeholder {
+    color: transparent;
+}
+
+.form-group .form-label {
+    position: absolute;
+    top: 9px;
+    left: 7px;
+    font-size: 15px;
+    padding: 0 12px;
+    color: #acacac;
+    pointer-events: none;
+    transition: 0.15s all ease;
+}
+
+.form-group input:focus + .form-label,
+.form-group input:not(:placeholder-shown) + .form-label {
+    transform: translate(5px, -22px);
+    background-color: #383838;
+    font-size: 14px;
+    color: #eee;
+}

@@ -10,7 +10,7 @@
 <%
     HttpSession miSessiondelUsuario = (HttpSession) request.getSession();
 
-    int idPersona = (int) (miSessiondelUsuario.getAttribute("id_usuario") == null ? 0 : miSessiondelUsuario.getAttribute("id_usuario"));
+    int idPersona = (int) (miSessiondelUsuario.getAttribute("id_usu") == null ? 0 : miSessiondelUsuario.getAttribute("id_usu"));
     if (idPersona < 1) {
         response.sendRedirect("../jsp/Menu.jsp");
     }
@@ -18,7 +18,7 @@
     String correo = "";
     BD basesita = new BD();
     basesita.conectar();
-    String datitos = "Select * from Estudiante where id_usuario = '" + idPersona + "'";
+    String datitos = "Select * from Usuario where id_usu = '" + idPersona + "'";
     ResultSet rsDatosPer = basesita.consulta(datitos);
     if (rsDatosPer.next()) {
         nombre = rsDatosPer.getString(2);
@@ -44,7 +44,7 @@
                     <li> <a href="../Jsp/Clases/clasesitas.jsp" class="link" target="seccion"><img src="../Img/Iconos_menu/clases.png" class="imgmenu"> Clase
                          <img src="../Img/Iconos_menu/desplegar.png" class="imgmenu usu"></a>
                             <ul>
-                                <li><a href="../html_D/CrearClaseForm.html" class="link" ><img src="../Img/Iconos_menu/plus.png" class="imgmenu">Crear clase</a></li>
+                                <li><a href="../Jsp/Clases/CrearClaseForm.html" class="link" target="seccion"><img src="../Img/Iconos_menu/plus.png" class="imgmenu">Crear clase</a></li>
                             </ul>
                     </li>
                     <li>
@@ -94,11 +94,14 @@
                             <li><a href="../Sesiones/perfil_usu.jsp" class="link" target="seccion">
                                     <img src="../Img/Iconos_menu/usuario.png"  class="imgmenu usu">Perfil</a>
                             </li>
-                            <li><a href="../Sesiones/perfil_usu.jsp" class="link" target="seccion">
+                            <li><a href="../Jsp/Otros/planes/infoPlanes.jsp" class="link" target="seccion">
                                     <img src="../Img/Iconos_menu/premium.png"  class="imgmenu usu">Actualizar plan</a>
                             </li>
                             <li><a href="../Sesiones/perfil_usu.jsp" class="link" target="seccion">
                                     <img src="../Img/Iconos_menu/help.png"  class="imgmenu usu">Ayuda y soporte</a>
+                            </li>
+                            <li><a href="../Sesiones/perfil_usu.jsp" class="link" target="seccion">
+                                    <img src="../Img/Iconos_menu/acerca de.png"  class="imgmenu usu">Acerca de</a>
                             </li>
                             <li><a href="../Sesiones/cerrarSesion.jsp" class="link" target="seccion">
                                     <img src="../Img/Iconos_menu/salir.png" class="imgmenu"> Cerrar sesión</a>
@@ -113,7 +116,7 @@
 
     <section class="home">
         <div class="PostsFrame">
-            <iframe name="seccion" src="pagina1.html" style="width: 100%; height: 100vh; border:none;"  ></iframe>
+            <iframe name="seccion" src="bienvenido.jsp" style="width: 100%; height: 100vh; border:none; margin: 0; " ></iframe>
         </div>
     </section>
 

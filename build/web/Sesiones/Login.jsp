@@ -35,7 +35,7 @@
     <div class="cuadro">
         <center>
             <p><h1>Iniciar Sesión</h1> <br>
-            <form name="form" action="ValidarEstudiante.jsp" method="post" > 
+            <form name="form" action="ValidarUsuario.jsp" method="post" > 
                 <div class="section">
                     <div class="form-group">
                             <img src="../Img/Iconos_menu/arroba.png"  alt="arroba" class="icons"/>

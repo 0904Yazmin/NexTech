@@ -1,0 +1,121 @@
+*{
+    /*font-family: 'Mulish', sans-serif;*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+header{
+    background-color:  #150B28;
+    padding: 16px;
+    color: white;
+    margin-bottom: 40px;
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    border-radius: 4px;
+    float: right;
+}
+
+header h1{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+body{
+    background-color:  #F8F9FA;
+}
+
+.container{
+    background-color:  #F8F8F8;
+    margin-bottom: 130px;
+    border-radius: 8px;
+    padding: 40px;
+    width: 75%;
+    height: auto;
+    position:  relative;
+    padding-left: 60px;
+    left: 14%;
+    top: 13%;
+    line-height: 26px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0)); 
+    -webkit-backdrop-filter: blur(20px); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
+    border: 1px solig rgba(255, 255 , 255, 0.18); 
+}
+
+section{
+    margin-top: 20px;
+}
+section ul{
+    margin-left: 20px;
+    list-style: none;
+}
+
+label{
+    margin-right: 15px;
+}
+input{
+    margin-right: 10px;
+}
+.head{
+    margin-bottom: 60px;
+    padding: 30px;
+}
+.head h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color:   #171717;
+}
+label:hover{
+    background-color: #1D2F3D; color: white;
+    transition: .4s;
+    padding: 2px;
+    border-radius: 4px;
+}
+.botonE{
+    background-color:  #0C1821;
+    border-radius: 14px;
+    width: 140px;
+    height: 37px;
+    padding: 3px;
+    margin: 6px;
+    color: white; border: none;
+}
+.botonE:hover{
+    background-color:  #1D2F3D;
+}
+#btnLogin{
+    justify-content:  space-between;
+    margin-top: 50px;
+    width: 200px;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+}
+#btnLogin:hover{
+    background-color:  #acacac;
+    transition: .6s;
+}
+
+/*input[type="radio"]{
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 10%;
+    border: 10px solid; border-color:  #B5B5B5;
+    cursor: pointer;
+    height: 12px;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+    transition: border-color 800ms;
+    width: 12px;
+}
+input[type="radio"].active{
+    border-color: white;
+}*/

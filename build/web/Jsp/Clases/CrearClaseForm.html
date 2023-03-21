@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Crear clase</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+        </style>
+        <link href="../../CSS/form_docen.css" rel="stylesheet" type="text/css"/>
+        <link rel="shorcut icon" href="../../Img/logos/LogoCopernicus.png">
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
+        <script defer src="codigo.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <table>
+                <tr>
+                    <td>
+                        <img src="../../General/img/logos/Newlogo.png" alt="logoCS" class="imglogo"/>
+                    </td>
+                    <td>
+                        <a href="../index.html" ><h1>Copernicus System</h1></a>
+                    </td>
+                </tr>
+            </table>
+
+        </header>
+
+        <div class="cuadro">
+            <p><h1>Crear clase</h1></p> <br>
+
+        <form name="formulario" id="formulario" action="../jsp_D/InfoClase.jsp" method="post" > 
+            <center>
+                <p><input class="info" type="text" id="TxtClase" name="TxtClase" placeholder="Ingrese el nombre de la clase" required="">
+                <p> Grado de la clase:
+                    <select class="info grado" id="Grado" name="SelectGrado" required>
+                        <option value="Basico" >Básico</option>
+                        <option value="Intermedio" >Intermedio</option>
+                        <option value="Avanzado" >Avanzado</option>
+                    </select>  
+                </p>
+                <label style="margin-right:20px;" >Elige un color para la clase </label>
+                <label> <input style="border: none; " type="color" id="color" name="color" value="#ffffff" required></label>
+                <br> <br>
+                <p><input class="info" type="submit" id="btnLogin" name="btnLogin" value="Crear clase"></p>
+                <br> <a href="../jsp_D/Menu_D.jsp" >Regresar a menú</a>
+            </center>
+        </form>
+    </div>
+
+
+    <div class="contenedorQR" id="contenedorQR" >
+        <p><h3>Crea una clase para trabajar con tus alumnos en un solo lugar!</h3></p><br> <br>
+    <img class="imgClase" src="../../General/img/clase.png" alt=""/>
+</div>
+
+</body>
+
+
+<footer>
+    <div class="footer1">
+        <p>
+            Copernicus System
+        </p>
+    </div>
+    <div class="footer2">
+       
+    </div>
+</footer>
+</html>
