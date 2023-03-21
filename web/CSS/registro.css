@@ -73,16 +73,14 @@ h1{
     margin-top:60px;
 }
 .link{
-    font-size: 14px;
+    font-size: 15px;
     margin-right: 19px;
-    padding: 3px;
+    padding: 6px;
 }
 .link:hover{
-    background-color: #311B93;
-    border-radius: 7px;
-    font-size: 16px;
-    padding: 2px;
-    transition: .6s;
+    background-color:  #0C1821;
+    border-radius: 4px;
+    transition: .4s;
 }
 
 .imglogo{

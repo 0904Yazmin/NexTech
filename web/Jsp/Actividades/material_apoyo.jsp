@@ -1,6 +1,6 @@
 <%-- 
-    Document   : guardar_Img
-    Created on : 16 mar. 2023, 00:57:48
+    Document   : material_apoyo
+    Created on : 20 mar. 2023, 21:32:32
     Author     : kim53
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>material apoyo</h1>
     </body>
 </html>

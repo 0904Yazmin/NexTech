@@ -9,37 +9,45 @@
             @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
         </style>
         <link rel="shorcut icon" href="../Img/logos/LogoNexTech.png">
-   
     </head>
     <body>
         <header>
             <a href="../index.html" class="link" ><img src="../Img/logos/LogoCopernicus.png" alt="LogoCS" class="imglogo"/></a> <a href="../index.html" class="link" ><h1>Copernicus System</h1></a>
             <nav>
                 <ul>
-                    <p>Iniciar sesión como:</p>
-                    <a href="Login.jsp" class="link" >Estudiante</a>
-                    <a href="Login.jsp" class="link" >Docente</a>
+                   
                 </ul>
+                <a href="Login.jsp" class="link">Iniciar sesión</a>
+                <a href="Login.jsp" class="link">Conócenos</a>
+                <a href="Login.jsp" class="link">NexTech Company</a>
             </nav>
         </header>
 
         <div class="div1">
             <center>
-                <form name="form" action="Info.jsp" method="post" > <!-- la pagina redirigira al inicio de sesion index.htm -->
+                <form name="form" action="Insertar_Info.jsp" method="post" > <!-- la pagina redirigira al inicio de sesion index.htm -->
                     <div class="Principal">
                         <h1>Registrate</h1>
-                        <input class="Registro" type="text" id="TxtNombre" name="TxtUsu" placeholder="Ingrese su Nombre" required>
-                        <p><input class="Registro" type="email" id="TxtCorreo" name="TxtMail" placeholder="Ingrese su correo" required>
-                        <p><input class="Registro" type="password" id="TxtPass" name="TxtPass" placeholder="Ingrese su contraseña" required><br> <br>
-                        <p> Únete a Copernicus System como:
-                            <select class="Registro tipo" id="SelectUsu" name="SelectUsu" >
-                                <option>Seleccionar</option>
-                                <option value="Alumno" >Alumno</option>
-                                <option value="Docente" >Docente</option>
-                                <option value="Independiente" >Independiente</option>
-                            </select>
+                        <input class="Registro" type="text" id="TxtNombre" name="TxtUsu" placeholder="Nombre de usuario" autocomplete="off"  autofocus="yes"
+                               minlength="6" maxlength="20" onkeypress="return username(event)" required>
 
-                        <p><input class="Registro" type="submit" id="btnRegis" name="btnRegis" value="Registrarse" onclick="valida()"></p>
+                        <p><input class="Registro" type="email" id="TxtCorreo" name="TxtMail" placeholder="Correo electrónico" autocomplete="off"  required>
+
+                        <p><input class="Registro" type="password" id="TxtPass" name="TxtPass" placeholder="Contraseña" onkeypress="return password(event)"
+                                  minlength="6"  required >
+
+                        <p><input class="Registro" type="password" placeholder="Confirmar contraseña" id="contra2" onkeypress="return password(event)" 
+                                  minlength="6"   required></p>
+
+                        <label> Únete a Copernicus System como: </label>
+
+                        <select class="Registro tipo" id="SelectUsu" name="SelectUsu" onkeypress="return password(event)" required>
+                            <option required  value="Independiente" >Independiente</option>
+                            <option required  value="Alumno" >Alumno</option>
+                            <option required  value="Docente" >Docente</option>
+                        </select>
+
+                        <input class="Registro" type="submit" id="btnRegis" name="btnRegis" value="Registrarse" onclick="valida()">
                         <p>Ya tengo una cuenta   <a href="Login.jsp">Iniciar Sesión </a></p>
                     </div>
                 </form>
@@ -55,17 +63,50 @@
                 Copernicus System
             </p>
             <p>
-                
+
             </p>
         </div>
         <div class="footer2">
-            <p>Equipo 6 Tuna tech</p>
-            <p>Integrantes</p>
+            <p>NexTech</p>
            
-            <p> Reyes Barquera Yazmin</p>
+
         </div>
     </footer>
+
+
+
     <script>
+        function username(e) {
+            var nums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_. ";
+            var x = e.which || e.keyCode;
+            var num = String.fromCharCode(x);
+            var n = nums.indexOf(num);
+            if (n === -1)
+                return false;
+            else
+                return true;
+        }
+        function password(e) {
+            var nums = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.@%&#$";
+            var x = e.which || e.keyCode;
+            var num = String.fromCharCode(x);
+            var n = nums.indexOf(num);
+            if (n === -1) {
+                return false;
+            } else
+                return true;
+        }
+
+        function validaContra() {
+            var contra = document.getElementById("TxtPass").value;
+            var confirma = document.getElementById("contra2").value;
+            var longitud = contra.length;
+
+            if (contra !== confirma) {
+                alert("Las contraseñas no coinciden");
+                return false;
+            }
+        }
         function validaVacio() {
             var nombre = document.getElementById("TxtNombre").value;
             var mail = document.getElementById("TxtCorreo").value;
@@ -79,11 +120,12 @@
         }
         function valida() {
             // Ninguno campo vacìo
-            if (!validaVacio())
-                return false;
+            if (!validaVacio() && !validaContra() &&  !password() &&  !username() )
+                    return false;
             // Contraseña coinicide
-
             document.prof.submit();
         }
     </script>
+
+</body>
 </html>

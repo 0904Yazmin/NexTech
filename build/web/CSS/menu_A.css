@@ -1,0 +1,155 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(33,37,41);
+    min-height: 100vh;
+    background-color: white;
+}
+
+.tierra div{
+    min-height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+a{
+    color: white;
+}
+/** -------------------------------------BARRA DE NAVEGACION --------------------------------------------------------------**/
+header{
+    position: fixed;
+    background: #1E222D;
+    top: 20px; right: 0; left: 0;
+    color: white;
+    display: flex;
+    z-index: 1000;
+    padding: 8px 4%;
+    align-content:  center;
+    justify-content:  center;
+    border-bottom: 0px;
+    border-radius: 24px;
+    width: 86%;
+    margin-left: auto; margin-right: auto;
+}
+.nav_A{
+    justify-content:  center;
+    align-content:  center;
+}
+.nav_A ul{
+    list-style: none;
+}
+header .nav_A ul li{
+    position: relative;
+    float:   left;
+    align-content:  center;
+}
+header .nav_A ul li .opciones{
+    position: relative;
+    align-content:  flex-end;
+    padding: 19px;
+    margin-left: 40px;
+}
+header .nav_A ul li a{
+    display: block;
+    padding: 13px;
+    display: block;
+}
+header .nav_A ul li ul{
+    font-size: 11px;
+    position: absolute;
+    left: 0;
+    width: 280px;
+    background-color:   #1E222D;
+    display: none;
+    padding: 10px;
+}
+header .nav_A ul li ul li{
+    width: 100%;
+    text-align: left;
+    transition: .8s;
+    font-size: 11px;
+}
+
+.link .opciones:hover{
+    cursor: pointer;
+}
+header .nav_A ul li:hover > ul{
+    display: initial;
+    border-radius: 11px;
+    transition: .9s;
+}
+
+header .nav_A ul li ul li .link table{
+    width: 100%;
+}
+
+.link:hover{
+    background-color: #0C1821;
+    border-radius: 13px;
+    transition: .9s;
+}
+.link{
+    padding: 17px;
+    transition: .7s;
+}
+
+
+.imgmenu usu{
+    width: 19px;
+    height: 19px;
+    margin-right: 7px;
+    margin-left: 7px;
+}
+
+.imgmenu{
+    width: 16px;
+    height:16px;
+    transition: .7s;
+    margin-right: 7px;
+}
+
+.logo{
+    width: 37px;
+    height:37px;
+    margin-right: 140px;
+}
+
+.Principal {
+    flex-direction:  column;
+    top: 23%; 
+    z-index: 0; left: 4%;
+    align-items: center;
+    justify-content: center;
+    align-content:  center;
+    background:  none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+}
+
+.Principal h1 {
+    font-size: 38px;
+}
+
+
+/*** -----------------------------------------------MAPA INTERACTIVO ---------------------------------------------- ***/
+.Mapa_interactivo{
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
+
+
+.final{
+    color:  #140152;
+    font-size: 16px;
+    font-weight: 600;
+}
