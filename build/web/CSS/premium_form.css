@@ -1,0 +1,237 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+body{
+    background-color: #E3B6FF;
+}
+.modal {
+    width: fit-content;
+    height: fit-content;
+    background: #FFFFFF;
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 26px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px; margin-bottom: auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.payment--options {
+    width: calc(100% - 40px);
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    gap: 20px;
+    padding: 10px;
+}
+
+.payment--options button {
+    height: 55px;
+    background: #F2F2F2;
+    border-radius: 11px;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+
+.payment--options button svg {
+    height: 18px;
+}
+
+.payment--options button:last-child svg {
+    height: 22px;
+}
+
+.separator {
+    width: calc(100% - 20px);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    color: #8B8E98;
+    margin: 0 10px;
+}
+
+.separator > p {
+    word-break: keep-all;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-size: 11px;
+    margin: auto;
+}
+
+.separator .line {
+    display: inline-block;
+    width: 60%;
+    height: 1px;
+    border: 0;
+    background-color: #e8e8e8;
+    margin: auto;
+}
+
+.credit-card-info--form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input_container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    gap: 15px;
+}
+
+.split input {
+    width: 100%;
+}
+
+.input_label {
+    font-size: 10px;
+    color: #8B8E98;
+    font-weight: 600;
+}
+
+
+.input_field {
+    width: auto;
+    height: 40px;
+    padding: 0 0 0 16px;
+    border-radius: 9px;
+    outline: none;
+    background-color: #F2F2F2;
+    border: 1px solid #e5e5e500;
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input_field:focus {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 0px 2px #242424;
+    background-color: transparent;
+}
+
+.purchase--btn {
+    height: 45px;
+    width: 60%;
+    margin: 4px;
+    background: #2B0C48;
+    border-radius: 11px;
+    border: 0;
+    outline: none;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    background: #2B0C48;
+    box-shadow: 0px 0px 0px 0px #FFFFFF, 0px 0px 0px 0px #000000;
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.purchase--btn:hover {
+    box-shadow: 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #0000003a;
+}
+
+/* Reset input number styles */
+.input_field::-webkit-outer-spin-button,
+.input_field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input_field[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.container .content{
+    position: relative;
+    background-color: white;
+    width: 70%;
+    display: flex;
+    margin: auto;
+}
+.container#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+#popup{
+    position: fixed;
+    top: 40%; left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#popup.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+.titlePlanes{
+    transform:  rotate(-90deg);
+}
+
+.Plan_card{
+    border: 2px solid gray;
+    border-radius: 11px;
+    background-color: white;
+    width: 60%;
+    margin: 15px;
+    padding: 16px;
+}
+.card{
+    background-color: white ;
+    width: 100%;
+    height: 70vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    padding: 30px;
+}
+a{
+    text-decoration: none;
+}
+h1{
+    font-size: 35px;
+}
+h2{
+    font-size: 19px;
+    color:  #20002c;
+}
+.botoncito_Act{
+    background-color: #341ED4;
+    padding: 9px;
+    font-size: 14px;
+    color: white;
+    border-radius: 8px;
+    width: 100%;
+    height: 20%;
+    align-self:  baseline;
+}
