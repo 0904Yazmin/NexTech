@@ -49,18 +49,18 @@
                     </li>
                     <li>
                         <a href="../Actividades/temario.jsp" class="link" target="seccion">
-                            <img src="../Img/Iconos_menu/lecciones.png" class="imgmenu"> Lecciones 
+                            <img src="../Img/Iconos_menu/lecciones.png" class="imgmenu"> Actividades 
                             <img src="../Img/Iconos_menu/desplegar.png" class="imgmenu usu">
                         </a>
                         <ul>
                             <li>
-                                <a href="../Actividades/Basico.jsp" class="link" target="seccion"><img src="../Img/Iconos_menu/apuntes.png" class="imgmenu"> Nivel Básico</a>
+                                <a href="../Actividades/Basico.jsp" class="link" target="seccion"><img src="../Img/Iconos_menu/apuntes.png" class="imgmenu"> Lecciones</a>
                             </li> 
                             <li>
-                                <a  href="../Actividades/Intermedio.jsp"  class="link" target="seccion"><img src="../Img/Iconos_menu/apuntes.png" class="imgmenu usu">Nivel Intermedio</a>
+                                <a  href="../Actividades/Intermedio.jsp"  class="link" target="seccion"><img src="../Img/Iconos_menu/apuntes.png" class="imgmenu usu">Ejercicios</a>
                             </li>
                             <li>
-                                <a  href="../Actividades/Avanzado.jsp"  class="link" target="seccion"><img src="../Img/Iconos_menu/apuntes.png" class="imgmenu">Nivel Avanzado</a>
+                                <a  href="../Actividades/Avanzado.jsp"  class="link" target="seccion"><img src="../Img/Iconos_menu/apuntes.png" class="imgmenu">Examenes</a>
                             </li>
                             <li>
                                 <a href="../Jsp/Actividades/material_apoyo.jsp" class="link" target="seccion"><img src="../Img/Iconos_menu/libros_1.png" class="imgmenu">Material de apoyo</a>

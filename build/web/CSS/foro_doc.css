@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+body{
+    background-color:  #f2f2f2;
+}
+
+#crearP{
+    background: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+/* * ============================== */
+/* * ============ HEADER ========== */
+/* * ============================== */
+
+.navbar {
+    background: #FFCD48;
+}
+
+.navbar a {
+    color: #fff;
+    display: inline-block;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    transition: .3s ease-out all;
+}
+
+.navbar a:hover {
+    background: #1D2F3D;
+    color: #fff;
+    text-decoration: none;
+}
+
+.contenedor {
+    max-width: 900px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* * ============================== */
+/* * ===== CONTENEDOR IMAGEN ====== */
+/* * ============================== */
+
+.contenedor-imagen {
+    height: 40vh;
+    margin-bottom: -50px;
+    z-index: -100;
+}
+
+.contenedor-imagen img {
+    width: 90%;
+    height: 90%;
+    margin-top: 90px;
+    vertical-align: top;
+    object-fit: cover;
+    object-position: 58px bottom;
+}
+
+main {
+    min-height: 100vh;
+    z-index: 1000;
+}
+
+main .contenido p {
+    margin-bottom: 20px;
+    line-height: 30px;
+    color: #525151;
+}
+
+main .contenido .titulo {
+    font-weight:  500;
+    padding-top: 16px;
+    font-size: 18px;
+}
+
+main .contenido .fecha {
+    font-size: 14px;
+    color: #B5B5B5;
+}
+
+/* * ============================== */
+/* * ============ ASIDE =========== */
+/* * ============================== */
+
+aside {
+    min-width: 42%;
+    margin: -20px 10px 10px -90px;
+    height: 65vh;
+    background:  none;
+    border-radius: 6px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 120px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+.post .titulo {
+    font-size: 23px;
+    margin-bottom: 20px;
+    color:  #000;
+}
+
+aside .indice a {
+    display: block;
+    margin-bottom: 10px;
+    color: #FFCD48;
+}
+.indice a {
+    display: block;
+    margin-bottom: 10px;
+    color: #FFCD48;
+}
+.infoClase{
+    padding: 20px;
+    border-radius: 8px;
+    height: 33%;
+    margin-bottom: 12px;
+    color: white;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+.div_1{
+    padding: 20px;
+    height: 85vh;
+    background: none;
+}
+.indice{
+    margin-top: 30px;
+    padding: 20px;
+    color: gray;
+    border-radius: 8px;
+    height: 80%;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/**  ----------------------------------------------------------- FORMULARIO ------------------------**/
+.info{
+    border-radius: 7px;
+    border: 0;
+    margin: 10px;
+    height: 65px;
+    padding: 5px;
+    width: 300px;
+    background-color: #f2f2f2;
+    text-align: left;
+    font-size: 12px;
+    color: #171717;
+    font-family: 'Poppins', sans-serif;
+}
+.postInput{
+    border-radius: 3px;
+    border: 0;
+    margin: 7px;
+    height: 35px;
+    padding: 7px;
+    width: 85%;
+    color:  #1E222D;
+    background-color: #dee2e6;
+    text-align: left;
+    font-size: 14px;
+}
+#btnComent{
+    border: none;
+    background-color: #B5B5B5;
+    border-radius: 5px;
+    padding-top: -1px; padding-bottom: -3px;
+    padding-left: 2px; padding-right: 2px;
+    font-size: 12px;
+    transition: .7s;
+}
+#btnComent:hover{
+    background-color:  #494949;
+    transition: .7s;
+
+}
+
+.info .textArea{
+    max-width: 270px;
+    border: none;
+    background-color:  #f2f2f2;
+}
+.fileImg {
+    border-radius: 10px;
+    border: none;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    width: 350px;
+    height: 29px;
+    margin-left: 16px;
+    color: white;
+    position: absolute;
+    top: 57%;
+}
+
+.botoncitos{
+    transition: .8s;
+    color: white;
+    background:  #1E222D;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+}
+.botoncitos:hover{
+    color:  white;
+    padding: 8px;
+    transition: .8s;
+    background-color:  #1E222D;
+    width: 100px;
+    height: 36px;
+}
+.tablita{
+    height: 80px; width: 100px;
+    text-align: left;
+    align-items:  flex-start;
+    font-size: 12px;
+}
+
+.tablita td{
+    padding: 10px;
+}
+
+
+
+/* * ============================== */
+/* * ========== POST ============ */
+/* * ============================== */
+
+.post{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    padding: 23px;
+    border-radius: 6px;
+    background-color: white;
+    color:  #150B28;
+    width: 157%; height: auto;
+}
+.imagenUsuCero{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    margin-right: 17px;
+    border-radius: 100px;
+}
+.headerPost{
+    display:  flex;
+}
+.textoPost{
+    margin-left: 10px;
+}
+
+/* * ============================== */
+/* * ====== MEDIA QUERIES ========= */
+/* * ============================== */
+@media screen and (max-width: 900px){
+    .navbar .contenedor {
+        flex-wrap: wrap;
+        margin: 0;
+        width: 100%;
+    }
+
+    .navbar a {
+        width: auto;
+        flex: 1;
+    }
+
+    .contenedor-imagen {
+        height: 50vh;
+    }
+
+    main .contenedor {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+
+}
+
+#tituloForo{
+    margin-bottom: 15px;
+    padding-top: 20px;
+    padding-left: 25px;
+
+    background-color: #ffffff;
+    width: 100%;
+    height: 68px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+}
+#tituloForo h1{
+    font-size: 21px;
+}
+
+#publicaciones{
+    background-color:  #d9d9d9;
+    width: 65%;
+    height: 100%; display: table; float: right; border: none;
+    padding-bottom: 40px;
+}
+#post{
+    padding: 23px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    width: 75%;
+    height: 40%;
+    margin-left: 13%;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+#tablaInfo{
+    width: 100%;
+    padding: 2px;
+    margin-bottom: 15px;
+}
+#tablaInfo h1{
+    font-size: 17px;
+}
+#tablaInfo h3{
+    font-size: 11px; color: gray;
+}
+#txtPost{
+    text-align:  justify;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+#ImagePost{
+    margin-top: 10px;
+    margin-left: 2%;
+}
+#cajitaComent{
+
+}
+
+#imagenUsuCero{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+}
+/** ------------------------------------------------------Formulario para comentar publi --------------------------------------------------**/
+.postInput{
+    border-radius: 3px;
+    border: 0;
+    margin: 7px;
+    height: 35px;
+    padding: 7px;
+    width: 85%;
+    color:  #1E222D;
+    background-color: #dee2e6;
+    text-align: left;
+    font-size: 14px;
+}
+#btnComent{
+    border: none;
+    background-color: #B5B5B5;
+    border-radius: 5px;
+    padding-top: -1px; padding-bottom: -3px;
+    padding-left: 2px; padding-right: 2px;
+    font-size: 12px;
+    transition: .7s;
+}
+#btnComent:hover{
+    background-color:  #494949;
+    transition: .7s;
+
+}
+
+/** ------------------------------------------------------Menus de la clase (crear post e info de la clase )--------------------------------------------------**/
+aside.card .clip{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    clip-path: circle(15% at 105% 47.5%);
+    transition: 0.5s all ease-in-out;
+}
+aside.card {
+    background-color:  #dee2e6;
+    width: 80%;
+    height: 110px;
+    padding: 18px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+    margin-left: 11%;
+    margin-top: 30px;
+}
+aside.card:hover .clip{
+    clip-path: circle(150% at 105% 47.5%);
+}
+#indice{
+    width: 80%;
+    height: 60%;
+    margin-left: 11%;
+    padding: 17px;
+    color: white;
+    border-radius: 5px;
+    background-color:  #242423;
+    margin-top: 40px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+/** -------------------------------------------------------Crear post --------------**/
+.textArea{
+    max-width: 260px;
+    min-width: 260px;;
+    min-height: 45%;
+    border: none;
+    background-color:  #171717;
+    border-radius: 4px;
+    padding: 9px;
+    color: white;
+}
+.fileImg input{
+    background-color:  #140D59;
+}
+.botoncitos{
+    width: 75%;
+    background-color:  #171717;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 37px;
+    transition: .7s;
+}
+.botoncitos:hover{
+    transition: .7s;
+}
+.tablita{
+    height: 40%;
+}
+.tablita td{
+    padding-top: 15px;
+}
+#frameMenu{
+    width:100%; height: 100vh; 
+    display: table; float: left; 
+    border: none;
+    scrolling: no;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 10%;
+}

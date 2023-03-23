@@ -5,7 +5,7 @@
 <%
     HttpSession miSessiondelUsuario = (HttpSession) request.getSession();
 
-    int idPersona = (int) (miSessiondelUsuario.getAttribute("id_docen") == null ? 0 : miSessiondelUsuario.getAttribute("id_docen"));
+    int idPersona = (int) (miSessiondelUsuario.getAttribute("id_usu") == null ? 0 : miSessiondelUsuario.getAttribute("id_usu"));
     if (idPersona < 1) {
         response.sendRedirect("../jsp/Menu.jsp");
     }
@@ -16,7 +16,7 @@
     BD basesita = new BD();
     basesita.conectar();
 
-    String UsuarioInfo = "Select * from Docente where id_docen = '" + idPersona + "'"; //selecionamos los datos del maestro de la tabla Docente
+    String UsuarioInfo = "Select * from Usuario where id_usu = '" + idPersona + "'"; //selecionamos los datos del maestro de la tabla Docente
     ResultSet rsDatosPer = basesita.consulta(UsuarioInfo);
     if (rsDatosPer.next()) {
         correo = rsDatosPer.getString(3);
@@ -26,8 +26,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Foro de la clase</title>
         <link rel="stylesheet" href="../css_D/menu_D.css" >
-        <link rel="stylesheet" href="../css_D/foro_style.css" >
-        <link rel="stylesheet" href="../css_D/css1.css">
+        <link href="../../CSS/foro_doc.css" rel="stylesheet" type="text/css"/>
+        <link href="../../CSS/barra_foro_doc.css" rel="stylesheet" type="text/css"/>
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link rel="shorcut icon" href="../Img/logos/LogoNexTech.png">
         <style>
@@ -61,7 +61,7 @@
                         </li>
                         <%
                             try {
-                                String strQry = "select * from Clases where id_docen = '" + idPersona + "'";
+                                String strQry = "select * from Clases where id_usu = '" + idPersona + "'";
                                 ResultSet rs = null;
                                 rs = basesita.consulta(strQry);
                                 int id_clase;
@@ -99,7 +99,7 @@
 
         <section class="home">
             <div class="PostsFrame">
-                <iframe name="postList" src="Posts_1.jsp" style="width: 100%; height: 100vh; border:none;" border="no" ></iframe>
+                <iframe name="postList" src="Posts_doc.jsp" style="width: 100%; height: 100vh; border:none;" border="no" ></iframe>
             </div>
 
         </section>
