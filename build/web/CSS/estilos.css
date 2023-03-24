@@ -1,0 +1,380 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+     font-family: 'Quicksand', sans-serif;
+}
+::-webkit-scrollbar
+{
+  background: #2B0C48;
+  width: 9px;
+}
+::-webkit-scrollbar-thumb
+{
+  background: #D290FA;
+  border-radius: 15px;
+}
+section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    pointer-events: none;
+}
+section .bg
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section .orion{
+    position: absolute;
+    scale: 0.25;
+    animation: orioncito 40s linear infinite;
+}
+@keyframes orioncito {
+    0%
+    {
+        transform: translateX(calc(190% + 100vw));
+    }
+    50%
+    {
+        transform: translateX(calc(-100% - 200vw));
+    }
+    50.01%
+    {
+        transform: translateX(calc(-100% - 190vw))
+        rotateY(180deg);
+    }
+    100%
+    {
+        transform: translateX(calc(100% + 190vw)) rotateY(180deg);
+    }
+}
+.conocenos
+{
+   position:inherit;
+   padding: 60px;
+   background: rgba(violet, rgb(157, 0, 255), blue, purple);
+   backdrop-filter: blur(10px);
+   border: 1 px solid #FFF;
+   border-radius: 25px;
+   width: 40%;
+   height: 60%;
+   border-bottom: rgb(225, 225, 225, 0.5);
+   border-right: rgb(225, 225, 225, 0.5);
+   display: flex;
+   margin-bottom: 30px;
+   align-items: center;
+}
+/*.row
+{
+    display: flex;
+}*/
+.text
+{
+    font-family: 'Quicksand', sans-serif;
+    font-size:xx-large;
+    text-align: center;
+    color:#FFF
+}
+
+h1
+{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+p
+{
+    font-size: x-large;
+    
+}
+section .botoncito
+{
+  align-items: center;
+  align-content: center;
+}
+
+.div_info{
+  padding: 25px;
+  color: black;
+  background-color: #E3B6FF;
+}
+.card
+{
+    color: black;
+    text-align: center;
+    padding: 16px;
+    flex-direction: initial;
+}
+.linea
+{
+  scale: 0.6;
+}
+.mini_container
+{
+  display: inline;
+}
+.deco
+{
+  position: absolute;
+  left: 15%;
+  scale: 0.9;
+}
+.textito
+{
+  width: 50%;
+  position: relative;
+  left: 40%;
+}
+.textito_2
+{
+  width: 46%;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  left: 10%;
+}
+.deco_2
+{
+  position: relative;
+  scale: 0.9;
+
+}
+.deco3
+{
+  position: absolute;
+  left: 15%;
+  scale: 0.8;
+}
+.espaciado
+{
+ flex-direction: row;
+}
+.titulo
+{
+  padding: 30px;
+}
+.xd
+{
+  align-items: center;
+  align-content: center;
+  padding: 30px;
+}
+.section_AU
+{
+  background-color: #2B0C48;
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+}
+.textodederecha
+{
+  align-items: center;
+  align-content: center;
+  width:max-content;
+  position: relative;
+  left: 17%;
+}
+.diseño
+{
+  padding: 0%;
+}
+.prueba
+{
+  width: max-content;
+  margin-left: 70%;
+  margin-top: -12%;
+}
+.acomodo
+{
+width: 70%;
+padding-left: 15%;
+}
+.botoncito
+{
+  padding: 30px;
+}
+
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    
+    height: 3rem;
+    background-size: 300% 300%;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #ff833b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 15px;
+  }
+  
+  #container-stars {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+  }
+  
+  strong {
+    z-index: 2;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+    
+  }
+  
+  #glow {
+    position: absolute;
+    display: flex;
+    width: 12rem;
+  }
+  
+  .circle {
+    width: 100%;
+    height: 30px;
+    filter: blur(2rem);
+    animation: pulse_3011 4s infinite;
+    z-index: -1;
+  }
+  
+  .circle:nth-of-type(1) {
+    background: rgba(254, 83, 186, 0.636);
+  }
+  
+  .circle:nth-of-type(2) {
+    background: rgba(142, 81, 234, 0.704);
+  }
+  
+  .btn:hover #container-stars {
+    z-index: 1;
+    background-color: #212121;
+  }
+  
+  .btn:hover {
+    transform: scale(1.1)
+  }
+  
+  .btn:active {
+    border: double 4px #FE53BB;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: none;
+  }
+  
+  .btn:active .circle {
+    background: #FE53BB;
+  }
+  
+  #stars {
+    position: relative;
+    background: transparent;
+    width: 200rem;
+    height: 200rem;
+  }
+  
+  #stars::after {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    left: -100rem;
+    width: 100%;
+    height: 100%;
+    animation: animStarRotate 90s linear infinite;
+  }
+  
+  #stars::after {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+  }
+  
+  #stars::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 170%;
+    height: 500%;
+    animation: animStar 60s linear infinite;
+  }
+  
+  #stars::before {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+    opacity: 0.5;
+  }
+  
+
+
+  @keyframes animStar {
+    from {
+      transform: translateY(0);
+    }
+  
+    to {
+      transform: translateY(-135rem);
+    }
+  }
+  
+  @keyframes animStarRotate {
+    from {
+      transform: rotate(360deg);
+    }
+  
+    to {
+      transform: rotate(0);
+    }
+  }
+  
+  @keyframes gradient_301 {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes pulse_3011 {
+    0% {
+      transform: scale(0.75);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+  
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+  
+    100% {
+      transform: scale(0.75);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }

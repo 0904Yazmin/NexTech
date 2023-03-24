@@ -38,9 +38,7 @@
         <nav class="sidebar close">
             <header id="header2">
                 <div class="image-text">
-                    <span class="image">
-                        <img src="../../General/img/logos/Newlogo.png" class="bx icon"  width="5px" height="5px" />
-                    </span>
+                   
                     <div class="text logo-text">
                         <br> 
                         <span class="profession">Clases</span>

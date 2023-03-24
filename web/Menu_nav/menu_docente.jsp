@@ -57,10 +57,10 @@
                                 <a href="../Actividades/Basico.jsp" class="link" target="seccion"><img src="../Img/Iconos_menu/apuntes.png" class="imgmenu"> Lecciones</a>
                             </li> 
                             <li>
-                                <a  href="../Actividades/Intermedio.jsp"  class="link" target="seccion"><img src="../Img/Iconos_menu/apuntes.png" class="imgmenu usu">Ejercicios</a>
+                                <a  href="../Actividades/Intermedio.jsp"  class="link" target="seccion"><img src="../Img/Iconos_menu/ejercicios.png" class="imgmenu usu">Ejercicios</a>
                             </li>
                             <li>
-                                <a  href="../Actividades/Avanzado.jsp"  class="link" target="seccion"><img src="../Img/Iconos_menu/apuntes.png" class="imgmenu">Examenes</a>
+                                <a  href="../Actividades/Avanzado.jsp"  class="link" target="seccion"><img src="../Img/Iconos_menu/apuntes.png" class="imgmenu">Exámenes</a>
                             </li>
                             <li>
                                 <a href="../Jsp/Actividades/material_apoyo.jsp" class="link" target="seccion"><img src="../Img/Iconos_menu/libros_1.png" class="imgmenu">Material de apoyo</a>
@@ -70,12 +70,7 @@
                     <li><a href="../Jsp/Foros/foro_docente.jsp" class="link" target="seccion" >
                             <img  src="../Img/Iconos_menu/comentarios.png"  class="imgmenu">Foro</a>
                     </li>
-                    <li><a href="../Jsp/Actividades/Ejercicios/ejercicios.jsp" class="link" target="seccion">
-                            <img  src="../Img/Iconos_menu/ejercicios.png" class="imgmenu"> Ejercicios <img src="../Img/Iconos_menu/desplegar.png" class="imgmenu usu"></a>
-                            <ul>
-                                <li><a href="../html_D/CrearClaseForm.html" class="link" ><img src="../Img/Iconos_menu/plus.png" class="imgmenu">Crear cuestionario</a></li>
-                            </ul>
-                    </li>
+                  
                     <li><a href="../Jsp/Calificaciones/calificaciones.jsp" class="link" target="seccion"> 
                             <img src="../Img/Iconos_menu/puntuaciones.png" class="imgmenu">Calificaciones</a>
                     </li>
@@ -103,7 +98,7 @@
                             <li><a href="../Sesiones/perfil_usu.jsp" class="link" target="seccion">
                                     <img src="../Img/Iconos_menu/acerca de.png"  class="imgmenu usu">Acerca de</a>
                             </li>
-                            <li><a href="../Sesiones/cerrarSesion.jsp" class="link" target="seccion">
+                            <li><a href="../Sesiones/cerrarSesion.jsp" class="link" >
                                     <img src="../Img/Iconos_menu/salir.png" class="imgmenu"> Cerrar sesión</a>
                             </li>
                         </ul>

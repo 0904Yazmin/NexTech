@@ -1,0 +1,263 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 14px;
+}
+#principal{
+    background-color: white;
+}
+
+.fondoMarte{
+    z-index: -1;
+}
+
+.menu_perfil{
+    width: 100px;
+    height: 84vh;
+    position: absolute;
+    top: 13%;
+    flex-direction: column;
+    justify-content: center;
+    background:   #000814;
+    border-radius: 0 16px 16px 0;
+}
+.lista{
+    width: 100%;
+}
+
+
+.dos{
+    width: 86%;
+    height: 78vh;
+    position: absolute;
+    top: 16%;
+    left: 10%;
+    background:  white;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+#cuadro1{
+    position: absolute;
+    background:   #F8F9FA;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    width: 65%;
+    height: 32%;
+    top: 2%;
+    left: 1%;
+    border-radius: 16px;
+    padding: 20px;
+}
+#cuadro1 h1{
+    font-size: 30px;
+}
+
+
+#cuadro2{
+    position: absolute;
+    background:  #F8F8F8;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    width: 29%;
+    height: 90%;
+    top: 2%;
+    left: 68%;
+    border-radius: 16px;
+    padding: 30px;
+}
+
+#cuadro3{
+    position: absolute;
+    background:  #F8F8F8;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    width: 65%;
+    height: 55%;
+    top: 37%;
+    left: 1%;
+    border-radius: 16px;
+    padding: 30px;
+}
+
+.imgPerfil{
+    width: 180px; height: 200px;
+    position: absolute;
+    z-index: 10;
+    left: 70%;
+    top: -15%;
+}
+
+.imagenUsuCero{
+    position: absolute;
+    top: 15%;
+    left: 29%;
+    border-radius: 100px;
+}
+.editarBtn{
+    padding: 11px;
+    position: absolute;
+    background-color:  #150B28;
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    top: 57%;
+    left: 23%;
+    transition: .7s;
+}
+.editarBtn:hover{
+    background: none;
+    font-size: 15px;
+    transition: .5s;
+    color: black;
+}
+.tablita2{
+    padding: 8px;
+    height: 180px; width: 590px;
+    text-align: left;
+    align-items:  flex-start;
+    position: absolute;
+    top: 10%;
+    left: 7%;
+    font-size: 13px;
+}
+.tablita2 td{
+    padding: 8px;
+}
+#FRAME{
+    z-index: 100;
+}
+
+
+/** -------------------------------------------------------------EDITAR DATOS.JSP -----------------------------------------------------------------------**/
+#p2{
+    background-color:  #D8DEE9;
+}
+
+.formulario{
+    width: 84%;
+    height: 78vh;
+    position: absolute;
+    top: 16%;
+    left: 8%;
+    background:  #F8F8F8;
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    padding: 30px;
+}
+
+.menu{
+    width: 400px;
+    height: 65vh;
+    position: absolute;
+    top: 22%;
+    flex-direction: column;
+    justify-content: center;
+    background:   #000814;
+    border-radius: 0 3px 3px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 10;
+    color: white;
+    padding: 37px;
+}
+.menu h1{
+    font-size: 21px;
+}
+
+#cuadro4{
+    position: absolute;
+    background:  none;
+    width: 60%;
+    height: 90%;
+    top: 3%;
+    left: 33%;
+    border-radius: 16px;
+    padding: 30px;
+}
+#cuadro4 h1{
+    font-size: 27px;
+}
+
+.tablita{
+    padding: 2px;
+    height: 280px; width: 720px;
+    text-align: left;
+    align-items:  flex-start;
+    position: absolute;
+    top: 20%;
+    left: -7%;
+    font-size: 13px;
+}
+.tablita td{
+    padding: 8px;
+}
+
+.fileImg{
+    border-radius: 12px;
+    border: none;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    width: 390px;
+    height: 27px;
+    background:  none;
+    color: white;
+    position: absolute;
+    top: 57%;
+    left: 10%;
+}
+.imagenUsuCero blanco{
+    position: absolute;
+    top: 29%;
+    left: 29%;
+}
+
+.actu{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(255,255,255, 0.14);
+    border-radius: 8px;
+    border: 0;
+    height: 35px;
+    width: 170px;
+    background-color: #D8DEE9;
+    text-align: center;
+}
+.actu_b{
+    border-radius: 13px; 
+    border:none;
+    font-size: 13px;
+    text-align:  center;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(255,255,255, 0.14);
+}
+
+
+#BtnEditar{
+    background-color:  #afb2b8;
+    height: 37px; width: 390px;
+    color: white;
+    transition: .7s;
+}
+#BtnEditar:hover{
+    background-color:  #A17EFB;
+    color:  #000814;
+    font-size: 14px;
+    transition: .7s;
+}
+
+.link_borrar{
+    color:  #140152;
+    font-weight:  600;
+    transition: .8s;
+}
+
+.link_borrar:hover{
+    color:  #140152;
+    padding: 13px;
+    background-color:   #D8DEE9;
+    transition: .7s;
+    border-radius: 7px;
+}

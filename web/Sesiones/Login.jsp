@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                             <img src="../Img/Iconos_menu/pass.png"  alt="candado" class="icons"/>
-                            <input type="password" id="TxtPass" name="password" placeholder="Ingrese su contraseña"minlength="6" maxlength="30" 
+                            <input type="password" id="TxtPass" name="password" placeholder="Ingrese su contraseña"minlength="4" maxlength="30" 
                                    autocomplete="off" required=""/>
                             <label class="form-label">Contraseña</label></p>
                     </div>
