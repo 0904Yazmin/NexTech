@@ -64,13 +64,13 @@
                         <tr>
                             <%                                if (rs.getString(8) == null) {
                             %>
-                            <td rowspan="2"><img src="../../General/Usu_img/fotosPerfil/fotoUsu_0.png" width="50" height="50" alt="foto 0" id="imagenUsuCero" style="margin-right: -20px;"/></td>
+                            <td rowspan="2"><img src="../../Img/fotoUsu_0.png"  width="50" height="50" alt="foto 0" id="imagenUsuCero" style="margin-right: -20px;"/></td>
 
                             <%
                             } else {
 
                             %>
-                            <td rowspan="2"><img class="imagenUsuCero" src="../../General/Usu_img/fotosPerfil/<%=rs.getString(8)%>" style="margin-right: -20px; border-radius: 100px;"  width="60" height="60"></td>
+                            <td rowspan="2"><img class="imagenUsuCero" src="../../Img/fotos_perfil/<%=rs.getString(8)%>" style="margin-right: -20px; border-radius: 100px;"  width="60" height="60"></td>
                                 <%                                }
                                 %>
                             <td><h1><%=nombre%></h1></td>

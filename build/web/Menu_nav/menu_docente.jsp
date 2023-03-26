@@ -37,11 +37,11 @@
 </head>
 <body>
     <header>
-        <a href="Menu_A.jsp" ><img src="../Img/logos/LogoCopernicus.png" alt="logo" class="logo"></a>
+        <a href="menu_docente.jsp" ><img src="../Img/logos/LogoCopernicus.png" alt="logo" class="logo"></a>
         <nav class="nav_A">
             <center>
                 <ul>
-                    <li> <a href="../Jsp/Clases/clasesitas.jsp" class="link" target="seccion"><img src="../Img/Iconos_menu/clases.png" class="imgmenu"> Clase
+                    <li> <a href="../Jsp/Clases/clasesitas.jsp" class="link" target="seccion"><img src="../Img/Iconos_menu/clases.png" class="imgmenu"> Clases
                          <img src="../Img/Iconos_menu/desplegar.png" class="imgmenu usu"></a>
                             <ul>
                                 <li><a href="../Jsp/Clases/CrearClaseForm.html" class="link" target="seccion"><img src="../Img/Iconos_menu/plus.png" class="imgmenu">Crear clase</a></li>

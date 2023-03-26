@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Contáctanos</title>
+        <link href="../../CSS/contact_us.css" rel="stylesheet" type="text/css"/>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+        </style>
+        <link rel="shorcut icon" href="../../Img/logos/LogoCopernicus.png">
+    </head>
+    <body>
+        <header>
+            <table>
+                <tr>
+                    <td>
+                        <img src="../../Img/logos/LogoCopernicus.png" alt="CS" class="imglogo"/>
+                    </td>
+                    <td>
+                        <a href="../index.html" ><h1>Copernicus System</h1></a>
+                    </td>
+                </tr>
+            </table>
+            <nav class="navegacion">
+                <a href="Registro.html" class="link" >Registro</a>
+                <a href="../../index.html" class="link">Conócenos</a>
+                <a href="Login.jsp" class="link">NexTech Company</a>
+                <a href="Login.jsp" class="link">Login</a>
+            </nav>
+        </header>
+
+        <section>
+            <form class="form" action="https://formspree.io/f/xqkodwnp" method="POST">
+                <p class="heading">Contáctanos</p>
+                <div class="box">
+                    <input class="input" type="text" id="TxtNombre" name="nombre" placeholder="Nombre" autocomplete="off"  autofocus
+                           minlength="4" maxlength="20" required>
+                    <input type="email" name="email" class="input" placeholder="Correo electrónico" required>
+
+                    <textarea name="message" class="input" placeholder="Mensaje" rows="4" cols="50" required></textarea>
+                    <button class="btn1">Submit</button>
+                    <button class="btn2">Back</button>
+                </div>
+            </form>
+        </section>
+
+        
+
+    </body>
+</html>

@@ -38,13 +38,13 @@
         <nav class="sidebar close">
             <header id="header2">
                 <div class="image-text">
-                   
+
                     <div class="text logo-text">
                         <br> 
                         <span class="profession">Clases</span>
                     </div>
                 </div>
-                <i class='bx bx-chevron-right toggle'></i>
+                 <i class='bx bx-chevron-right toggle'></i>
             </header>
 
             <div class="menu-bar">
@@ -57,6 +57,7 @@
                                 <span class="text nav-text">Menú principal</span>
                             </a>
                         </li>
+                        
                         <%
                             try {
                                 String strQry = "select * from Clases where id_usu = '" + idPersona + "'";
@@ -82,7 +83,7 @@
                         %>
                     </ul>
                 </div>
-
+               
                 <div class="bottom-content">
                     <li class="">
                         <a href="#">
@@ -92,6 +93,7 @@
                     </li>
                 </div>
             </div>
+
 
         </nav>
 

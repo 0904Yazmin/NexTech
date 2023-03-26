@@ -42,18 +42,7 @@
 
 
     <body>
-        <header>
-            <table>
-                <tr>
-                    <td>
-                        <img src="../../General/img/logos/Newlogo.png" alt="logoCS" class="imglogo"/>
-                    </td>
-                    <td>
-                        <a href="../index.html" ><h1>Copernicus System</h1></a>
-                    </td>
-                </tr>
-            </table>
-        </header>
+        
         <div class='cuadro3'>
             <div class="newClass">
                 <h1>Nueva clase</h1>

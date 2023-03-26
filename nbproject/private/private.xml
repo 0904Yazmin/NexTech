@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/NexTech_PA/NexTech/web/index.html</file>
-            <file>file:/D:/NexTech_PA/NexTech/web/CSS/estilos_NT.css</file>
-            <file>file:/D:/NexTech_PA/NexTech/web/Jsp/Clases/CrearClaseForm.html</file>
+            <file>file:/D:/NexTech_PA/NexTech/web/Sesiones/Login.jsp</file>
+            <file>file:/D:/NexTech_PA/NexTech/web/CSS/login.css</file>
+            <file>file:/D:/NexTech_PA/NexTech/web/Jsp/Otros/Contactanos.html</file>
+            <file>file:/D:/NexTech_PA/NexTech/web/CSS/contact_us.css</file>
             <file>file:/D:/NexTech_PA/NexTech/web/CSS/estilos.css</file>
-            <file>file:/D:/NexTech_PA/NexTech/web/Menu_nav/menu_docente.jsp</file>
+            <file>file:/D:/NexTech_PA/NexTech/web/Sesiones/Registro.html</file>
         </group>
     </open-files>
 </project-private>

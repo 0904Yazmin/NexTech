@@ -14,9 +14,7 @@
         <header>
             <a href="../index.html" class="link" ><img src="../Img/logos/LogoCopernicus.png" alt="LogoCS" class="imglogo"/></a> <a href="../index.html" class="link" ><h1>Copernicus System</h1></a>
             <nav>
-                <ul>
-                   
-                </ul>
+                
                 <a href="Login.jsp" class="link">Iniciar sesión</a>
                 <a href="Login.jsp" class="link">Conócenos</a>
                 <a href="Login.jsp" class="link">NexTech Company</a>
@@ -25,11 +23,11 @@
 
         <div class="div1">
             <center>
-                <form name="form" action="Insertar_Info.jsp" method="post" > <!-- la pagina redirigira al inicio de sesion index.htm -->
+                <form name="form" action="Insertar_Info.jsp" method="POST" > <!-- la pagina redirigira al inicio de sesion index.htm -->
                     <div class="Principal">
-                        <h1>Registrate</h1>
+                        <h1>Regístrate</h1>
                         <input class="Registro" type="text" id="TxtNombre" name="TxtUsu" placeholder="Nombre de usuario" autocomplete="off"  autofocus="yes"
-                               minlength="6" maxlength="20" onkeypress="return username(event)" required>
+                               minlength="4" maxlength="20" onkeypress=" return username(event)" required>
 
                         <p><input class="Registro" type="email" id="TxtCorreo" name="TxtMail" placeholder="Correo electrónico" autocomplete="off"  required>
 
