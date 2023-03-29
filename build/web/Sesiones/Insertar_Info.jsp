@@ -22,6 +22,8 @@
             String tipoUsu = request.getParameter("SelectUsu");
             String pass = request.getParameter("TxtPass");
             String tipoPlan = "basico";
+            String fotoUsu = "fotoUsu_0.png";
+            
             String pswd = Digest.bytesToHex(Digest.createSha1(pass));
             String strQry = null;
 
@@ -29,7 +31,7 @@
                 BD base = new BD();
                 try {
                     base.conectar();
-                    strQry = "insert into Usuario(nombre_usu, correo_usu, pass_usu, tipo_usu, tipo_plan)" + "values( '" + usuario + "','" + correo + "','" + pswd + "','" + tipoUsu +  "','" + tipoPlan + "' )";
+                    strQry = "insert into Usuario(nombre_usu, correo_usu, pass_usu, tipo_usu, tipo_plan, foto_usu)" + "values( '" + usuario + "','" + correo + "','" + pswd + "','" + tipoUsu +  "','" + tipoPlan + "' ,'" + fotoUsu + "' )";
                     base.insertar(strQry);
                     /**
                      * switch (tipoUsu) { case "Alumno": strQry = "insert into

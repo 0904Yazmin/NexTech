@@ -25,39 +25,40 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Foro de la clase</title>
-        <link rel="stylesheet" href="../css_D/menu_D.css" >
         <link href="../../CSS/foro_doc.css" rel="stylesheet" type="text/css"/>
         <link href="../../CSS/barra_foro_doc.css" rel="stylesheet" type="text/css"/>
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link rel="shorcut icon" href="../Img/logos/LogoNexTech.png">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+            *{
+                overflow: hidden;
+            }
+            body{
+                overflow: hidden;
+            }
         </style>
     </head>
     <body id="foro1">
         <nav class="sidebar close">
             <header id="header2">
                 <div class="image-text">
-
                     <div class="text logo-text">
                         <br> 
                         <span class="profession">Clases</span>
                     </div>
                 </div>
-                 <i class='bx bx-chevron-right toggle'></i>
+                <i class='bx bx-chevron-right toggle'></i>
             </header>
-
             <div class="menu-bar">
                 <div class="menu">
                     <ul class="menu-links">
-
                         <li class="nav-link">
-                            <a href="../jsp_D/Menu_D.jsp">
+                            <a href="../../Menu_nav/menu_docente.jsp">
                                 <i class='bx bx-home-alt icon' ></i>
                                 <span class="text nav-text">Menú principal</span>
                             </a>
                         </li>
-                        
                         <%
                             try {
                                 String strQry = "select * from Clases where id_usu = '" + idPersona + "'";
@@ -68,7 +69,7 @@
                                     id_clase = Integer.parseInt(rs.getString(1));
                         %>
                         <li class="nav-link">
-                            <a href="Posts_1.jsp?id_clase=<%=id_clase%>" target="postList"  >
+                            <a href="Posts_doc.jsp?id_clase=<%=id_clase%>" target="postList">
                                 <i class='bx bx-pencil icon' style="margin-right: -6px;"></i>
                                 <span class="text nav-text"><%=rs.getString(2)%></span>
                             </a>
@@ -83,30 +84,23 @@
                         %>
                     </ul>
                 </div>
-               
+
                 <div class="bottom-content">
                     <li class="">
-                        <a href="#">
+                        <a href="../../Sesiones/cerrarSesion.jsp">
                             <i class='bx bx-log-out icon' ></i>
                             <span class="text nav-text">Cerrar sesión</span>
                         </a>
                     </li>
                 </div>
             </div>
-
-
         </nav>
 
         <section class="home">
             <div class="PostsFrame">
-                <iframe name="postList" src="Posts_doc.jsp" style="width: 100%; height: 100vh; border:none;" border="no" ></iframe>
+                <iframe name="postList" src="fondoForo.html" style="width: 100%; height: 100vh; border:none;" border="no"  overflow: hidden;></iframe>
             </div>
-
         </section>
-
-
-
-
         <%
             }
         %>

@@ -32,6 +32,15 @@
     <link href="../CSS/barra_menu.css" rel="stylesheet" type="text/css"/>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+        body{
+            overflow: hidden;
+            margin: 0;
+        }
+        .section{
+            overflow: hidden;
+            overflow-x:  hidden;
+            overflow-y: hidden;
+        }
     </style>
     <link rel="shorcut icon" href="../Img/logos/LogoCopernicus.png">
 </head>
@@ -48,7 +57,7 @@
                             </ul>
                     </li>
                     <li>
-                        <a href="../Actividades/temario.jsp" class="link" target="seccion">
+                        <a href="../Jsp/Actividades/Actividades.jsp" class="link" target="seccion">
                             <img src="../Img/Iconos_menu/lecciones.png" class="imgmenu"> Actividades 
                             <img src="../Img/Iconos_menu/desplegar.png" class="imgmenu usu">
                         </a>
@@ -70,11 +79,10 @@
                     <li><a href="../Jsp/Foros/foro_docente.jsp" class="link" target="seccion" >
                             <img  src="../Img/Iconos_menu/comentarios.png"  class="imgmenu">Foro</a>
                     </li>
-                  
-                    <li><a href="../Jsp/Calificaciones/calificaciones.jsp" class="link" target="seccion"> 
+                    <li><a href="../Jsp/Calificaciones/Lista_cal.jsp" class="link" target="seccion"> 
                             <img src="../Img/Iconos_menu/puntuaciones.png" class="imgmenu">Calificaciones</a>
                     </li>
-                    <li><a href="../Jsp/Modelos/Modelos.jsp" class="link" target="seccion">
+                    <li><a href="../Jsp/Modelos/Modelos3D.jsp" class="link" target="seccion">
                             <img src="../Img/Iconos_menu/coheteM.png" class="imgmenu">Modelos 3D</a>
                     </li> 
                     <li class="opciones"><a class="link" target="seccion" >
@@ -92,7 +100,7 @@
                             <li><a href="../Jsp/Otros/planes/infoPlanes.jsp" class="link" target="seccion">
                                     <img src="../Img/Iconos_menu/premium.png"  class="imgmenu usu">Actualizar plan</a>
                             </li>
-                            <li><a href="../Sesiones/perfil_usu.jsp" class="link" target="seccion">
+                            <li><a href="../Jsp/Otros/FAQs.jsp" class="link" target="seccion">
                                     <img src="../Img/Iconos_menu/help.png"  class="imgmenu usu">Ayuda y soporte</a>
                             </li>
                             <li><a href="../Sesiones/perfil_usu.jsp" class="link" target="seccion">
@@ -111,7 +119,7 @@
 
     <section class="home">
         <div class="PostsFrame">
-            <iframe name="seccion" src="bienvenido.jsp" style="width: 100%; height: 100vh; border:none; margin: 0; " ></iframe>
+            <iframe name="seccion" src="bienvenido.jsp" style="width: 100%; height: 100vh; border:none; margin: 0; "  ></iframe>
         </div>
     </section>
 

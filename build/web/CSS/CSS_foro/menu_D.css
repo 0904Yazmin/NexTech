@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(33,37,41);
+    min-height: 100vh;
+}

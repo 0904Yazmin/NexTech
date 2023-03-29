@@ -57,7 +57,7 @@
                 <%
                     if (rsDatosPer.getString(5) == null) {
                 %>
-                <img src="../Img/fotoUsu_0.png" width="130" height="120" alt="foto 0" class="imagenUsuCero"/>
+                <img src="../Img/fotos_perfil/fotoUsu_0.png" width="130" height="120" alt="foto 0" class="imagenUsuCero"/>
 
                 <%
                 } else {

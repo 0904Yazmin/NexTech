@@ -55,17 +55,20 @@
     //Exam examen = new Exam();
     //int aciertos = request.getParameter("aciertos");
     String strQry = null;
-
+    String nivel = "";
     BD base = new BD();
     try {
         base.conectar();
         if (cantidad_correctas >= 12) {
             strQry = "update Usuario set grado_usuario='" + "Avanzado" + "' where id_usu='" + id + "'";
+            nivel = "Avanzado";
         } else {
-            if ( cantidad_correctas >= 7) {
-                strQry = "update Usuario set grado_usuario='" + "Intermedio"+ "' where id_usu='" + id + "'";
+            if (cantidad_correctas >= 7) {
+                strQry = "update Usuario set grado_usuario='" + "Intermedio" + "' where id_usu='" + id + "'";
+                nivel = "Intermedio";
             } else {
                 strQry = "update Usuario set grado_usuario='" + "Basico" + "' where id_usu='" + id + "'";
+                nivel = "Básico";
             }
         }
         base.insertar(strQry);
@@ -86,7 +89,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Resultado</title>
-
+        <link href="../../CSS/premium_form.css" rel="stylesheet" type="text/css"/>
         <link href="../../CSS/newClass.css" rel="stylesheet" type="text/css"/>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -95,7 +98,7 @@
         <link rel="shorcut icon" href="../../Img/logos/LogoCopernicus.png">
     </head>
     <body>
-        <div class="div2">
+        <div class="container div2" id="blur">
 
             <div class="cuadro4">
                 <div class="p2">
@@ -106,10 +109,49 @@
                     <h1>Examen diagnóstico</h1><br>
                     <center>
                         <h1>Tu puntaje es de <%=cantidad_correctas%>/17</h1>
-                        <a href="../../Menu_nav/bienvenido.jsp">Ir a menú principal</a>
+                        <h3>Tu nivel de aprendizaje adecuado es: <%=nivel%></h3>
+                        <br>
+                        <button class="purchase--btn"  onclick="toggle()">Siguiente</button>
                     </center>
                 </div>
             </div>
         </div>
+
+
+        <div id="popup">
+            <div class="modal2">
+                <form class="form" action="edad.jsp" method="POST" >
+                    <div class="separator">
+                        <hr class="line">
+                        <h3>Edad</h3> 
+                        <hr class="line">
+                    </div>
+                    <div class="credit-card-info--form">
+                        <div class="input_container">
+                            <label for="password_field" class="input_label">Ingresa tu edad para asignarte un foro adecuado a tu edad</label>
+                            <input id="edad" class="input_field" type="number" name="edad" title="Inpit title" placeholder="Ingresa tu edad" required>
+                            <input id="edad" class="input_field" type="hidden" name="nivel" title="Inpit title" value="<%=nivel%>">
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex;">
+                        <button class="purchase--btn"  >Ok</button>
+                        
+                    </div>
+
+                </form>
+            </div>
+        </div>
+                        
+                        
+                        
+        <script type="text/javascript">
+            function toggle() {
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+            }
+        </script>
     </body>
 </html>

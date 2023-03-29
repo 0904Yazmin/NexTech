@@ -9,7 +9,7 @@
 }
 
 body{
-    background-color:  #E3B6FF;
+    background-color: white;
     
 }
 
@@ -51,7 +51,7 @@ h1{
     margin-right: auto;
     margin-left: auto;
     background-color: white;
-    height: 43%;
+    height: 53%;
     width: 34%;
     padding: 25px;
 }
@@ -97,7 +97,7 @@ h1{
 }
 .imgClase{
     position: absolute;
-    width: 90%;
+    width: 80%;
     height: 85%;
     top: 12%;
     right: 10%;

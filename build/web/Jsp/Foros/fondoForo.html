@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Fondo del foro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* -------------------------------- 
+    
+    File#: _1_parallax-image
+    Title: Parallax Image
+    Descr: Figure element with images floating in a 3D space
+    Usage: codyhouse.co/license
+    
+    -------------------------------- */
+            /* reset */
+            *, *::after, *::before {
+                box-sizing: border-box;
+            }
+
+            * {
+                font: inherit;
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+
+            html {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            body {
+                background-color: hsl(0, 0%, 100%);
+                font-family: system-ui, sans-serif;
+                color: hsl(230, 7%, 23%);
+                font-size: 1.125rem; /* 18px */
+                line-height: 1.4;
+                overflow: hidden;
+            }
+
+            h1, h2, h3, h4 {
+                line-height: 1.2;
+                color: hsl(230, 13%, 9%);
+                font-weight: 700;
+            }
+
+            h1 {
+                font-size: 2.5rem; /* 40px */
+            }
+
+            h2 {
+                font-size: 2.125rem; /* 34px */
+            }
+
+            h3 {
+                font-size: 1.75rem; /* 28px */
+            }
+
+            h4 {
+                font-size: 1.375rem; /* 22px */
+            }
+
+            ol, ul, menu {
+                list-style: none;
+            }
+
+            button, input, textarea, select {
+                background-color: transparent;
+                border-radius: 0;
+                color: inherit;
+                line-height: inherit;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            textarea {
+                resize: vertical;
+                overflow: auto;
+                vertical-align: top;
+            }
+
+            a {
+                color: hsl(250, 84%, 54%);
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+
+            img, video, svg {
+                display: block;
+                max-width: 100%;
+            }
+
+            /* -------------------------------- 
+            
+            Component 
+            
+            -------------------------------- */
+
+            .parallax {
+                overflow: hidden;
+                perspective: 4000px;
+                opacity: 0; /* hide image while it is initialized in JS */
+            }
+
+            .parallax--loaded {
+                opacity: 1;
+            }
+
+            .parallax__wrapper {
+                position: relative;
+                transform-style: preserve-3d;
+                transform: translateZ(0);
+                will-change: transform;
+                transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+
+            .parallax__item {
+                display: block;
+                width: 100%;
+            }
+
+            .parallax__item:not(:first-of-type) {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="parallax js-parallax">
+            <figure class="parallax__wrapper js-parallax__wrapper">
+                <img class="parallax__item js-parallax__item" src="https://d3ae4wrz2ljkbq.cloudfront.net/components/parallax-img-1.svg" alt="Image description">
+                <img class="parallax__item js-parallax__item" src="https://d3ae4wrz2ljkbq.cloudfront.net/components/parallax-img-2.svg" data-parallax-distance="100" aria-hidden="true">
+                <img class="parallax__item js-parallax__item" src="https://d3ae4wrz2ljkbq.cloudfront.net/components/parallax-img-3.svg" data-parallax-distance="200" aria-hidden="true">
+                <img class="parallax__item js-parallax__item" src="https://d3ae4wrz2ljkbq.cloudfront.net/components/parallax-img-4.svg" data-parallax-distance="300" aria-hidden="true">
+            </figure>
+        </div>
+    </body>
+
+    <script>
+        // File#: _1_parallax-image
+// Usage: codyhouse.co/license
+        (function () {
+            var ParallaxImg = function (element, rotationLevel) {
+                this.element = element;
+                this.figure = this.element.getElementsByClassName('js-parallax__wrapper')[0];
+                this.imgs = this.element.getElementsByClassName('js-parallax__item');
+                this.maxRotation = rotationLevel || 2; // rotate level
+                this.scale = 1;
+                this.animating = false;
+                initParallax(this);
+                initParallaxEvents(this);
+            };
+
+            function initParallax(element) {
+                element.count = 0;
+                window.requestAnimationFrame(checkImageLoaded.bind(element));
+                // check if this is an image -> otherwise no need to check if loaded
+                for (var i = 0; i < element.imgs.length; i++) {
+                    (function (i) {
+                        var loaded = false;
+                        if (element.imgs[i].tagName.toLowerCase() != 'img') {
+                            element.count = element.count + 1;
+                            return;
+                        }
+                        element.imgs[i].addEventListener('load', function () {
+                            if (loaded)
+                                return;
+                            element.count = element.count + 1;
+                        });
+                        if (element.imgs[i].complete && !loaded) {
+                            loaded = true;
+                            element.count = element.count + 1;
+                        }
+                    })(i);
+                }
+
+                // set translateZ
+                for (var i = 0; i < element.imgs.length; i++) {
+                    if (element.imgs[i].getAttribute('data-parallax-distance')) {
+                        element.imgs[i].style.transform = 'translateZ(' + parseInt(element.imgs[i].getAttribute('data-parallax-distance')) + 'px' + ')';
+                    }
+                }
+            }
+            ;
+
+            function checkImageLoaded() {
+                if (this.count >= this.imgs.length) {
+                    initScale(this);
+                    if (this.loaded) {
+                        window.cancelAnimationFrame(this.loaded);
+                        this.loaded = false;
+                    }
+                } else {
+                    this.loaded = window.requestAnimationFrame(checkImageLoaded.bind(this));
+                }
+            }
+            ;
+
+            function initScale(element) {
+                var maxImgResize = getMaxScale(element);
+                element.scale = maxImgResize / (Math.sin(Math.PI / 2 - element.maxRotation * Math.PI / 180));
+                element.figure.style.transform = 'scale(' + element.scale + ')';
+                element.element.classList.add('parallax--loaded');
+            }
+            ;
+
+            function getMaxScale(element) {
+                var minWidth = 0;
+                var maxWidth = 0;
+                for (var i = 0; i < element.imgs.length; i++) {
+                    var width = element.imgs[i].getBoundingClientRect().width;
+                    if (width < minWidth || i == 0)
+                        minWidth = width;
+                    if (width > maxWidth || i == 0)
+                        maxWidth = width;
+                }
+                var scale = Math.ceil(10 * maxWidth / minWidth) / 10;
+                if (scale < 1.1)
+                    scale = 1.1;
+                return scale;
+            }
+
+            function initParallaxEvents(element) {
+                element.element.addEventListener('mousemove', function (event) {
+                    if (element.animating)
+                        return;
+                    element.animating = true;
+                    window.requestAnimationFrame(moveImage.bind(element, event));
+                });
+            }
+            ;
+
+            function moveImage(event, timestamp) {
+                var wrapperPosition = this.element.getBoundingClientRect();
+                var rotateY = 2 * (this.maxRotation / wrapperPosition.width) * (wrapperPosition.left - event.clientX + wrapperPosition.width / 2);
+                var rotateX = 2 * (this.maxRotation / wrapperPosition.height) * (event.clientY - wrapperPosition.top - wrapperPosition.height / 2);
+
+                if (rotateY > this.maxRotation)
+                    rotateY = this.maxRotation;
+                if (rotateY < -1 * this.maxRotation)
+                    rotateY = -this.maxRotation;
+                if (rotateX > this.maxRotation)
+                    rotateX = this.maxRotation;
+                if (rotateX < -1 * this.maxRotation)
+                    rotateX = -this.maxRotation;
+                this.figure.style.transform = 'scale(' + this.scale + ') rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+                this.animating = false;
+            }
+            ;
+
+            window.ParallaxImg = ParallaxImg;
+
+            //initialize the ParallaxImg objects
+            var parallaxImgs = document.getElementsByClassName('js-parallax');
+            if (parallaxImgs.length > 0) {
+                for (var i = 0; i < parallaxImgs.length; i++) {
+                    (function (i) {
+                        var rotationLevel = parallaxImgs[i].getAttribute('data-perspective');
+                        new ParallaxImg(parallaxImgs[i], rotationLevel);
+                    })(i);
+                }
+            }
+            ;
+        }());
+    </script>
+</html>

@@ -78,10 +78,23 @@ foreign key(id_usu) references Usuario(id_usu),
 foreign key(id_post) references Post(id_post)
 );
 
+# __________________________________________ Creacion de "clases" _______________________________
+# para menores de edad
+ insert into Clases (id_clase, nom_clase, grado, clave) values (1,'Foro Nivel Básico A','Básico','basico');
+ insert into Clases (id_clase, nom_clase, grado, clave) values (2,'Foro Intermedio A','Intermedio','intermedio');
+ insert into Clases (id_clase, nom_clase, grado, clave) values (3,'Foro Avanzado A','Avanzado','avanzado');
+# para mayores de edad
+ insert into Clases (id_clase, nom_clase, grado, clave) values (4,'Foro Nivel Básico B','Básico','basico');
+ insert into Clases (id_clase, nom_clase, grado, clave) values (5,'Foro Intermedio B','Intermedio','intermedio');
+ insert into Clases (id_clase, nom_clase, grado, clave) values (6,'Foro Avanzado B','Avanzado','avanzado');
 
-#insert into Clases (id_clase, nom_clase, grado, clave) values (1,'Foro Básico','Básico','basico');
-#insert into Clases (id_clase, nom_clase, grado, clave) values (2,'Foro Intermedio','Intermedio','intermedio');
-#insert into Clases (id_clase, nom_clase, grado, clave) values (3,'Foro Avanzado','Avanzado','avanzado');
+# __________________________________________ Creacion de los foros de chat para independientes  _______________________________
+ insert into Foro (id_foro, id_clase) values (1, 1 );
+ insert into Foro (id_foro, id_clase) values (2, 2);
+ insert into Foro (id_foro, id_clase) values (3, 3);
+ insert into Foro (id_foro, id_clase) values (4, 4);
+ insert into Foro (id_foro, id_clase) values (5, 5);
+ insert into Foro (id_foro, id_clase) values (6, 6);
 
 
 select * from Usuario;

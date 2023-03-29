@@ -77,7 +77,7 @@
                 // Asignar contenido
                 input.value = contenido;
                 // Agregar input a documento
-                document.body.appendChild(input);
+                
                 // Seleccionar contenido
                 input.select();
                 // Copiar

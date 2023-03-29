@@ -26,8 +26,8 @@
                 <form name="form" action="Insertar_Info.jsp" method="POST" > <!-- la pagina redirigira al inicio de sesion index.htm -->
                     <div class="Principal">
                         <h1>Regístrate</h1>
-                        <input class="Registro" type="text" id="TxtNombre" name="TxtUsu" placeholder="Nombre de usuario" autocomplete="off"  autofocus="yes"
-                               minlength="4" maxlength="20" onkeypress=" return username(event)" required>
+                        <input class="Registro" type="text" id="TxtNombre" name="TxtUsu" placeholder="Nombre de usuario" autocomplete="off"  autofocus
+                               minlength="6" maxlength="25" onkeypress=" return username(event)" required>
 
                         <p><input class="Registro" type="email" id="TxtCorreo" name="TxtMail" placeholder="Correo electrónico" autocomplete="off"  required>
 
@@ -39,10 +39,10 @@
 
                         <label> Únete a Copernicus System como: </label>
 
-                        <select class="Registro tipo" id="SelectUsu" name="SelectUsu" onkeypress="return password(event)" required>
-                            <option required  value="Independiente" >Independiente</option>
-                            <option required  value="Alumno" >Alumno</option>
-                            <option required  value="Docente" >Docente</option>
+                        <select class="Registro tipo" id="SelectUsu" name="SelectUsu"  required>
+                            <option value="Independiente" >Independiente</option>
+                            <option value="Alumno" >Alumno</option>
+                            <option value="Docente" >Docente</option>
                         </select>
 
                         <input class="Registro" type="submit" id="btnRegis" name="btnRegis" value="Registrarse" onclick="valida()">
@@ -52,7 +52,7 @@
             </center>
         </div>
         <div class="tierra">
-            <iframe src='https://my.spline.design/tierracopy-260d91b029384b94b13d1fcc9e173690/' frameborder='0' width='100%' height='800'></iframe>
+            <iframe src='https://my.spline.design/tierracopy-260d91b029384b94b13d1fcc9e173690/' frameborder="no"  style="width:100%; height:800px; "></iframe>
         </div>
     </body>
     <footer>

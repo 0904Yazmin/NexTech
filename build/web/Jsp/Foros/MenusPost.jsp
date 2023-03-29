@@ -5,7 +5,7 @@
 
     HttpSession miSessiondelUsuario = (HttpSession) request.getSession();
 
-    int idPersona = (int) (miSessiondelUsuario.getAttribute("id_usu") == null ? 0 : miSessiondelUsuario.getAttribute("id_docen"));
+    int idPersona = (int) (miSessiondelUsuario.getAttribute("id_usu") == null ? 0 : miSessiondelUsuario.getAttribute("id_usu"));
     if (idPersona < 1) {
         response.sendRedirect("../jsp/Menu.jsp");
     }
@@ -23,10 +23,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="../css_D/foro.css" >
+        <link href="../../CSS/CSS_foro/foro.css" rel="stylesheet" type="text/css"/>
         <link rel="shorcut icon" href="../../General/img/logos/Newlogo.png">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+            .botoncitos:hover{ background-color: <%=color%>;}
         </style>
     </head>
     <body id="crearP">
@@ -42,11 +43,8 @@
                         clave = rs.getString(4);
                         grado = rs.getString(3);
                         color = rs.getString(6);
-
             %>
-            <style>
-                .botoncitos:hover{ background-color: <%=color%>;}
-            </style>
+
             <div class="infoClase">
                 <aside class="card">
                     <h1><%=nombre%></h1>
@@ -59,7 +57,7 @@
 
             <nav id="indice">
                 <center><h1>Crear publicación</h1></center>
-                <form name="crearPost" action="infoForo.jsp" method="post" > 
+                <form name="crearPost" action="infoForo.jsp" method="post"> 
                     <table class="tablita" border="0">
                         <tr>
                             <td>
@@ -80,7 +78,7 @@
                             <td>
                                 <input type="hidden"  id="idclase" name="idclase" value="<%=rs.getString(1)%>">
                                 <input type="hidden"  id="hora" name="hora" onclick="Date()" value="">
-                                <input class="botoncitos" type="submit" id="btn" name="btn" onclick="valida()" value="Publicar"  >
+                                <input class="botoncitos" type="submit" id="btn" name="btn"  value="Publicar"  >
                             </td>
                         </tr>
                     </table>
@@ -88,9 +86,7 @@
             </nav>
         </div>
 
-        <script>
-            document.getElementById("hora").innerHTML = Date();
-        </script>
+
         <%                 }
 
                 rs.close();
@@ -102,28 +98,9 @@
 
 
         %>
-
         <script>
-            document.getElementById("current_date").innerHTML = var fecha;
-            fecha = Date();
-            function validaVacio() {
-                var textoPost = document.getElementById("textoPost").value;
-                var file = document.getElementById("fileImg").value;
-
-                if (textoPost === "" && file === "") {
-                    alert("No dejes los campos vacios");
-                    return false;
-                }
-            }
-            function valida() {
-                // Ninguno campo vacìo
-                if (!validaVacio())
-                    return false;
-                // Contraseña coinicide
-
-                document.prof.submit();
-            }
-
+            document.getElementById("hora").innerHTML = Date();
         </script>
+
     </body>
 </html>
