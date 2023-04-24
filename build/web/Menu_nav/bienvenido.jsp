@@ -38,9 +38,11 @@
     </head>
     <body>
    
-    <div class="tierra">
-        <iframe src='https://my.spline.design/introcopy-9b6d2927d850bc6c37c043957ca73cf3/' frameborder='0' width='1600' height="800" scrolling="no"></iframe>
+    <div class="container" style="z-index: -10;">
+        <iframe src='https://my.spline.design/forestlightscopy-7af51de18e755a4630775ceb04bd50e6/' frameborder='0' width='100%' style="height:  auto;" scrolling="no"></iframe>
     </div>
+
+
     <div class="Principal" id="Principal">
         <center><h1>Bienvenido  <%=nombre%> </h1></center>
     </div>

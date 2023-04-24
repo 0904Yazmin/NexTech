@@ -5,6 +5,9 @@
         <group>
             <file>file:/C:/NexTech/nbproject/build-impl.xml</file>
             <file>file:/C:/NexTech/web/index.html</file>
+            <file>file:/C:/NexTech/web/Menu_nav/bienvenido.jsp</file>
+            <file>file:/C:/NexTech/web/Menu_nav/menu_docente.jsp</file>
+            <file>file:/C:/NexTech/web/carrusel.js</file>
         </group>
     </open-files>
 </project-private>

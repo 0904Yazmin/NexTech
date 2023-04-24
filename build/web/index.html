@@ -1,321 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/index_estilos.css">
+    <link rel="stylesheet" href="CSS/carrusel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="Imagenes/LogoCopernicusV1.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Quicksand:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="Img/logos/LogoCopernicus.png">
     <title>Copernicus</title>
 </head>
-<body>
+
+<body style="font-family: 'Quicksand', sans-serif;">
     <header class="header mf1-position-fixed js-header ">
         <div class="header__container mf1-container mf1-max-width-lg">
-          <div class="header__logo">
-            <a href="#0">
-              <img src="Imagenes/CopLogBlack.png" class="logo">
-            </a>
-          </div>
-      
-          <button class="mf1-btn header__trigger js-header__trigger" aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
-            <i class="header__trigger-icon" aria-hidden="true"></i>
-          </button>
-      
-          <nav class="header__nav js-header__nav" id="header-nav" role="navigation" aria-label="Main">
-            <div class="header__nav-inner">
-              <div class="header__label">Main menu</div>
-              <ul class="header__list">
-                <li class="header__item"><a href="#0" class="header__link">Inicio</a></li>
-                <li class="header__item"><a href="#0" class="header__link">Nosotros</a></li>
-                <li class="header__item"><a href="#0" class="header__link">Nuestro Equipo</a></li>
-                <li class="header__item"><a href="#0" class="header__link">Blog</a></li>
-                <li class="header__item"><a href="#0" class="header__link">Contacto</a></li>
-              </ul>
+            <div class="header__logo">
+                <a href="#">
+                    <img src="Img/Imagenes_index/CopLogBlack.png" class="logo">
+                </a>
             </div>
-          </nav>
-        </div>
-      </header>
 
-      <!--Hero-->
-      <section class="hero" id="hero">
-        <div class="cd-container cd-max-width-adaptive-md">
+            <button class="mf1-btn header__trigger js-header__trigger" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="header-nav">
+                <i class="header__trigger-icon" aria-hidden="true"></i>
+            </button>
+
+            <nav class="header__nav js-header__nav" id="header-nav" role="navigation" aria-label="Main">
+                <div class="header__nav-inner">
+                    <div class="header__label" style="font-family: 'Quicksand', sans-serif;">Copernicus System</div>
+                    <ul class="header__list">
+                        <li class="header__item"><a href="#0" class="header__link">Inicio</a></li>
+                        <li class="header__item"><a href="#0" class="header__link">Nosotros</a></li>
+                        <li class="header__item"><a href="OurTeam.html" class="header__link">Nuestro Equipo</a></li>
+                        <li class="header__item"><a href="#0" class="header__link">Blog</a></li>
+                        <li class="header__item"><a href="#0" class="header__link">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!--Hero-->
+    <section class="hero" id="hero">
+        <div class="cd-container cd-max-width-adaptive-md" style="font-family: 'Quicksand', sans-serif;">
             <h1 class="cd-margin-bottom-xs fonsize">Copernicus System</h1>
             <p class="fonsizep">Buscamos la grandeza humana a través de la ciencia</p>
-        
+
             <div class="hero__cta">
-                <button class="button"> 
+                <button class="button">
                     Iniciar
                 </button>
             </div>
-          </div>
+        </div>
     </section>
 
 
     <!--¿Qué es Copernicus System?-->
-      <div class="container col-xxl-8 px-4 py-5">
+    <div class="container col-xxl-8 px-4 py-5">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5 cont">
 
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">¿Qué es Copernicus System?</h1>
-            <p class="lead txt">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-          </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">¿Qué es Copernicus System?</h1>
+                <p class="lead txt">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                    world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive
+                    grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+            </div>
 
-          <div class="col-10 col-sm-8 col-lg-6">
-            <img src="Imagenes/Planeta.jpg" class="d-block mx-lg-auto img-fluid contimg" loading="lazy">
-          </div>
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="Img/Imagenes_index/Planeta.jpg" class="d-block mx-lg-auto img-fluid contimg" loading="lazy">
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="text-divider"></div>
+    <div class="text-divider"></div>
+
+    <!--Carrusel -->
+    <section>
+        <div class="slideshow js-slideshow slideshow--transition-slide" data-swipe="on">
+            <p class="sq7-sr-only">Slideshow Items</p>
+
+            <ul class="slideshow__content">
+
+                <li class="slideshow__item sq7-bg-light js-slideshow__item" style="">
+                    <div class='sq7-container sq7-max-width-sm'>
+                        <div class='sq7-text-component'>
+                            <script type="module"
+                                src="https://unpkg.com/@splinetool/viewer@0.9.304/build/spline-viewer.js"></script>
+                            <spline-viewer hint loading-anim
+                                url="https://prod.spline.design/BpNrKqz0qULML2iU/scene.splinecode" style="width:80vh; "></spline-viewer>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="slideshow__item sq7-bg-light js-slideshow__item" style="">
+                    <div class='sq7-container sq7-max-width-sm'>
+                        <div class='sq7-text-component'>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla expedita eius eos maiores
+                                consectetur autem ratione voluptatem sequi, id eveniet.</p>
+                        </div>
+                        <div class='sq7-margin-top-md'>
+                            <div class='sq7-flex sq7-flex-wrap sq7-flex-center sq7-gap-sm'><a href='#0'
+                                    class='sq7-btn sq7-btn--primary'>Download</a><a href='#0'
+                                    class='sq7-color-inherit'>Learn more</a></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="slideshow__item sq7-bg-light js-slideshow__item"
+                    style="background-image: url('../../../app/assets/img/slideshow-img-1.jpg');">
+                    <div class='sq7-container sq7-max-width-sm'>
+                        <div class='sq7-text-component sq7-text-center'>
+                            <h1>Slide Three</h1>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="slideshow__item sq7-bg-light js-slideshow__item" style="">
+                    <div class='sq7-container sq7-max-width-sm'>
+                        <div class='sq7-text-component sq7-text-center'>
+                            <h1>Slide Four</h1>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+            <ul>
+                <li class="slideshow__control js-slideshow__control">
+                    <button class="slideshow__btn js-tab-focus">
+                        <svg class="sq7-icon" viewBox="0 0 32 32">
+                            <title>Show previous slide</title>
+                            <path
+                                d="M20.768,31.395L10.186,16.581c-0.248-0.348-0.248-0.814,0-1.162L20.768,0.605l1.627,1.162L12.229,16 l10.166,14.232L20.768,31.395z">
+                            </path>
+                        </svg>
+                    </button>
+                </li>
+
+                <li class="slideshow__control js-slideshow__control">
+                    <button class="slideshow__btn js-tab-focus">
+                        <svg class="sq7-icon" viewBox="0 0 32 32">
+                            <title>Show next slide</title>
+                            <path
+                                d="M11.232,31.395l-1.627-1.162L19.771,16L9.605,1.768l1.627-1.162l10.582,14.813 c0.248,0.348,0.248,0.814,0,1.162L11.232,31.395z">
+                            </path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </section>
 
     <!--¿Qué ofrecemos?-->
     <section class="feature-v7 cd-position-relative cd-z-index-1 cd-padding-y-2xl">
         <div class="cd-container cd-max-width-adaptive-lg">
-          <div class="cd-margin-bottom-xl">
-            <h1 class="cd-text-center">¿Qué ofrecemos?</h1>
-          </div>
-      
-          <ul class="feature-v7__grid">
-            <li class="feature-v7__grid-item">
-              <div class="feature-v7__sub-grid cd-items-center">
-                <figure class="feature-v7__img">
-                  <svg class="cd-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <g fill="currentColor">
-                      <path d="M21 10H3c-1.103 0-2-.897-2-2V5c0-1.103.897-2 2-2h18c1.103 0 2 .897 2 2v3c0 1.103-.897 2-2 2z"></path>
-                      <rect x="1" y="12" width="6" height="9" rx="2" ry="2" opacity=".4"></rect>
-                      <rect x="9" y="12" width="14" height="9" rx="2" ry="2" opacity=".4"></rect>
-                    </g>
-                  </svg>
-                </figure>
-          
-                <h4>Navigations</h4>
-              </div>
-      
-              <div class="feature-v7__sub-grid">
-                <div class="feature-v7__img-clone" aria-hidden="true"></div>
-      
-                <p class="feature-v7__description">Lorem ipsum dolor sit amet consectetur adipisicing elit error nam repellendus exercitationem</p>
-              </div>
-            </li>
-      
-            <li class="feature-v7__grid-item">
-              <div class="feature-v7__sub-grid cd-items-center">
-                <figure class="feature-v7__img">
-                  <svg class="cd-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <title>Galleries</title>
-                    <g fill="currentColor">
-                      <path d="M9 9H4c-1.103 0-2-.897-2-2V4c0-1.103.897-2 2-2h5c1.103 0 2 .897 2 2v3c0 1.103-.897 2-2 2z"></path>
-                      <rect x="2" y="11" width="9" height="11" rx="2" ry="2" opacity=".4"></rect>
-                      <path d="M20 22h-5c-1.103 0-2-.897-2-2v-3c0-1.103.897-2 2-2h5c1.103 0 2 .897 2 2v3c0 1.103-.897 2-2 2z"></path>
-                      <rect x="13" y="2" width="9" height="11" rx="2" ry="2" transform="rotate(180 17.5 7.5)" opacity=".4"></rect>
-                    </g>
-                  </svg>
-                </figure>
-          
-                <h4>Galleries</h4>
-              </div>
-      
-              <div class="feature-v7__sub-grid">
-                <div class="feature-v7__img-clone" aria-hidden="true"></div>
-      
-                <p class="feature-v7__description">Lorem ipsum dolor sit amet consectetur adipisicing elit error nam repellendus exercitationem</p>
-              </div>
-            </li>
-      
-            <li class="feature-v7__grid-item">
-              <div class="feature-v7__sub-grid cd-items-center">
-                <figure class="feature-v7__img">
-                  <svg class="cd-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <title>Animations</title>
-                    <g fill="currentColor">
-                      <circle cx="19" cy="9" r="5"></circle>
-                      <path d="M1 3.059A23.925 23.925 0 0 1 8 20c0-3.416 1.557-6.468 4-8.486" fill="none" opacity=".4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                    </g>
-                  </svg>
-                </figure>
-          
-                <h4>Animations</h4>
-              </div>
-      
-              <div class="feature-v7__sub-grid">
-                <div class="feature-v7__img-clone" aria-hidden="true"></div>
-      
-                <p class="feature-v7__description">Lorem ipsum dolor sit amet consectetur adipisicing elit error nam repellendus exercitationem</p>
-              </div>
-            </li>
-      
-            <li class="feature-v7__grid-item">
-              <div class="feature-v7__sub-grid cd-items-center">
-                <figure class="feature-v7__img">
-                  <svg class="cd-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <title>UI Controls</title>
-                    <g fill="currentColor">
-                      <path d="M17.5 11h-11C4.019 11 2 8.981 2 6.5S4.019 2 6.5 2h11C19.981 2 22 4.019 22 6.5S19.981 11 17.5 11z" opacity=".4"></path>
-                      <circle cx="6.5" cy="6.5" r="4.5"></circle>
-                      <path d="M6.5 13h11c2.481 0 4.5 2.019 4.5 4.5S19.981 22 17.5 22h-11C4.019 22 2 19.981 2 17.5S4.019 13 6.5 13z" opacity=".4"></path>
-                      <circle cx="17.5" cy="17.5" r="4.5"></circle>
-                    </g>
-                  </svg>
-                </figure>
-          
-                <h4>UI controls</h4>
-              </div>
-      
-              <div class="feature-v7__sub-grid">
-                <div class="feature-v7__img-clone" aria-hidden="true"></div>
-      
-                <p class="feature-v7__description">Lorem ipsum dolor sit amet consectetur adipisicing elit error nam repellendus exercitationem</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-
-
-      <!--Gallery-->
-      <div class="text-divider"></div>
-
-      <section class="adv-gallery cd-padding-y-xl">
-        <div class="adv-gallery__grid">
-          <div>
-            <img class="adv-gallery__img" src="Imagenes/gallery-01-730x720.jpg" alt="Image description">
-          </div>
-      
-          <div>
-            <img class="adv-gallery__img" src="Imagenes/gallery-04-620x610.jpg" alt="Image description">
-          </div>
-      
-          <div>
-            <img class="adv-gallery__img" src="Imagenes/parallax-bg-02.jpg" alt="Image description">
-          </div>
-      
-          <div class="adv-gallery__label">
-            <div class="adv-gallery__label-inner">
-              <div class="adv-gallery__label-line" aria-hidden="true"></div>
-              <p class="adv-gallery__label-text">Explora el Universo</p>
+            <div class="cd-margin-bottom-xl">
+                <h1 class="cd-text-center">¿Qué ofrecemos?</h1>
             </div>
-          </div>
+
+            <ul class="feature-v7__grid">
+                <li class="feature-v7__grid-item">
+                    <div class="feature-v7__sub-grid cd-items-center">
+                        <figure class="feature-v7__img">
+                            <svg class="cd-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <g fill="currentColor">
+                                    <path
+                                        d="M21 10H3c-1.103 0-2-.897-2-2V5c0-1.103.897-2 2-2h18c1.103 0 2 .897 2 2v3c0 1.103-.897 2-2 2z">
+                                    </path>
+                                    <rect x="1" y="12" width="6" height="9" rx="2" ry="2" opacity=".4"></rect>
+                                    <rect x="9" y="12" width="14" height="9" rx="2" ry="2" opacity=".4"></rect>
+                                </g>
+                            </svg>
+                        </figure>
+
+                        <h4>Navigations</h4>
+                    </div>
+
+                    <div class="feature-v7__sub-grid">
+                        <div class="feature-v7__img-clone" aria-hidden="true"></div>
+
+                        <p class="feature-v7__description">Lorem ipsum dolor sit amet consectetur adipisicing elit error
+                            nam repellendus exercitationem</p>
+                    </div>
+                </li>
+
+                <li class="feature-v7__grid-item">
+                    <div class="feature-v7__sub-grid cd-items-center">
+                        <figure class="feature-v7__img">
+                            <svg class="cd-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <title>Galleries</title>
+                                <g fill="currentColor">
+                                    <path
+                                        d="M9 9H4c-1.103 0-2-.897-2-2V4c0-1.103.897-2 2-2h5c1.103 0 2 .897 2 2v3c0 1.103-.897 2-2 2z">
+                                    </path>
+                                    <rect x="2" y="11" width="9" height="11" rx="2" ry="2" opacity=".4"></rect>
+                                    <path
+                                        d="M20 22h-5c-1.103 0-2-.897-2-2v-3c0-1.103.897-2 2-2h5c1.103 0 2 .897 2 2v3c0 1.103-.897 2-2 2z">
+                                    </path>
+                                    <rect x="13" y="2" width="9" height="11" rx="2" ry="2"
+                                        transform="rotate(180 17.5 7.5)" opacity=".4"></rect>
+                                </g>
+                            </svg>
+                        </figure>
+
+                        <h4>Galleries</h4>
+                    </div>
+
+                    <div class="feature-v7__sub-grid">
+                        <div class="feature-v7__img-clone" aria-hidden="true"></div>
+
+                        <p class="feature-v7__description">Lorem ipsum dolor sit amet consectetur adipisicing elit error
+                            nam repellendus exercitationem</p>
+                    </div>
+                </li>
+
+                <li class="feature-v7__grid-item">
+                    <div class="feature-v7__sub-grid cd-items-center">
+                        <figure class="feature-v7__img">
+                            <svg class="cd-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <title>Animations</title>
+                                <g fill="currentColor">
+                                    <circle cx="19" cy="9" r="5"></circle>
+                                    <path d="M1 3.059A23.925 23.925 0 0 1 8 20c0-3.416 1.557-6.468 4-8.486" fill="none"
+                                        opacity=".4" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"></path>
+                                </g>
+                            </svg>
+                        </figure>
+
+                        <h4>Animations</h4>
+                    </div>
+
+                    <div class="feature-v7__sub-grid">
+                        <div class="feature-v7__img-clone" aria-hidden="true"></div>
+
+                        <p class="feature-v7__description">Lorem ipsum dolor sit amet consectetur adipisicing elit error
+                            nam repellendus exercitationem</p>
+                    </div>
+                </li>
+
+                <li class="feature-v7__grid-item">
+                    <div class="feature-v7__sub-grid cd-items-center">
+                        <figure class="feature-v7__img">
+                            <svg class="cd-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <title>UI Controls</title>
+                                <g fill="currentColor">
+                                    <path
+                                        d="M17.5 11h-11C4.019 11 2 8.981 2 6.5S4.019 2 6.5 2h11C19.981 2 22 4.019 22 6.5S19.981 11 17.5 11z"
+                                        opacity=".4"></path>
+                                    <circle cx="6.5" cy="6.5" r="4.5"></circle>
+                                    <path
+                                        d="M6.5 13h11c2.481 0 4.5 2.019 4.5 4.5S19.981 22 17.5 22h-11C4.019 22 2 19.981 2 17.5S4.019 13 6.5 13z"
+                                        opacity=".4"></path>
+                                    <circle cx="17.5" cy="17.5" r="4.5"></circle>
+                                </g>
+                            </svg>
+                        </figure>
+
+                        <h4>UI controls</h4>
+                    </div>
+
+                    <div class="feature-v7__sub-grid">
+                        <div class="feature-v7__img-clone" aria-hidden="true"></div>
+
+                        <p class="feature-v7__description">Lorem ipsum dolor sit amet consectetur adipisicing elit error
+                            nam repellendus exercitationem</p>
+                    </div>
+                </li>
+            </ul>
         </div>
-      </section>
+    </section>
 
-      <div class="text-divider"></div>
 
-      <div class="container">
+
+    <!--Gallery-->
+    <div class="text-divider"></div>
+
+    <section class="adv-gallery cd-padding-y-xl">
+        <div class="adv-gallery__grid">
+            <div>
+                <img class="adv-gallery__img" src="Img/Imagenes_index/gallery-01-730x720.jpg" alt="Image description">
+            </div>
+
+            <div>
+                <img class="adv-gallery__img" src="Img/Imagenes_index/gallery-04-620x610.jpg" alt="Image description">
+            </div>
+
+            <div>
+                <img class="adv-gallery__img" src="Img/Imagenes_index/parallax-bg-01.jpg" alt="Image description">
+            </div>
+
+            <div class="adv-gallery__label">
+                <div class="adv-gallery__label-inner">
+                    <div class="adv-gallery__label-line" aria-hidden="true"></div>
+                    <p class="adv-gallery__label-text">Explora el Universo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="thank-you tm3-padding-y-2xl">
+        <div class="tm3-container tm3-max-width-adaptive-sm tm3-text-center">
+
+            <img src="Img/logos/LogoCopernicus.png" class="thank-you__icon tm3-inline-block tm3-margin-bottom-sm">
+            <div class="tm3-text-component">
+                <h1 class="tm3-text-3xl">¿Estas listo para explorar el universo?</h1>
+                <p class="tm3-color-contrast-medium">
+                    Únete a nuestra comunidad astronómica y comienza tu aventura
+                </p>
+
+                <p class="tm3-flex tm3-flex-wrap tm3-flex-column tm3-flex-row@xs tm3-gap-2xs tm3-justify-center">
+                    <a class="tm3-btn tm3-btn--subtle" href="Sesiones/Registro.html">Regístrate</a>
+                    <a class="tm3-btn tm3-btn--primary" href="Sesiones/Login.jsp">Iniciar sesión</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="text-divider"></div>
+
+    <div class="container">
         <footer class="d-flex flex-wrap pilot align-items-center py-3 my-4 mf1-container ">
-          <div class="sis">
-            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                <img src="Imagenes/CircularLog.png" class="logoflu">
-            </a>
-            <span class="mb-3 mb-md-0 text-body-secondary iperio">© Copernicus System, 2023</span>
-          </div>
+            <div class="sis">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <img src="Img/Imagenes_index/CircularLog.png" class="logoflu">
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary iperio">© Copernicus System, 2023</span>
+            </div>
 
-          <div class="list-unstyled d-flex align-items-center">
-          <ul class="nav justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="Imagenes/402-facebook2.png" class="logoslink"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="Imagenes/414-youtube.png" class="logoslink"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="Imagenes/402-instagram.png" class="logoslink"><use xlink:href="#facebook"></use></svg></a></li>
-          </ul>
-          </div>
+            <div class="list-unstyled d-flex align-items-center">
+                <ul class="nav justify-content-end list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-body-secondary" href="#"><img
+                                src="Img/Imagenes_index/402-facebook2.png" class="logoslink">
+                            <use xlink:href="#twitter"></use></svg>
+                        </a></li>
+                    <li class="ms-3"><a class="text-body-secondary"
+                            href="https://www.youtube.com/@CopernicusSystem"><img
+                                src="Img/Imagenes_index/414-youtube.png" class="logoslink">
+                            <use xlink:href="#instagram"></use></svg>
+                        </a></li>
+                    <li class="ms-3"><a class="text-body-secondary"
+                            href="https://www.instagram.com/copernicus_system/"><img
+                                src="Img/Imagenes_index/402-instagram.png" class="logoslink">
+                            <use xlink:href="#facebook"></use></svg>
+                        </a></li>
+                </ul>
+            </div>
         </footer>
-      </div>
+    </div>
 
-      <!--Script Header-->
-      <script>
+    <!--Script Header-->
+    <script>
         // utility functions
-if(!Util) function Util () {};
+        if (!Util) function Util() { };
 
-Util.hasClass = function(el, className) {
-  return el.classList.contains(className);
-};
+        Util.hasClass = function (el, className) {
+            return el.classList.contains(className);
+        };
 
-Util.addClass = function(el, className) {
-  var classList = className.split(' ');
-  el.classList.add(classList[0]);
-  if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
-};
+        Util.addClass = function (el, className) {
+            var classList = className.split(' ');
+            el.classList.add(classList[0]);
+            if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
+        };
 
-Util.removeClass = function(el, className) {
-  var classList = className.split(' ');
-  el.classList.remove(classList[0]);
-  if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
-};
+        Util.removeClass = function (el, className) {
+            var classList = className.split(' ');
+            el.classList.remove(classList[0]);
+            if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
+        };
 
-Util.toggleClass = function(el, className, bool) {
-  if(bool) Util.addClass(el, className);
-  else Util.removeClass(el, className);
-};
+        Util.toggleClass = function (el, className, bool) {
+            if (bool) Util.addClass(el, className);
+            else Util.removeClass(el, className);
+        };
 
-// File#: _1_main-header
-// Usage: codyhouse.co/license
-(function() {
-	var mainHeader = document.getElementsByClassName('js-header');
-	if( mainHeader.length > 0 ) {
-		var trigger = mainHeader[0].getElementsByClassName('js-header__trigger')[0],
-			nav = mainHeader[0].getElementsByClassName('js-header__nav')[0];
+        // File#: _1_main-header
+        // Usage: codyhouse.co/license
+        (function () {
+            var mainHeader = document.getElementsByClassName('js-header');
+            if (mainHeader.length > 0) {
+                var trigger = mainHeader[0].getElementsByClassName('js-header__trigger')[0],
+                    nav = mainHeader[0].getElementsByClassName('js-header__nav')[0];
 
-		// we'll use these to store the node that needs to receive focus when the mobile menu is closed 
-		var focusMenu = false;
+                // we'll use these to store the node that needs to receive focus when the mobile menu is closed 
+                var focusMenu = false;
 
-		//detect click on nav trigger
-		trigger.addEventListener("click", function(event) {
-			event.preventDefault();
-			toggleNavigation(!Util.hasClass(nav, 'header__nav--is-visible'));
-		});
+                //detect click on nav trigger
+                trigger.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    toggleNavigation(!Util.hasClass(nav, 'header__nav--is-visible'));
+                });
 
-		// listen for key events
-		window.addEventListener('keyup', function(event){
-			// listen for esc key
-			if( (event.keyCode && event.keyCode == 27) || (event.key && event.key.toLowerCase() == 'escape' )) {
-				// close navigation on mobile if open
-				if(trigger.getAttribute('aria-expanded') == 'true' && isVisible(trigger)) {
-					focusMenu = trigger; // move focus to menu trigger when menu is close
-					trigger.click();
-				}
-			}
-			// listen for tab key
-			if( (event.keyCode && event.keyCode == 9) || (event.key && event.key.toLowerCase() == 'tab' )) {
-				// close navigation on mobile if open when nav loses focus
-				if(trigger.getAttribute('aria-expanded') == 'true' && isVisible(trigger) && !document.activeElement.closest('.js-header')) trigger.click();
-			}
-		});
+                // listen for key events
+                window.addEventListener('keyup', function (event) {
+                    // listen for esc key
+                    if ((event.keyCode && event.keyCode == 27) || (event.key && event.key.toLowerCase() == 'escape')) {
+                        // close navigation on mobile if open
+                        if (trigger.getAttribute('aria-expanded') == 'true' && isVisible(trigger)) {
+                            focusMenu = trigger; // move focus to menu trigger when menu is close
+                            trigger.click();
+                        }
+                    }
+                    // listen for tab key
+                    if ((event.keyCode && event.keyCode == 9) || (event.key && event.key.toLowerCase() == 'tab')) {
+                        // close navigation on mobile if open when nav loses focus
+                        if (trigger.getAttribute('aria-expanded') == 'true' && isVisible(trigger) && !document.activeElement.closest('.js-header')) trigger.click();
+                    }
+                });
 
-		// listen for resize
-		var resizingId = false;
-		window.addEventListener('resize', function() {
-			clearTimeout(resizingId);
-			resizingId = setTimeout(doneResizing, 500);
-		});
+                // listen for resize
+                var resizingId = false;
+                window.addEventListener('resize', function () {
+                    clearTimeout(resizingId);
+                    resizingId = setTimeout(doneResizing, 500);
+                });
 
-		function doneResizing() {
-			if( !isVisible(trigger) && Util.hasClass(mainHeader[0], 'header--expanded')) toggleNavigation(false); 
-		};
-	}
+                function doneResizing() {
+                    if (!isVisible(trigger) && Util.hasClass(mainHeader[0], 'header--expanded')) toggleNavigation(false);
+                };
+            }
 
-	function isVisible(element) {
-		return (element.offsetWidth || element.offsetHeight || element.getClientRects().length);
-	};
+            function isVisible(element) {
+                return (element.offsetWidth || element.offsetHeight || element.getClientRects().length);
+            };
 
-	function toggleNavigation(bool) { // toggle navigation visibility on small device
-		Util.toggleClass(nav, 'header__nav--is-visible', bool);
-		Util.toggleClass(mainHeader[0], 'header--expanded', bool);
-		trigger.setAttribute('aria-expanded', bool);
-		if(bool) { //opening menu -> move focus to first element inside nav
-			nav.querySelectorAll('[href], input:not([disabled]), button:not([disabled])')[0].focus();
-		} else if(focusMenu) {
-			focusMenu.focus();
-			focusMenu = false;
-		}
-	};
-}());
-      </script>
+            function toggleNavigation(bool) { // toggle navigation visibility on small device
+                Util.toggleClass(nav, 'header__nav--is-visible', bool);
+                Util.toggleClass(mainHeader[0], 'header--expanded', bool);
+                trigger.setAttribute('aria-expanded', bool);
+                if (bool) { //opening menu -> move focus to first element inside nav
+                    nav.querySelectorAll('[href], input:not([disabled]), button:not([disabled])')[0].focus();
+                } else if (focusMenu) {
+                    focusMenu.focus();
+                    focusMenu = false;
+                }
+            };
+        }());
+    </script>
+    <script src="carrusel.js"></script>
 
-      <!--Script Boots-->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <!--Script Boots-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>
