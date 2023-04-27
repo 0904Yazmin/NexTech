@@ -38,8 +38,9 @@
     </head>
     <body>
    
-    <div class="container" style="z-index: -10;">
-        <iframe src='https://my.spline.design/forestlightscopy-7af51de18e755a4630775ceb04bd50e6/' frameborder='0' width='100%' style="height:  auto;" scrolling="no"></iframe>
+    <div  style="z-index: -10;">
+        <iframe src='https://my.spline.design/forestlightscopy-7af51de18e755a4630775ceb04bd50e6/' frameborder='0' width="100%" height="900" 
+        ></iframe>
     </div>
 
 

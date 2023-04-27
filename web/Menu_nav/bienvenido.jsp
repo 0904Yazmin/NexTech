@@ -38,9 +38,9 @@
     </head>
     <body>
    
-    <div class="embed-container" style="z-index: -10;">
-        <iframe src='https://my.spline.design/forestlightscopy-7af51de18e755a4630775ceb04bd50e6/' frameborder='0' 
-         allowfullscreen></iframe>
+    <div  style="z-index: -10;">
+        <iframe src='https://my.spline.design/forestlightscopy-7af51de18e755a4630775ceb04bd50e6/' frameborder='0' width="100%" height="900" 
+        ></iframe>
     </div>
 
 

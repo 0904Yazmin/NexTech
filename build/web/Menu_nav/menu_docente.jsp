@@ -1,4 +1,4 @@
-<%-- 
+}<%-- 
     Document   : menu_docente
     Created on : 16 mar. 2023, 00:56:34
     Author     : kim53
@@ -32,6 +32,10 @@
     <link href="../CSS/barra_menu.css" rel="stylesheet" type="text/css"/>
     <link href="../CSS/menu_bienvendo.css" rel="stylesheet" type="text/css"/>
     <link href="../CSS/Navegacion_menu.css" rel="stylesheet" type="text/css"/>
+    
+	<link rel="stylesheet" href="../CSS/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="../CSS/style.css"> <!-- Resource style -->
+	<script src="../js/modernizr.js"></script> <!-- Modernizr -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
         body{
@@ -43,6 +47,7 @@
             overflow-x:  hidden;
             overflow-y: hidden;
         }
+
     </style>
     <link rel="shorcut icon" href="../Img/logos/LogoCopernicus.png">
 </head>
@@ -121,53 +126,44 @@
             </nav>
         </header>
     -->
-       
-        <div class="si6-bg-dark">
-            <div class="si6-container si6-max-width-lg">
-                <div class="subnav  js-subnav">
-                    <button class="si6-btn si6-btn--subtle si6-margin-y-sm subnav__control js-subnav__control">
-                        <span>Show Categories</span>
-                        <svg class="si6-icon si6-icon--2xs si6-margin-left-2xs" aria-hidden="true" viewBox="0 0 12 12">
-                        <polyline points="0.5 3.5 6 9.5 11.5 3.5" fill="none" stroke-width="1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></polyline>
-                        </svg>
-                    </button>
+    <header>
+		<div class="cd-logo"><a href="#0"><img src="../Img/logos/LogoCopernicus.png" width="30px" height="30px" alt="Logo"></a></div>
 
-                    <div class="subnav__wrapper js-subnav__wrapper">
-                        <nav class="subnav__nav si6-justify-center">
-                            <button class="subnav__close-btn js-subnav__close-btn js-tab-focus" aria-label="Close navigation">
-                                <svg class="si6-icon" viewBox="0 0 16 16">
-                                <g stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                <line x1="13.5" y1="2.5" x2="2.5" y2="13.5"></line>
-                                <line x1="2.5" y1="2.5" x2="13.5" y2="13.5"></line>
-                                </g>
-                                </svg>
-                            </button>
-
-                            <ul class="subnav__list" ">
-                                <li class="subnav__item"><a href="menu_docente.jsp" class="subnav__link" aria-current=page>
-                                    Menú</a></li>
-                                <li class="subnav__item"><a href="#0" class="subnav__link" target="seccion">Clases</a></li>
-                                <li class="subnav__item"><a href="#0" class="subnav__link" target="seccion">Photos</a></li>
-                                <li class="subnav__item"><a href="../Jsp/Actividades/timeline.html" class="subnav__link" target="seccion">timeline</a></li>
-                                <li class="subnav__item"><a href="#0" class="subnav__link" target="seccion">Specs</a></li>
-                                <li class="subnav__item"><a href="#0" class="subnav__link" target="seccion">Support</a></li>
-                                <li class="subnav__item"><a href="../Jsp/Foros/foro_docente.jsp" class="subnav__link" target="seccion">Foro</a></li>
-                                <li class="subnav__item"><a href="#0" class="subnav__link" target="seccion">Buy</a></li>
-                               
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-   
-
-    <dic class="container">
-        <iframe name="seccion" src="bienvenido.jsp"  style="width: 100%; height:max-content; border:none; margin: 0; " ></iframe>
+		<nav class="cd-main-nav-wrapper">
+			<ul class="cd-main-nav">
+				<li><a href="menu_docente.jsp" target="seccion">Menú</a></li>
+				<li><a href="../Jsp/Clases/clasesitas.jsp" target="seccion">Clases</a></li>
+				<li><a href="../Jsp/Foros/foro_docente.jsp" target="seccion">Foro</a></li>
+				<li><a href="../Jsp/Calificaciones/Lista_cal.jsp" target="seccion">Calificaciones</a></li>
+                <li><a href="../Jsp/Modelos/Modelos3D.jsp" target="seccion">Modelos3D</a></li>
+                <li><a href="../Jsp/Actividades/Actividades.jsp" target="seccion">Actividades/Material educativo</a></li>
+                <li><a href="#0" target="seccion">Lecciones</a></li>
+				<li>
+					<a href="#0" class="cd-subnav-trigger"><span>Opciones </span></a>
+					<ul style="color: white;">
+						<li class="go-back"><a href="#0">Menu</a></li>
+						<li><a href="" target="seccion"><%=correo%></a></li>
+						<li><a href="../Sesiones/perfil_usu.jsp" target="seccion">Perfil</a></li>
+						<li><a href="../Jsp/Otros/planes/infoPlanes.jsp" target="seccion">Actualizar plan</a></li>
+                        <li><a href="../Jsp/Otros/FAQs.jsp" target="seccion">Ayuda y soporte</a></li>
+						<li><a href="#0" target="seccion">Acerca de</a></li>
+						<li><a href="../Sesiones/cerrarSesion.jsp">Cerrar sesión</a></li>
+						<li><a href="#0" class="placeholder">Placeholder</a></li>
+					</ul>
+				</li>
+			</ul> <!-- .cd-main-nav -->
+		</nav> <!-- .cd-main-nav-wrapper -->
+		
+		<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+	</header>
+	
+    <div >
+        <iframe name="seccion" src="bienvenido.jsp" class="embed-container" width="100%" height="900" ></iframe>
     </div>
 
     <script src="menu.js"></script>
-    
+    <script src="../js/jquery-2.1.1.js"></script>
+    <script src="../js/main.js"></script> <!-- Resource jQuery -->
 
 </body>
 </html>
