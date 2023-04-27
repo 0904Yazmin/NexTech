@@ -153,12 +153,11 @@
 				</li>
 			</ul> <!-- .cd-main-nav -->
 		</nav> <!-- .cd-main-nav-wrapper -->
-		
 		<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
 	</header>
 	
     <div >
-        <iframe name="seccion" src="bienvenido.jsp" class="embed-container" width="100%" height="900" ></iframe>
+        <iframe name="seccion" src="bienvenido.jsp" width="100%" height="860vh"></iframe>
     </div>
 
     <script src="menu.js"></script>

@@ -32,20 +32,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+            
         </style>
         <link rel="shorcut icon" href="../Img/logos/LogoCopernicus.png">
         <link href="../CSS/menu_bienvendo.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
    
-    <div  style="z-index: -10;">
-        <iframe src='https://my.spline.design/forestlightscopy-7af51de18e755a4630775ceb04bd50e6/' frameborder='0' width="100%" height="900" 
-        ></iframe>
+    <div style="z-index: -10;">
+        <iframe src='https://my.spline.design/forestlightscopy-7af51de18e755a4630775ceb04bd50e6/' frameborder='0' width='100%' height='860'></iframe>
+
     </div>
 
 
     <div class="Principal" id="Principal">
         <center><h1>Bienvenido  <%=nombre%> </h1></center>
     </div>
+    
 </body>
 </html>

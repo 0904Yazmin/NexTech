@@ -1,5 +1,11 @@
 
 
+import { Application } from '@splinetool/runtime';
+const canvas = document.getElementById('canvas3d');
+const app = new Application(canvas);
+app.load('https://prod.spline.design/ELikNgmVdWKbVgcy/scene.splinecode');
+
+
 Util.hasClass = function (el, className) {
     return el.classList.contains(className);
 };
@@ -43,7 +49,7 @@ Util.toggleClass = function (el, className, bool) {
         if (sidenav.navList.length == 0)
             return;
         var focusableEle = sidenav.navList[0].querySelectorAll('[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex]:not([tabindex="-1"]), [contenteditable], audio[controls], video[controls], summary'),
-                firstFocusable = false;
+            firstFocusable = false;
         for (var i = 0; i < focusableEle.length; i++) {
             if (focusableEle[i].offsetWidth || focusableEle[i].offsetHeight || focusableEle[i].getClientRects().length) {
                 firstFocusable = focusableEle[i];
@@ -117,8 +123,8 @@ Util.toggleClass = function (el, className, bool) {
     ;
 
     var sideNav = document.getElementsByClassName('js-subnav'),
-            SideNavArray = [],
-            j = 0;
+        SideNavArray = [],
+        j = 0;
     if (sideNav.length > 0) {
         for (var i = 0; i < sideNav.length; i++) {
             var beforeContent = getComputedStyle(sideNav[i], ':before').getPropertyValue('content');
@@ -132,7 +138,7 @@ Util.toggleClass = function (el, className, bool) {
 
         if (j > 0) { // on resize - update sidenav layout
             var resizingId = false,
-                    customEvent = new CustomEvent('update-sidenav');
+                customEvent = new CustomEvent('update-sidenav');
             window.addEventListener('resize', function (event) {
                 clearTimeout(resizingId);
                 resizingId = setTimeout(doneResizing, 300);
@@ -149,8 +155,8 @@ Util.toggleClass = function (el, className, bool) {
             ;
 
             (window.requestAnimationFrame) // init table layout
-                    ? window.requestAnimationFrame(doneResizing)
-                    : doneResizing();
+                ? window.requestAnimationFrame(doneResizing)
+                : doneResizing();
         }
 
         // listen for key events
