@@ -101,8 +101,8 @@ Main Components
 .cd-tour-wrapper {
   position: fixed;
   z-index: 2;
-  height: 90%;
-  width: 90%;
+  height: 95%;
+  width: 95%;
   left: 50%;
   top: 50%;
   bottom: auto;
@@ -557,7 +557,7 @@ Main Components
 }
 .cd-tour-nav li {
   display: inline-block;
-  float: left;
+
 }
 .cd-tour-nav li:first-of-type {
   margin-right: 1.5em;
