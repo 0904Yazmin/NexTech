@@ -132,7 +132,7 @@
 		<nav class="cd-main-nav-wrapper">
 			<ul class="cd-main-nav">
 				<li><a href="menu_docente.jsp" target="seccion">Menú</a></li>
-				<li><a href="../Jsp/Clases/clasesitas.jsp" target="seccion">Clases</a></li>
+				<li><a href="../Jsp/Clases/CrearClaseForm.html" target="seccion">Clases</a></li>
 				<li><a href="../Jsp/Foros/foro_docente.jsp" target="seccion">Foro</a></li>
 				<li><a href="../Jsp/Calificaciones/Lista_cal.jsp" target="seccion">Calificaciones</a></li>
                 <li><a href="../Jsp/Modelos/Modelos3D.jsp" target="seccion">Modelos3D</a></li>
@@ -141,8 +141,6 @@
 				<li>
 					<a href="#0" class="cd-subnav-trigger"><span>Opciones </span></a>
 					<ul style="color: white;">
-						<li class="go-back"><a href="#0">Menu</a></li>
-						<li><a href="" target="seccion"><%=correo%></a></li>
 						<li><a href="../Sesiones/perfil_usu.jsp" target="seccion">Perfil</a></li>
 						<li><a href="../Jsp/Otros/planes/infoPlanes.jsp" target="seccion">Actualizar plan</a></li>
                         <li><a href="../Jsp/Otros/FAQs.jsp" target="seccion">Ayuda y soporte</a></li>
