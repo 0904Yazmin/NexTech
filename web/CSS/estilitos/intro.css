@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Quicksand:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Quicksand:wght@500;700&display=swap');
 
     *,
     *::after,
@@ -23,13 +23,56 @@
         text-decoration: none;
     }
 
+    a .botoncito {
+        background-color: wheat;
+    }
+    button {
+        font-size: 18px;
+        color: #181818;
+        font-family: inherit;
+        font-weight: 800;
+        cursor: pointer;
+        position: relative;
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: color;
+      }
+      
+      button:focus,
+      button:hover {
+        color: #39007a;
+      }
+      
+      button:focus:after,
+      button:hover:after {
+        width: 100%;
+        left: 0%;
+      }
+      
+      button:after {
+        content: "";
+        pointer-events: none;
+        bottom: -2px;
+        left: 50%;
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background-color: #001755;
+        transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition-duration: 400ms;
+        transition-property: width, left;
+      }
+
     .cd-intro {
         position: relative;
         height: 100vh;
         width: 100%;
         /* vertically align its content */
         display: table;
-        background: #e8e8e8;
+        background: #f0ecec;
         overflow: hidden;
     }
 

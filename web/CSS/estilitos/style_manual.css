@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Quicksand:wght@500;700&display=swap');
+
 /* -------------------------------- 
 
 Primary style
@@ -5,6 +8,7 @@ Primary style
 -------------------------------- */
 *, *::after, *::before {
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -14,14 +18,14 @@ html {
 body {
   min-height: 100%;
   font-size: 1.6rem;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #222d33;
-  background-color: #15374d;
+  background-color: #e6e6e6;
   overflow-x: hidden;
 }
 
 a {
-  color: #ff962c;
+  color: #872cff;
   text-decoration: none;
 }
 
@@ -64,7 +68,7 @@ xnugget info
   appearance: none;
   border: none;
   border-radius: 50em;
-  background: #ff962c;
+  background: #1a1919;
   padding: 1em 2em;
   color: #fefffb;
   font-weight: bold;
@@ -81,7 +85,7 @@ xnugget info
 }
 .no-touch .cd-nugget-info .cd-btn:hover, .cd-nugget-info .cd-btn:focus {
   outline: none;
-  background: #ffa346;
+  background: #141414;
 }
 @media only screen and (min-width: 1100px) {
   .cd-nugget-info h1 {
@@ -99,7 +103,7 @@ Main Components
 
 -------------------------------- */
 .cd-tour-wrapper {
-  position: fixed;
+  position: absolute;
   z-index: 2;
   height: 95%;
   width: 95%;
@@ -286,16 +290,24 @@ Main Components
   }
   .cd-single-step:nth-of-type(1) {
     /* set tour points positions */
-    bottom: 40%;
-    right: 30%;
+    bottom: 90%;
+    right: 70%;
   }
   .cd-single-step:nth-of-type(2) {
-    bottom: 60%;
-    right: 48%;
+    bottom: 90%;
+    right: 45%;
   }
   .cd-single-step:nth-of-type(3) {
     top: 28%;
     left: 20%;
+  }
+  .cd-single-step:nth-of-type(4) {
+    top: 11%;
+    left: 45%;
+  }
+  .cd-single-step:nth-of-type(5) {
+    bottom: 90%;
+    right: 30%;
   }
   .cd-single-step > span, .cd-single-step::after {
     display: block;
@@ -388,7 +400,7 @@ Main Components
   font-size: 1.3rem;
   line-height: 1.6;
   margin-bottom: 1.4em;
-  font-family: Georgia, serif;
+  font-family: 'Poppins', sans-serif;
   color: #7f7f7d;
 }
 .cd-single-step .cd-more-info img {
@@ -445,7 +457,7 @@ Main Components
   float: left;
   padding-top: .1em;
   font-size: 1.3rem;
-  font-family: Georgia, serif;
+  font-family: 'Poppins', sans-serif;
 }
 @media only screen and (min-width: 1100px) {
   .cd-single-step .cd-more-info {
@@ -576,7 +588,7 @@ Main Components
 .cd-cover-layer {
   /* background cover layer - visible when tour is activated */
   position: fixed;
-  z-index: 1;
+  z-index: 0;
   top: 0;
   left: 0;
   height: 100%;
@@ -598,9 +610,9 @@ Main Components
 @media only screen and (min-width: 1100px) {
   .cd-cover-layer.is-visible {
     opacity: 0;
-    -webkit-animation: cd-fade-in 2.1s;
-    -moz-animation: cd-fade-in 2.1s;
-    animation: cd-fade-in 2.1s;
+    -webkit-animation: cd-fade-in 1.1s;
+    -moz-animation: cd-fade-in 1.1s;
+    animation: cd-fade-in 1.1s;
   }
 }
 
@@ -638,21 +650,43 @@ xapp prototype - no need to import this in production
   left: 50%;
   top: 50%;
   bottom: auto;
+  background-image: url("../../Img/otros/menu_1.png");
   right: auto;
   -webkit-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  width: 90%;
-  height: 80%;
-  background-image: url("../../Img/otros/Pantallita\ menu.png");
-  background-size: 110% 190%;
+  width: 95%;
+  height: 85%;
+  background-size: 100% 135%;
   background-repeat: no-repeat;
   justify-content: center;
   border-radius: 4px;
   box-shadow: 0 10px 60px #08151d;
 }
+
+.cd-app-screen .dos{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  background-image: url("../../Img/otros/menu_2.png");
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 95%;
+  height: 70%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  justify-content: center;
+  border-radius: 4px;
+  box-shadow: 0 10px 60px #08151d;
+}
+
 .cd-app-screen::before, .cd-app-screen::after {
   content: '';
   position: absolute;
@@ -672,4 +706,116 @@ xapp prototype - no need to import this in production
   width: 60px;
   background: #e4e5e1;
   border-radius: 3px;
+}
+
+
+
+:root {
+  --diagonal-section-offset: 50px;
+}
+
+.diagonal-section,
+.diagonal-section-top,
+.diagonal-section-bottom {
+  position: relative;
+  z-index: 1;
+  background-color: hsl(240, 4%, 90%);
+  
+  
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@supports ((-webkit-clip-path: inset(50%)) or (clip-path: inset(50%))) {
+  .diagonal-section, .diagonal-section-top.diagonal-section-bottom {
+    padding-top: calc(var(--diagonal-section-offset)/2);
+    padding-bottom: calc(var(--diagonal-section-offset)/2);
+    -webkit-clip-path: polygon(0% 0%, 100% var(--diagonal-section-offset), 100% 100%, 0% calc(100% - var(--diagonal-section-offset)));
+            clip-path: polygon(0% 0%, 100% var(--diagonal-section-offset), 100% 100%, 0% calc(100% - var(--diagonal-section-offset)));
+  }
+
+  .diagonal-section--flip-x {
+    -webkit-clip-path: polygon(0% var(--diagonal-section-offset), 100% 0%, 100% calc(100% - var(--diagonal-section-offset)), 0% 100%);
+            clip-path: polygon(0% var(--diagonal-section-offset), 100% 0%, 100% calc(100% - var(--diagonal-section-offset)), 0% 100%);
+  }
+
+  .diagonal-section-top {
+    padding-top: calc(var(--diagonal-section-offset)/2);
+    -webkit-clip-path: polygon(0% 0%, 100% var(--diagonal-section-offset), 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% var(--diagonal-section-offset), 100% 100%, 0% 100%);
+  }
+
+  .diagonal-section-top--flip-x {
+    -webkit-clip-path: polygon(0% var(--diagonal-section-offset), 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% var(--diagonal-section-offset), 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .diagonal-section-top--flip-x.diagonal-section-bottom {
+    -webkit-clip-path: polygon(0% var(--diagonal-section-offset), 100% 0%, 100% 100%, 0% calc(100% - var(--diagonal-section-offset)));
+            clip-path: polygon(0% var(--diagonal-section-offset), 100% 0%, 100% 100%, 0% calc(100% - var(--diagonal-section-offset)));
+  }
+
+  .diagonal-section-bottom {
+    padding-bottom: calc(var(--diagonal-section-offset)/2);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - var(--diagonal-section-offset)));
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - var(--diagonal-section-offset)));
+  }
+
+  .diagonal-section-bottom--flip-x {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--diagonal-section-offset)), 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--diagonal-section-offset)), 0% 100%);
+  }
+
+  .diagonal-section-bottom--flip-x.diagonal-section-top {
+    -webkit-clip-path: polygon(0% 0%, 100% var(--diagonal-section-offset), 100% calc(100% - var(--diagonal-section-offset)), 0% 100%);
+            clip-path: polygon(0% 0%, 100% var(--diagonal-section-offset), 100% calc(100% - var(--diagonal-section-offset)), 0% 100%);
+  }
+
+  .diagonal-section-top--flip-x.diagonal-section-bottom--flip-x {
+    -webkit-clip-path: polygon(0% var(--diagonal-section-offset), 100% 0%, 100% calc(100% - var(--diagonal-section-offset)), 0% 100%);
+            clip-path: polygon(0% var(--diagonal-section-offset), 100% 0%, 100% calc(100% - var(--diagonal-section-offset)), 0% 100%);
+  }
+}
+
+/* -------------------------------- 
+
+Utilities 
+
+-------------------------------- */
+
+.cd-container {
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cd-max-width-sm {
+  max-width: 90rem;
+}
+
+.cd-padding-y-3xl {
+  padding-top: 10.75rem;
+  padding-bottom: 10.75rem;
+}
+
+.cd-margin-bottom-sm {
+  margin-bottom: 1.5rem;
+}
+
+.cd-text-center {
+  text-align: center;
+  line-height: normal;
+  margin-bottom: 40px;
+}
+
+.section1{
+  height: 80vh;
+  width: auto;
+  background-color: #222d33;
+  margin-bottom: 20vh;
+  position: static;
+}
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  font-weight: 700;
 }
