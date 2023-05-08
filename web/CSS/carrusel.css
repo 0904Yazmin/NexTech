@@ -753,7 +753,7 @@
     line-height: var(--sq7-body-line-height, 1.4);
   }
   
-  .sq7-text-component :where(ul, ol, p, blockquote, .sq7-text-component__block) {
+  .sq7-text-component :where(ul, ol, p, blockquote, sq7-text-component__block) {
     margin-bottom: calc(var(--sq7-space-sm) * var(--sq7-space-multiplier, 1));
   }
   

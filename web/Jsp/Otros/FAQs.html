@@ -1,0 +1,1108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>document.getElementsByTagName("html")[0].className += " js";</script>
+	<link rel="stylesheet" href="../../CSS/FAQ.css"">
+	
+	<link rel=" preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Quicksand:wght@500;700&display=swap"
+		rel="stylesheet">
+	<link rel="shortcut icon" href="../../Img/logos/LogoCopernicus.png">
+	<title>FAQs</title>
+	<style>
+		* {
+			font-family: 'Quicksand', sans-serif;
+		}
+
+		h1 {
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.parallax {
+			overflow: hidden;
+			/*perspective: 4000px; */
+			height: 45vh;
+			opacity: 0;
+			z-index: -7;
+			/* hide image while it is initialized in JS */
+		}
+
+		.parallax--loaded {
+			opacity: 1;
+			z-index: -3;
+		}
+
+		.parallax__wrapper {
+			position: relative;
+			transform-style: preserve-3d;
+			transform: translateZ(0);
+			will-change: transform;
+			transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+		}
+
+		.parallax__item {
+			display: block;
+			width: 100%;
+		}
+
+		.parallax__item:not(:first-of-type) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -3;
+		}
+
+		.cd-container {
+			z-index: 5;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.cd-max-width-sm {
+			max-width: 90rem;
+		}
+
+		.cd-padding-y-3xl {
+			padding-top: 10.75rem;
+			padding-bottom: 10.75rem;
+		}
+
+		.cd-margin-bottom-sm {
+			margin-bottom: 1.5rem;
+		}
+
+		.cd-text-center {
+			text-align: center;
+			line-height: normal;
+			margin-bottom: 40px;
+			z-index: 3;
+		}
+
+		.cd-faq__trigger {
+			color: #020122;
+			font-size: 16px;
+		}
+
+		/** 
+* Imports and plugins 
+*/
+		@use postcss-custom-media;
+		@use postcss-nested;
+		@use postcss-simple-vars;
+		@import url('https://fonts.googleapis.com/css?family=Eczar:400,700|Gentium+Basic');
+
+		/** 
+* Base 
+*/
+
+		html {
+			height: 100%;
+			scroll-behavior: smooth;
+		}
+
+		body {
+			font-family: 'Eczar', sans-serif;
+			font-weight: 400;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: "Eczar", sans-serif;
+
+		}
+
+		h2 {
+			font-family: "Eczar", sans-serif;
+			font-size: 26px;
+			font-weight: 700;
+			padding: 0;
+			margin: 56px 0 24px -1.883px;
+			text-align: left;
+			line-height: 34.5px;
+			letter-spacing: -0.45px;
+		}
+
+		p {
+			font-family: 'Gentium Basic', serif;
+			margin-top: 21px;
+			font-size: 21px;
+			letter-spacing: -0.03px;
+			line-height: 1.58;
+		}
+
+		a {
+			color: brown;
+			text-decoration: none;
+
+			&:hover {
+				font-weight: bold;
+			}
+		}
+
+		.footer {
+			color: white;
+			background-color: #d0bcab;
+			padding: 24px;
+		}
+
+		.section {
+			margin: 0 auto;
+			max-width: 650px;
+			padding: 0 24px;
+
+			&__text {
+				&::first-letter {
+					font-size: 32px;
+				}
+			}
+		}
+
+		/** 
+* Utils 
+*/
+		.group {
+			overflow: hidden;
+		}
+
+		.pull {
+			float: left;
+		}
+
+		.push {
+			float: right;
+		}
+
+		.container {
+			position: relative;
+
+			display: block;
+			width: 100%;
+			height: 100vh;
+		}
+
+		.hero {
+			position: relative;
+
+			display: block;
+			width: 100%;
+			height: 100vh;
+
+			&__image {
+				position: absolute;
+
+				width: 100%;
+				height: 100vh;
+
+				clip: rect(0, auto, auto, 0);
+
+				background-image: url(https://res.cloudinary.com/mihael/image/upload/v1548409393/codepen/hero.jpg);
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+				background-size: cover;
+
+				&--overlay {
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					z-index: 1;
+
+					background: linear-gradient(to bottom, rgba(121, 85, 72, 0) 0%, rgba(121, 85, 72, 0.17) 21%, rgba(121, 85, 72, 0.5) 80%);
+				}
+			}
+
+			&__child {
+				position: fixed;
+
+				background-repeat: no-repeat;
+				backface-visibility: hidden;
+				opacity: .8;
+
+				&--primary {
+					top: -120px;
+					left: 50px;
+
+					width: 819px;
+					height: 1621px;
+
+					background-image: url(https://res.cloudinary.com/mihael/image/upload/v1548409393/codepen/cloud-2.png);
+				}
+
+				&--secondary {
+					top: 0;
+					right: 50px;
+
+					width: 300px;
+					height: 500px;
+
+					background-size: 300px auto;
+					background-image: url(https://res.cloudinary.com/mihael/image/upload/v1548409392/codepen/cloud-1.png);
+				}
+			}
+
+			&__title {
+				position: absolute;
+				bottom: 18vh;
+				left: 24vw;
+				right: 24vw;
+				z-index: 1;
+
+				opacity: 0;
+
+				font-size: calc(6px * 10);
+				line-height: calc(6px * 12);
+
+				color: white;
+
+				font-family: 'Eczar', sans-serif;
+				font-weight: 200;
+
+				text-align: center;
+
+				@media screen and (min-width: 768px) {
+					bottom: 15vh;
+					font-size: calc(6px * 16);
+					line-height: calc(6px * 18);
+				}
+			}
+
+			&__subtitle {
+				position: absolute;
+				bottom: 15vh;
+				left: 24vw;
+				right: 24vw;
+
+				color: white;
+
+				font-family: 'Gentium Basic', serif;
+				font-size: 24px;
+				line-height: 32px;
+				text-align: center;
+			}
+		}
+
+		/**
+* Animation 
+*/
+
+		.animation {
+			&--floating {
+				animation-name: floating;
+				animation-duration: 200000ms;
+				animation-iteration-count: infinite;
+			}
+
+			&--title-in {
+				animation: title-in 800ms forwards ease-in-out 750ms;
+			}
+
+			&--from-top {
+				animation: from-top 350ms forwards cubic-bezier(0.65, 0.05, 0.36, 1);
+			}
+
+			&--from-bottom {
+				animation: from-bottom 350ms forwards cubic-bezier(0.65, 0.05, 0.36, 1);
+			}
+		}
+
+		/**
+* Keyframes for specific animation
+*/
+		@keyframes floating {
+			0% {
+				transform: translateY(0%);
+			}
+
+			50% {
+				transform: translateY(50%);
+			}
+
+			100% {
+				transform: translateY(0%);
+			}
+		}
+
+		@keyframes title-in {
+			0% {
+				visibility: hidden;
+				opacity: 0;
+				transform: translateY(-25%);
+			}
+
+			100% {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes from-top {
+			0% {
+				visibility: hidden;
+				opacity: 0;
+				transform: translateY(-30%);
+			}
+
+			100% {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes from-bottom {
+			0% {
+				visibility: hidden;
+				opacity: 0;
+				transform: translateY(15%);
+			}
+
+			100% {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<div class="container">
+			<div class="hero">
+				<div class="hero__image">
+					<div class="hero__image--overlay"></div>
+					<div class="hero__child hero__child--primary animation--floating"></div>
+					<div class="hero__child hero__child--secondary animation--floating"></div>
+					<p class="hero__title animation--title-in">The flaming mountain</p>
+					<p class="hero__subtitle animation--title-in">by John Blaine</p>
+				</div>
+			</div>
+		</div>
+		<div class="cd-text-center" style="z-index: 4;">
+			<h2>Preguntas frecuentes</h2>
+		</div>
+	</section>
+
+
+
+
+
+	<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
+
+		<ul class="cd-faq__categories">
+			<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#basics">Basics</a></li>
+			<li><a class="cd-faq__category truncate" href="#mobile">Mobile</a></li>
+			<li><a class="cd-faq__category truncate" href="#account">Account</a></li>
+			<li><a class="cd-faq__category truncate" href="#payments">Payments</a></li>
+			<li><a class="cd-faq__category truncate" href="#privacy">Privacy</a></li>
+			<li><a class="cd-faq__category truncate" href="#delivery">Delivery</a></li>
+		</ul> <!-- cd-faq__categories -->
+
+		<div class="cd-faq__items">
+			<ul id="basics" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>Basics</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>¿</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus
+								corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non
+								a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum
+								et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit
+								iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut
+								quidem! Aut, totam rerum, cupiditate quae aperiam voluptas rem inventore quas, ex maxime
+								culpa nam soluta labore at amet nihil laborum? Explicabo numquam, sit fugit, voluptatem
+								autem atque quis quam voluptate fugiat earum rem hic, reprehenderit quaerat tempore at.
+								Aperiam.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How do I sign up?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi cupiditate et laudantium
+								esse adipisci consequatur modi possimus accusantium vero atque excepturi nobis in
+								doloremque repudiandae soluta non minus dolore voluptatem enim reiciendis officia
+								voluptates, fuga ullam? Voluptas reiciendis cumque molestiae unde numquam similique quas
+								doloremque non, perferendis doloribus necessitatibus itaque dolorem quam officia atque
+								perspiciatis dolore laudantium dolor voluptatem eligendi? Aliquam nulla unde voluptatum
+								molestiae, eos fugit ullam, consequuntur, saepe voluptas quaerat deleniti. Repellendus
+								magni sint temporibus, accusantium rem commodi?</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>Can I remove a post?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How do reviews work?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="mobile" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>Mobile</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How does syncing work?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum
+								eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto
+								architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore
+								nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo
+								iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum
+								accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus,
+								accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How do I upload files from my phone or tablet?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempore, placeat quisquam
+								rerum! Eligendi fugit dolorum tenetur modi fuga nisi rerum, autem officiis quaerat quos.
+								Magni quia, quo quibusdam odio. Error magni aperiam amet architecto adipisci aspernatur!
+								Officia, quaerat magni architecto nostrum magnam fuga nihil, ipsum laboriosam similique
+								voluptatibus facilis nobis? Eius non asperiores, nesciunt suscipit veniam blanditiis
+								veritatis provident possimus iusto voluptas, eveniet architecto quidem quos molestias,
+								aperiam eum reprehenderit dolores ad deserunt eos amet. Vero molestiae commodi unde
+								dolor dicta maxime alias, velit, nesciunt cum dolorem, ipsam soluta sint suscipit
+								maiores mollitia assumenda ducimus aperiam neque enim! Quas culpa dolorum ipsam? Ipsum
+								voluptatibus numquam natus? Eligendi explicabo eos, perferendis voluptatibus hic sed
+								ipsam rerum maiores officia! Beatae, molestias!</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How do I link to a file or folder?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="account" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>Account</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How do I change my password?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis earum autem
+								consectetur labore eius tenetur esse, in temporibus sequi cum voluptatem vitae repellat
+								nostrum odio perspiciatis dolores recusandae necessitatibus, unde, deserunt voluptas
+								possimus veniam magni soluta deleniti! Architecto, quidem, totam. Fugit minus odit unde
+								ea cupiditate ab aperiam sed dolore facere nihil laboriosam dolorum repellat deleniti
+								aliquam fugiat laudantium delectus sint iure odio, necessitatibus rem quisquam! Ipsum
+								praesentium quam nisi sint, impedit sapiente facilis laudantium mollitia quae fugiat
+								similique. Dolor maiores aliquid incidunt commodi doloremque rem! Quaerat, debitis
+								voluptatem vero qui enim, sunt reiciendis tempore inventore maxime quasi fugiat
+								accusamus beatae modi voluptates iste officia esse soluta tempora labore quisquam fuga,
+								cum. Sint nemo iste nulla accusamus quam qui quos, vero, minus id. Eius mollitia
+								consequatur fugit nam consequuntur nesciunt illo id quis reprehenderit obcaecati
+								voluptates corrupti, minus! Possimus, perspiciatis!</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How do I delete my account?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo tempore soluta, minus
+								magnam non blanditiis dolore, in nam voluptas nobis minima deserunt deleniti id animi
+								amet, suscipit consequuntur corporis nihil laborum facere temporibus. Qui inventore,
+								doloribus facilis, provident soluta voluptas excepturi perspiciatis fugiat odit vero!
+								Optio assumenda animi at! Assumenda doloremque nemo est sequi eaque, ipsum id, labore
+								rem nisi, amet similique vel autem dolore totam facilis deserunt. Mollitia non ut libero
+								unde accusamus praesentium sint maiores, illo, nemo aliquid?</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How do I change my account settings?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>I forgot my password. How do I reset it?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum at aspernatur iure facere
+								ab a corporis mollitia molestiae quod omnis minima, est labore quidem nobis accusantium
+								ad totam sunt doloremque laudantium impedit similique iste quasi cum! Libero fugit at
+								praesentium vero. Maiores non consequuntur rerum, nemo a qui repellat quibusdam
+								architecto voluptatem? Sequi, possimus, cupiditate autem soluta ipsa rerum officiis cum
+								libero delectus explicabo facilis, odit ullam aperiam reprehenderit! Vero ad non harum
+								veritatis tempore beatae possimus, ex odio quo.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="payments" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>Payments</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>Can I have an invoice for my subscription?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum
+								eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto
+								architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore
+								nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo
+								iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum
+								accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus,
+								accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>Why did my credit card or PayPal payment fail?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur accusantium dolorem
+								vel, ad, nostrum natus eos, nemo placeat quos nisi architecto rem dolorum amet
+								consectetur molestiae reprehenderit cum harum commodi beatae necessitatibus. Mollitia a
+								nostrum enim earum minima doloribus illum autem, provident vero et, aspernatur quae sunt
+								illo dolorem. Corporis blanditiis, unde, neque, adipisci debitis quas ullam accusantium
+								repudiandae eum nostrum quis! Velit esse harum qui, modi ratione debitis alias
+								laboriosam minus eaque, quod, itaque labore illo totam aut quia fuga nemo. Perferendis
+								ipsa laborum atque assumenda tempore aspernatur a eos harum non id commodi excepturi
+								quaerat ullam, explicabo, incidunt ipsam, accusantium quo magni ut! Ratione, magnam.
+								Delectus nesciunt impedit praesentium sed, aliquam architecto dolores quae, distinctio
+								consectetur obcaecati esse, consequuntur vel sit quis blanditiis possimus dolorum. Eaque
+								architecto doloremque aliquid quae cumque, vitae perferendis enim, iure fugiat, soluta
+								aut!</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>Why does my bank statement show multiple charges for one
+							upgrade?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="privacy" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>Privacy</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>Can I specify my own private key?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum
+								eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto
+								architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore
+								nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo
+								iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum
+								accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus,
+								accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>My files are missing! How do I get them back?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How can I access my account data?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus magni vero deserunt
+								enim et quia in aliquam, rem tempore voluptas illo nisi veritatis quas quod placeat
+								ipsa! Error qui harum accusamus incidunt at libero ipsum, suscipit dolorum esse
+								explicabo in eius voluptates quidem voluptatem inventore amet eaque deserunt veniam
+								dignissimos excepturi? Dolore, quo amet nostrum autem nemo. Sit nam assumenda, corporis
+								ea sunt distinctio nostrum doloribus alias, beatae nesciunt dolore saepe consequuntur
+								minima eveniet porro dolor officiis maiores ab obcaecati officia enim aliquam. Itaque
+								fuga molestiae hic accusantium atque corporis quia id sequi enim vero? Hic aperiam sint
+								facilis aliquam quia, accusamus tenetur earum totam enim est, error. Iusto, reiciendis
+								necessitatibus molestias. Voluptatibus eos explicabo repellat nesciunt nam vero minima.
+							</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How can I control if other search engines can link to my
+							profile?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="delivery" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>Delivery</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>What should I do if my order hasn't been delivered
+							yet?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum
+								eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto
+								architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore
+								nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo
+								iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum
+								accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus,
+								accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How can I find your international delivery
+							information?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>Who takes care of shipping?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How do returns or refunds work?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum
+								eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto
+								architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore
+								nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo
+								iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum
+								accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus,
+								accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How do I use shipping profiles?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How does your UK Next Day Delivery service
+							work?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>How does your Next Day Delivery service work?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>When will my order arrive?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>When will my order ship?</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis,
+								reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit,
+								magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+		</div> <!-- cd-faq__items -->
+
+		<a href="#0" class="cd-faq__close-panel text-replace">Close</a>
+
+		<div class="cd-faq__overlay" aria-hidden="true"></div>
+	</section> <!-- cd-faq -->
+
+
+	<script>
+		// Utility function
+		function Util() { };
+		/* 
+			class manipulation functions
+		*/
+		Util.hasClass = function (el, className) {
+			if (el.classList) return el.classList.contains(className);
+			else return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+		};
+
+		Util.addClass = function (el, className) {
+			var classList = className.split(' ');
+			if (el.classList) el.classList.add(classList[0]);
+			else if (!Util.hasClass(el, classList[0])) el.className += " " + classList[0];
+			if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
+		};
+		Util.removeClass = function (el, className) {
+			var classList = className.split(' ');
+			if (el.classList) el.classList.remove(classList[0]);
+			else if (Util.hasClass(el, classList[0])) {
+				var reg = new RegExp('(\\s|^)' + classList[0] + '(\\s|$)');
+				el.className = el.className.replace(reg, ' ');
+			}
+			if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
+		};
+		Util.toggleClass = function (el, className, bool) {
+			if (bool) Util.addClass(el, className);
+			else Util.removeClass(el, className);
+		};
+		Util.setAttributes = function (el, attrs) {
+			for (var key in attrs) {
+				el.setAttribute(key, attrs[key]);
+			}
+		};
+		/* 
+		  DOM manipulation
+		*/
+		Util.getChildrenByClassName = function (el, className) {
+			var children = el.children,
+				childrenByClass = [];
+			for (var i = 0; i < el.children.length; i++) {
+				if (Util.hasClass(el.children[i], className)) childrenByClass.push(el.children[i]);
+			}
+			return childrenByClass;
+		};
+		/* 
+			Animate height of an element
+		*/
+		Util.setHeight = function (start, to, element, duration, cb) {
+			var change = to - start,
+				currentTime = null;
+			var animateHeight = function (timestamp) {
+				if (!currentTime) currentTime = timestamp;
+				var progress = timestamp - currentTime;
+				var val = parseInt((progress / duration) * change + start);
+				// console.log(val);
+				element.setAttribute("style", "height:" + val + "px;");
+				if (progress < duration) {
+					window.requestAnimationFrame(animateHeight);
+				} else {
+					cb();
+				}
+			};
+			//set the height of the element before starting animation -> fix bug on Safari
+			element.setAttribute("style", "height:" + start + "px;");
+			window.requestAnimationFrame(animateHeight);
+		};
+		/* 
+			Smooth Scroll
+		*/
+		Util.scrollTo = function (final, duration, cb) {
+			var start = window.scrollY || document.documentElement.scrollTop,
+				currentTime = null;
+
+			var animateScroll = function (timestamp) {
+				if (!currentTime) currentTime = timestamp;
+				var progress = timestamp - currentTime;
+				if (progress > duration) progress = duration;
+				var val = Math.easeInOutQuad(progress, start, final - start, duration);
+				window.scrollTo(0, val);
+				if (progress < duration) {
+					window.requestAnimationFrame(animateScroll);
+				} else {
+					cb && cb();
+				}
+			};
+			window.requestAnimationFrame(animateScroll);
+		};
+		/* 
+		  Focus utility classes
+		*/
+		//Move focus to an element
+		Util.moveFocus = function (element) {
+			if (!element) element = document.getElementsByTagName("body")[0];
+			element.focus();
+			if (document.activeElement !== element) {
+				element.setAttribute('tabindex', '-1');
+				element.focus();
+			}
+		};
+
+		/* 
+		  Misc
+		*/
+
+		Util.getIndexInArray = function (array, el) {
+			return Array.prototype.indexOf.call(array, el);
+		};
+
+		Util.cssSupports = function (property, value) {
+			if ('CSS' in window) {
+				return CSS.supports(property, value);
+			} else {
+				var jsProperty = property.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+				return jsProperty in document.body.style;
+			}
+		};
+
+		/* 
+			Polyfills
+		*/
+		//Closest() method
+		if (!Element.prototype.matches) {
+			Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+		}
+
+		if (!Element.prototype.closest) {
+			Element.prototype.closest = function (s) {
+				var el = this;
+				if (!document.documentElement.contains(el)) return null;
+				do {
+					if (el.matches(s)) return el;
+					el = el.parentElement || el.parentNode;
+				} while (el !== null && el.nodeType === 1);
+				return null;
+			};
+		}
+
+		//Custom Event() constructor
+		if (typeof window.CustomEvent !== "function") {
+
+			function CustomEvent(event, params) {
+				params = params || { bubbles: false, cancelable: false, detail: undefined };
+				var evt = document.createEvent('CustomEvent');
+				evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+				return evt;
+			}
+
+			CustomEvent.prototype = window.Event.prototype;
+
+			window.CustomEvent = CustomEvent;
+		}
+
+		/* 
+			Animation curves
+		*/
+		Math.easeInOutQuad = function (t, b, c, d) {
+			t /= d / 2;
+			if (t < 1) return c / 2 * t * t + b;
+			t--;
+			return -c / 2 * (t * (t - 2) - 1) + b;
+		};
+	</script> <!-- util functions included in the CodyHouse framework -->
+
+	<script src="../../js/main_FAQ.js"></script>
+	<script>
+		// File#: _1_parallax-image
+		// Usage: codyhouse.co/license
+		(function () {
+			var ParallaxImg = function (element, rotationLevel) {
+				this.element = element;
+				this.figure = this.element.getElementsByClassName('js-parallax__wrapper')[0];
+				this.imgs = this.element.getElementsByClassName('js-parallax__item');
+				this.maxRotation = rotationLevel || 2; // rotate level
+				this.scale = 1;
+				this.animating = false;
+				initParallax(this);
+				initParallaxEvents(this);
+			};
+
+			function initParallax(element) {
+				element.count = 0;
+				window.requestAnimationFrame(checkImageLoaded.bind(element));
+				// check if this is an image -> otherwise no need to check if loaded
+				for (var i = 0; i < element.imgs.length; i++) {
+					(function (i) {
+						var loaded = false;
+						if (element.imgs[i].tagName.toLowerCase() != 'img') {
+							element.count = element.count + 1;
+							return;
+						}
+						element.imgs[i].addEventListener('load', function () {
+							if (loaded) return;
+							element.count = element.count + 1;
+						});
+						if (element.imgs[i].complete && !loaded) {
+							loaded = true;
+							element.count = element.count + 1;
+						}
+					})(i);
+				}
+
+				// set translateZ
+				for (var i = 0; i < element.imgs.length; i++) {
+					if (element.imgs[i].getAttribute('data-parallax-distance')) {
+						element.imgs[i].style.transform = 'translateZ(' + parseInt(element.imgs[i].getAttribute('data-parallax-distance')) + 'px' + ')';
+					}
+				}
+			};
+
+			function checkImageLoaded() {
+				if (this.count >= this.imgs.length) {
+					initScale(this);
+					if (this.loaded) {
+						window.cancelAnimationFrame(this.loaded);
+						this.loaded = false;
+					}
+				} else {
+					this.loaded = window.requestAnimationFrame(checkImageLoaded.bind(this));
+				}
+			};
+
+			function initScale(element) {
+				var maxImgResize = getMaxScale(element);
+				element.scale = maxImgResize / (Math.sin(Math.PI / 2 - element.maxRotation * Math.PI / 180));
+				element.figure.style.transform = 'scale(' + element.scale + ')';
+				element.element.classList.add('parallax--loaded');
+			};
+
+			function getMaxScale(element) {
+				var minWidth = 0;
+				var maxWidth = 0;
+				for (var i = 0; i < element.imgs.length; i++) {
+					var width = element.imgs[i].getBoundingClientRect().width;
+					if (width < minWidth || i == 0) minWidth = width;
+					if (width > maxWidth || i == 0) maxWidth = width;
+				}
+				var scale = Math.ceil(10 * maxWidth / minWidth) / 10;
+				if (scale < 1.1) scale = 1.1;
+				return scale;
+			}
+
+			function initParallaxEvents(element) {
+				element.element.addEventListener('mousemove', function (event) {
+					if (element.animating) return;
+					element.animating = true;
+					window.requestAnimationFrame(moveImage.bind(element, event));
+				});
+			};
+
+			function moveImage(event, timestamp) {
+				var wrapperPosition = this.element.getBoundingClientRect();
+				var rotateY = 2 * (this.maxRotation / wrapperPosition.width) * (wrapperPosition.left - event.clientX + wrapperPosition.width / 2);
+				var rotateX = 2 * (this.maxRotation / wrapperPosition.height) * (event.clientY - wrapperPosition.top - wrapperPosition.height / 2);
+
+				if (rotateY > this.maxRotation) rotateY = this.maxRotation;
+				if (rotateY < -1 * this.maxRotation) rotateY = -this.maxRotation;
+				if (rotateX > this.maxRotation) rotateX = this.maxRotation;
+				if (rotateX < -1 * this.maxRotation) rotateX = -this.maxRotation;
+				this.figure.style.transform = 'scale(' + this.scale + ') rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+				this.animating = false;
+			};
+
+			window.ParallaxImg = ParallaxImg;
+
+			//initialize the ParallaxImg objects
+			var parallaxImgs = document.getElementsByClassName('js-parallax');
+			if (parallaxImgs.length > 0) {
+				for (var i = 0; i < parallaxImgs.length; i++) {
+					(function (i) {
+						var rotationLevel = parallaxImgs[i].getAttribute('data-perspective');
+						new ParallaxImg(parallaxImgs[i], rotationLevel);
+					})(i);
+				}
+			};
+		}());
+	</script>
+</body>
+
+</html>

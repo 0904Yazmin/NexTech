@@ -1725,7 +1725,7 @@ svg {
   line-height: var(--tm3-body-line-height, 1.4);
 }
 
-.tm3-text-component :where(ul, ol, p, blockquote), .tm3-text-component__block) {
+.tm3-text-component :where(ul, ol, p, blockquote), .tm3-text-component__block {
   margin-bottom: calc(var(--tm3-space-sm) * var(--tm3-space-multiplier, 1));
 }
 
