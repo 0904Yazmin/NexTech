@@ -1,0 +1,45 @@
+/* -------------------------------- 
+
+File#: _1_responsive-iframe
+Title: Resposive Iframe
+Descr: Responsive wrapper for iframe elements (e.g., YouTube and Vimeo videos)
+Usage: codyhouse.co/license
+
+-------------------------------- */
+/* reset */
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  * {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  /* component */
+  
+  
+  /* utility classes */
+  :where(.rh5-media-wrapper-16\:9) {
+    position: relative;
+    
+  }
+  
+  .rh5-media-wrapper-16\:9 {
+    padding-bottom: 56.25%;
+  }
+  
+  .rh5-media-wrapper-16\:9 > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99%;
+    height: 100%;
+    align-items: center;
+  }
+  
+  .rh5-media-wrapper-16\:9 > *:not(iframe) {
+    object-fit: cover;
+  }
