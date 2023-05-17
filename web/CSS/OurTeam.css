@@ -96,7 +96,7 @@ Usage: codyhouse.co/license
   -------------------------------- */
   
   .hero {
-    background: url("Img/Imagenes_index/parallax-bg-02.jpg") center no-repeat;
+    background-image: url("../Img/Imagenes_index/parallax-bg-02.jpg") center no-repeat;
     height: 50vh;
     position: relative;
     z-index: 1;
@@ -123,6 +123,7 @@ Usage: codyhouse.co/license
   
   .hero--center {
     text-align: center;
+
   }
   
   .hero--center .hero__cta {

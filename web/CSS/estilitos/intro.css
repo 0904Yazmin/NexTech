@@ -28,7 +28,7 @@
     }
     button {
         font-size: 18px;
-        color: #181818;
+        /*color: #181818;**/
         font-family: inherit;
         font-weight: 800;
         cursor: pointer;
