@@ -55,7 +55,7 @@
                     </tr>
                 </table>
                 <br> <br> <br>
-                <p> <a href="Menu_D.jsp">Regresar al menú principal</a> </p>
+                <p> <a href="../../Menu_nav/menu_docente.jsp">Regresar al menú principal</a> </p>
             </div>
 
             <div class="div_clave">

@@ -142,8 +142,8 @@
 					<a href="#0" class="cd-subnav-trigger"><span>Opciones </span></a>
 					<ul style="color: white;">
 						<li><a href="../Sesiones/perfil_usu.jsp" target="seccion">Perfil</a></li>
-						<li><a href="../Jsp/Otros/planes/infoPlanes.jsp" target="seccion">Actualizar plan</a></li>
-                        <li><a href="../Jsp/Otros/FAQs.jsp" target="seccion">Ayuda y soporte</a></li>
+						<li><a href="../Jsp/Otros/planes/precios_docente.html" target="seccion">Actualizar plan</a></li>
+                        <li><a href="../Jsp/Manual/Intro.html" target="seccion">Ayuda y soporte</a></li>
 						<li><a href="#0" target="seccion">Acerca de</a></li>
 						<li><a href="../Sesiones/cerrarSesion.jsp">Cerrar sesión</a></li>
 						<li><a href="#0" class="placeholder">Placeholder</a></li>

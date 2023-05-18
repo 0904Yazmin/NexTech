@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Quicksand:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../../CSS/precios_suscripcion.css"> <!-- CSS reset -->
+    <script src="../../js/modernizr.js"></script> <!-- Modernizr -->
+    <link rel="shortcut icon" href="../../Img/logos/LogoCopernicus.png">
+
+    <title>Plan premium</title>
+
+</head>
+
+<body>
+    <section>
+        <p>
+        <h1>Planes y precios</h1><br>
+        </p>
+        <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-4UR610145V2042432MRSZNQI">
+            paypal
+        </a>
+        
+    </section>
+
+    <section>
+        <div class="p-table">
+            <div class="pd6-grid pd6-gap-sm">
+                <div class="p-table__item pd6-col-4@md">
+                    <div class="pd6-margin-bottom-2xs">
+                        <h4 class="p-table__title">Plan Gratis</h4>
+
+                    </div>
+
+                    <div class="p-table__price pd6-margin-bottom-sm"><span>$0</span> <i>/ month</i></div>
+
+                    <ul class="p-table__features pd6-margin-bottom-md">
+                        <li>1x user</li>
+                        <li>Free 15/days trial</li>
+                        <li>Access to all features</li>
+                        <li>1 project</li>
+                    </ul>
+
+                </div>
+
+                <div class="p-table__item p-table__item--popular pd6-col-4@md">
+                    <div class="pd6-flex pd6-justify-between pd6-items-center pd6-margin-bottom-2xs">
+                        <h4 class="p-table__title">Plan Cósmico</h4>
+                        <span class="p-table__badge">Más popular</span>
+                    </div>
+
+                    <div class="p-table__price pd6-margin-bottom-sm"><span>$100</span> <i>/ mes</i></div>
+
+                    <ul class="p-table__features pd6-margin-bottom-md">
+                        <li>1x user</li>
+                        <li>Access to all features</li>
+                        <li>10 projects</li>
+                        <li>E-commerce integration</li>
+                        <li>Email support</li>
+
+                    </ul>
+
+                    <div class="pd6-margin-top-auto"><a href="#0"
+                            class="pd6-btn pd6-btn--primary pd6-btn--md pd6-width-100%">Actualizar plan</a></div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+</body>
+
+
+
+<script>
+    // utility functions
+    if (!Util) function Util() { };
+
+    Util.addClass = function (el, className) {
+        var classList = className.split(' ');
+        el.classList.add(classList[0]);
+        if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
+    };
+
+    Util.removeClass = function (el, className) {
+        var classList = className.split(' ');
+        el.classList.remove(classList[0]);
+        if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
+    };
+
+    Util.toggleClass = function (el, className, bool) {
+        if (bool) Util.addClass(el, className);
+        else Util.removeClass(el, className);
+    };
+
+    // File#: _2_pricing-table
+    // Usage: codyhouse.co/license
+    (function () {
+        // NOTE: you need the js code only when using the --has-switch variation of the pricing table
+        // default version does not require js
+        var pTable = document.getElementsByClassName('js-p-table--has-switch');
+        if (pTable.length > 0) {
+            for (var i = 0; i < pTable.length; i++) {
+                (function (i) { addPTableEvent(pTable[i]); })(i);
+            }
+
+            function addPTableEvent(element) {
+                var pSwitch = element.getElementsByClassName('js-p-table__switch')[0];
+                if (pSwitch) {
+                    pSwitch.addEventListener('change', function (event) {
+                        Util.toggleClass(element, 'p-table--yearly', (event.target.value == 'yearly'));
+                    });
+                }
+            }
+        }
+    }());
+</script>
+
+</html>

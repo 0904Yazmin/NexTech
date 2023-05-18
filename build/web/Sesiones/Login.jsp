@@ -49,7 +49,7 @@
                             <label class="form-label">Contraseña</label></p>
                     </div>
 
-                    <label class="form-label"><p><a href="olvidoPass.html" class="linkRegis olvidopass" >¿Olvidaste tu contraseña?</a></p></label>
+                    <label class="form-label"><p><a href="olvido_pass.html" class="linkRegis olvidopass" >¿Olvidaste tu contraseña?</a></p></label>
                     <br > 
 
                     <p><input class="info" type="submit" id="btnLogin" name="btnLogin" value="Iniciar Sesión"></p><br>
