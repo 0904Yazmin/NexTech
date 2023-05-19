@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="CSS/estilitos/iframes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Quicksand:wght@500;700&display=swap"
+        rel="stylesheet">
+    
+    <link rel="shortcut icon" href="Img/logos/LogoCopernicus.png">
+    <title>Copernicus Team</title>
+    <style>
+        body {
+            margin: 0;
+            padding: rem-calc(20);
+            background-color: black;
+            color: white;
+            font-family: Poppins, sans-serif;
+        }
+
+        .astronomy-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .astronomy-title {
+            font-style: oblique;
+        }
+
+        .astronomy-text {
+            border: 1px solid #000000;
+            text-align: center;
+            margin: 15px;
+        }
+
+        .image-wrapper {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* desktop */
+        @media only screen and (min-width: 1200px) {
+            .content {
+                flex-direction: row;
+            }
+
+            .image-wrapper {
+                max-width: none;
+
+            }
+
+            .inside-content {
+                flex-grow: 2.5;
+            }
+
+            .astronomy-text {
+                flex-shrink: 2.5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root" class="astronomy-card">fedrftgy</div>
+    <script>
+        const AstronomyCard = props => {
+            //deconstruct object passed from parent via props
+            const {
+                date,
+                explanation,
+                hdurl,
+                media_type,
+                title,
+                url,
+                service_version
+            } = props.apiFetch;
+
+            //switch between images and video
+            const playerSwitch = () => {
+                switch (media_type) {
+                    case "video":
+                        return (
+                            <div className="inside-content">
+                                <iframe
+                                    allowFullScreen
+                                    frameBorder="0"
+                                    height="520"
+                                    width="720"
+                                    src={url}
+                                />
+                            </div>
+                        );
+
+                    case "image":
+                        return (
+                            <div className="inside-content">
+                                <img
+                                    src={url}
+                                    alt={title}
+                                    className="image-wrapper"
+                                />
+                            </div>
+                        );
+                    default:
+                        return null;
+                }
+            };
+
+            return (
+                <div className="astronomy-card">
+                    <h1 className="astronomy-title">{title}</h1>
+                    <div className="content">
+                        {playerSwitch()}
+                        <div className="astronomy-text">
+                            <p>{explanation}</p>
+                            <span>Image from Nasa API {service_version}</span>
+                            <br />
+                            <span> by Jose Zapata </span>
+                            <br />
+                            <span>{date}</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            );
+        };
+
+        class AstronomyContainer extends React.Component {
+            constructor() {
+                super();
+                //initialize state
+                this.state = {
+                    astronomy: []
+                };
+            }
+            //on mount execute the following
+            componentDidMount() {
+                //URL & parameter
+                const api_key = "f4JBvHAu2nCUqb3Bsblciq2ksqn4lcXUTc9FQjYG";
+                const path = "https://api.nasa.gov/planetary/apod?api_key=";
+
+                //send GET request
+                axios
+                    .get(path + api_key)
+                    .then(response => {
+                        //set response as our inital state
+                        this.setState({
+                            astronomy: response.data
+                        });
+
+                        console.log(this.state.astronomy);
+                    })
+                    .catch(error => {
+                        console.log(error, "failed to fetch data");
+                    });
+            }
+
+            render() {
+                //pass the current state as a prop to child component
+                const { astronomy } = this.state;
+                return (
+                    <div className="parent">
+                        <AstronomyCard apiFetch={astronomy} />
+                    </div>
+                );
+            }
+        }
+        class App extends React.Component {
+            render() {
+                return <AstronomyContainer />;
+            }
+        }
+
+        ReactDOM.render(
+            <div>
+                <App />
+            </div>,
+            document.getElementById("root")
+        );
+
+    </script>
+
+</body>
+
+</html>
