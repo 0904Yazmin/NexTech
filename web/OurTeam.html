@@ -27,6 +27,27 @@
 
   <div>
     <a href="Jsp/Orion/historia1.html">Orioncito</a>
+    <div id="paypal-button-container-P-6DX034133K1094619MRTCMOQ"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AUpoqhBQzhL25FlYYtFlVNvcdYpXw37w8PNcPKhw38PNci358RLcUWvH_hzSeD94b3zDAX8gw15TOke2&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'silver',
+          layout: 'vertical',
+          label: 'paypal'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-6DX034133K1094619MRTCMOQ'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-6DX034133K1094619MRTCMOQ'); // Renders the PayPal button
+</script>
   </div>
   <!--OurTeam Section-->
   <section class="team ty9-padding-y-xl">
