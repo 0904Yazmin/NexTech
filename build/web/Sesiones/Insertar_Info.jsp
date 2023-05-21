@@ -25,6 +25,7 @@
             String fotoUsu = "fotoUsu_0.png";
             
             String pswd = Digest.bytesToHex(Digest.createSha1(pass));
+            
             String strQry = null;
 
             if (!usuario.equals("") && !correo.equals("") && !pass.equals("") && !tipoUsu.equals("")) {
@@ -33,7 +34,9 @@
                     base.conectar();
                     strQry = "insert into Usuario(nombre_usu, correo_usu, pass_usu, tipo_usu, tipo_plan, foto_usu)" + "values( '" + usuario + "','" + correo + "','" + pswd + "','" + tipoUsu +  "','" + tipoPlan + "' ,'" + fotoUsu + "' )";
                     base.insertar(strQry);
-                    /**
+
+                    
+                    /** no sirve xd
                      * switch (tipoUsu) { case "Alumno": strQry = "insert into
                      * Estudiante(nom_usuario, correo_usuario, pass_usuario,
                      * tipo_usuario)" + "values( '" + usuario + "','" + correo +

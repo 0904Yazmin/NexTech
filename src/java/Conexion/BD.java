@@ -85,6 +85,18 @@ public class BD {
         Statement st = (Statement) this.conn.createStatement();
         return st.executeUpdate(inserta);
     }
+    
+    // Generar una funcion para mandar a llamar las imagenes de la tabla de Post de
+    // la base de datos
+    // Path: src\java\Conexion\BD.java
+    public String getImagenPost(int id) throws SQLException {
+        String imagenPost = "";
+        ResultSet rs = this.consulta("SELECT img_post FROM Post WHERE id = " + id);
+        while (rs.next()) {
+            imagenPost = rs.getString("img_post");
+        }
+        return imagenPost;
+    }
 
     public ResultSet consulta(String consulta) throws SQLException {
         this.estancia = (Statement) conn.createStatement();
@@ -102,4 +114,3 @@ public class BD {
     }
 
 }
-

@@ -16,7 +16,7 @@
     FileOutputStream fileOut = null;
     String remoteAddr = request.getRemoteAddr();
     String serverName = request.getServerName();
-    String realPath = "D:\\NexTech_PA\\NexTech\\web\\Img\\fotos_perfil\\";
+    String realPath = "C:\\NexTech\\web\\Img\\Img_posts\\";
     rootPath = realPath;
     String contentType = request.getContentType();
     String saveFile = "";
@@ -80,7 +80,7 @@
         // String strQry = "insert into imgUsu(id_usuario, imagen) values ( '" + id + " ' , ' " + saveFile + " ' ) ";
         // ---------------------String str = "insert into Estudiante(foto_usuario) values ( '" + saveFile + " ' ) where id_usuario='" + id + "'";
         //String strQry = "insert into imgUsu(id_usuario, imagen) values ( '" + id + " ' , ' " + saveFile + " ' ) ";
-        String str = "update Usuario set foto_usu='" + saveFile + "'where id_usu='" + id + "'";
+        String str = "update Usuario set foto_usu='" + saveFile + " 'where id_usu=' " + id + " '";
         base.conectar();
         //String str = "update Usuario set nombre='" + nombre + "',pass='" + pass2 +  "'where id_usuario='" + id + "'";
         //base.edita(str);

@@ -61,7 +61,7 @@
                     <table class="tablita" border="0">
                         <tr>
                             <td>
-                        <center><textarea cols="75" rows="5" name="textoPost" id="textoPost" class="info textArea" placeholder="Escribe lo que quieras" required></textarea></center>
+                        <center><textarea cols="75" rows="5" name="textoPost" id="textoPost" class="info textArea"  placeholder="Escribe lo que quieras" required></textarea></center>
                         </td>
                         </tr>
                         <tr>
@@ -85,6 +85,8 @@
                 </form>
             </nav>
         </div>
+
+     
 
 
         <%                 }

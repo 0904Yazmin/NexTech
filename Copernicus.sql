@@ -96,7 +96,7 @@ foreign key(id_post) references Post(id_post)
  insert into Foro (id_foro, id_clase) values (5, 5);
  insert into Foro (id_foro, id_clase) values (6, 6);
 
-insert into Usuario (id_usu, nom_usu, correo_usu, pass_usu, foto_usu, tipo_usu, tipo_plan) values (1,'Yazmin Reyes','reyes.yazmin.0904@gmail.com', 'yazmin_reyes', 'fotoUsu_0.png', 'Docente', 'basico');
+insert into Usuario (id_usu, nombre_usu, correo_usu, pass_usu, foto_usu, tipo_usu, tipo_plan) values (1,'Yazmin Reyes','reyes.yazmin.0904@gmail.com', '2E7550D6EAED279B4B6FC6A02B7A428BB9AFF123', 'fotoUsu_0.png', 'Docente', 'basico');
 
 
 select * from Usuario;

@@ -36,7 +36,7 @@ public class Exam {
 
         opcion_elegida[num_pregunta] = seleccionada;
 
-        String id = "p" + num_pregunta;
+        //String id = "p" + num_pregunta;
     }
 
     public int corregir() {

@@ -12,7 +12,6 @@
     }
     String nombre = "";
     String hora = "";
-
     String textoPost = "";
     BD basesita = new BD();
     basesita.conectar();
@@ -37,9 +36,11 @@
     </head>
 
     <body style=" background:  none;">
+        <!--   iframe que lleva al formulario donde se hacen posts -->
         <div style="display: table; float: left; border: none; width:35%;"  >
             <iframe name="postMenu" src="MenusPost.jsp?id_clase=<%=id_foro%>" id="frameMenu" scrolling="no" style=" position: sticky;  position: -webkit-sticky; top: 10%; border: none;"></iframe>
         </div>
+
         <div id="publicaciones">
             <div id="tituloForo">
                 <p><h1>Publicaciones de la clase</h1>

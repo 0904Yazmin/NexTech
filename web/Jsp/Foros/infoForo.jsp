@@ -19,7 +19,7 @@
             base.conectar();
             // Parametros del form CrearPost
             String texto = request.getParameter("textoPost");
-            String img = request.getParameter("fileImg");
+           // String img = request.getParameter("fileImg");
             String date = request.getParameter("hora");
             String idclase = request.getParameter("idclase");
             String nombre = "";
@@ -34,7 +34,7 @@
             FileOutputStream fileOut = null;
             String remoteAddr = request.getRemoteAddr();
             String serverName = request.getServerName();
-            String realPath = "D:\\NexTech_PA\\NexTech\\web\\Img\\Fotos_post\\";
+            String realPath = "C:\\NexTech\\web\\Img\\Img_posts\\";
             rootPath = realPath;
             String contentType = request.getContentType();
             String saveFile = "";
@@ -89,7 +89,7 @@
             }
             //  --------------------------------------------------------------------------------- INSERTAR ------------------------------------
             try {
-                UsuarioInfo = "Select * from Usuario where id_usu = '" + id + "'"; //selecionamos los datos del usuario de la tabla Estudiante
+                UsuarioInfo = "Select * from Usuario where id_usu = '" + id + "'"; //selecionamos los datos del usuario de la tabla Usuario
                 ResultSet rsDatosPer = base.consulta(UsuarioInfo);
                 String datitos = "Select * from Clases where id_clase = '" + idclase + "'"; // seleccionamos los datos de la clase de la tabla Usuario_Clase
                 ResultSet Datos = base.consulta(datitos);
@@ -98,18 +98,21 @@
                     while (Datos.next()) {
                         nombre = rsDatosPer.getString(2);
                         foto = rsDatosPer.getString(5);
-                        String dato = "insert into Post(autor_post, msj, id_usu, id_foro, img_autor, hora_post)" + "values( '" + nombre + "','" + texto + "','" + id + "','" + idclase + "','" + foto + "','" + date + "' )";
+                        String dato = "insert into Post(autor_post, msj, id_usu, id_foro,  img_autor, hora_post)" + "values( ' " + nombre + " ' , ' " + texto + "','" + id + "','" + idclase + "','" + foto + "','" + date + "' )";
+                     //   String dato = "insert into Post(autor_post, msj, id_usu, id_foro, img_post, img_autor, hora_post)" + "values( ' " + nombre + " ' , ' " + texto + "','" + id + "','" + idclase + "','" + saveFile + "','" + foto + "','" + date + "' )";
                         int resultadoEdita = base.insertar(dato);
                         
-                        
+                    }
                         
                         String select = "Select max(id_post) from Post where id_foro = '" + idclase + "'"; 
                         ResultSet resultado = base.consulta(select);
                         String id_publi = resultado.getString(1);
-                        String str = "update Post set img_post= ' " + saveFile + " ', img_autor= '" + foto + "' ,  autor_post=' " + nombre + " '  where id_post='" + id_publi + "'";
+                        String str = "update Post set img_post= ' " + saveFile + " '  where id_post=' " + id_publi + " ";
+                        base.edita(str);
                         int actualizacion = base.edita(str);
+                        
                         //out.print("hola" + saveFile);
-                        if (resultadoEdita == 3 && actualizacion == 1) {
+                        if (actualizacion == 1) {
         %>
         <script>
             window.alert(saveFile);
@@ -117,7 +120,7 @@
 
         <%
                         }
-                    }
+                    
                 }
             } catch (Exception XD) {
 
@@ -125,6 +128,9 @@
 
 
         %>
+
+
+       
       
 
 
