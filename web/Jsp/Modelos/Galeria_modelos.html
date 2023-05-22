@@ -1,312 +1,343 @@
 <!doctype html>
 <html lang="en" class="no-js">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
-    </style>
-    <link rel="stylesheet" href="../../CSS/reset.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="../../CSS/galeria_modelos.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="../../CSS/partials/_galeria_modelos.scss"> <!-- Resource style -->
-    <link rel="stylesheet" href="../../CSS/partials/_layout.scss"> <!-- Resource style -->
-    <script src="../../js/galeria_modelos.js"></script> <!-- Modernizr -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+        </style>
+        <link rel="stylesheet" href="../../CSS/reset.css"> <!-- CSS reset -->
+        <link rel="stylesheet" href="../../CSS/estilitos/iframes.css">
+        <link rel="stylesheet" href="../../CSS/galeria_modelos.css"> <!-- CSS reset -->
+        <link rel="stylesheet" href="../../CSS/partials/_galeria_modelos.scss"> <!-- Resource style -->
+        <link rel="stylesheet" href="../../CSS/partials/_layout.scss"> <!-- Resource style -->
+        <script src="../../js/galeria_modelos.js"></script> <!-- Modernizr -->
 
-    <title>Squeezebox Portfolio Template | CodyHouse</title>
-    <style>
-        /* -------------------------------- 
+        <title>Squeezebox Portfolio Template | CodyHouse</title>
+        <style>
+            /* -------------------------------- 
+    
+    Component 
+    
+    -------------------------------- */
+            .hero {
+                position: relative;
+                z-index: 1;
+                font-family: 'Poppins', sans-serif;
+                color: white;
+                padding-top: 18%;
+                background-color: hsl(240, 4%, 95%);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
 
-Component 
+            .hero__label {
+                font-size: 0.9375rem;
+                color: hsla(0, 0%, 100%, 0.966);
+            }
 
--------------------------------- */
-        .hero {
-            position: relative;
-            z-index: 1;
-            font-family: 'Poppins', sans-serif;
-            color: white;
-            padding-top: 18%;
-            background-color: hsl(240, 4%, 95%);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-        }
+            .hero__cta {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: left;
+                gap: 1rem;
+            }
 
-        .hero__label {
-            font-size: 0.9375rem;
-            color: hsla(0, 0%, 100%, 0.966);
-        }
+            .hero--right {
+                text-align: left;
+            }
 
-        .hero__cta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: left;
-            gap: 1rem;
-        }
+            .hero--right .hero__cta {
+                justify-content: end;
+            }
 
-        .hero--right {
-            text-align: left;
-        }
+            .hero--overlay-layer::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: hsl(0, 0%, 100%);
+                z-index: 1;
+            }
 
-        .hero--right .hero__cta {
-            justify-content: end;
-        }
+            .hero--overlay-layer>* {
+                position: relative;
+                z-index: 2;
+            }
 
-        .hero--overlay-layer::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background-color: hsl(0, 0%, 100%);
-            z-index: 1;
-        }
-
-        .hero--overlay-layer>* {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero--full-screen {
-            min-height: 100vh;
-            display: flex;
-        }
+            .hero--full-screen {
+                min-height: 100vh;
+                display: flex;
+            }
 
 
 
-        .cd-margin-bottom-2xs {
-            margin-bottom: 0.75rem;
-        }
+            .cd-margin-bottom-2xs {
+                margin-bottom: 0.75rem;
+            }
 
-        .cd-margin-bottom-xs {
-            margin-bottom: 1rem;
-        }
+            .cd-margin-bottom-xs {
+                margin-bottom: 1rem;
+            }
 
-        .cd-margin-bottom-sm {
-            margin-bottom: 1.5rem;
-        }
+            .cd-margin-bottom-sm {
+                margin-bottom: 1.5rem;
+            }
 
-        .cd-container {
-            width: calc(100% - 3rem);
-            margin-left: auto;
-            margin-right: auto;
-        }
+            .cd-container {
+                width: calc(100% - 3rem);
+                margin-left: auto;
+                margin-right: auto;
+            }
 
-        .cd-max-width-xs {
-            max-width: 32rem;
-        }
-
-        .cd-max-width-adaptive-sm,
-        .cd-max-width-adaptive-md,
-        .cd-max-width-adaptive-lg {
-            max-width: 32rem;
-        }
-
-        @media (min-width: 48rem) {
+            .cd-max-width-xs {
+                max-width: 32rem;
+            }
 
             .cd-max-width-adaptive-sm,
             .cd-max-width-adaptive-md,
             .cd-max-width-adaptive-lg {
-                max-width: 48rem;
+                max-width: 32rem;
             }
-        }
 
-        @media (min-width: 64rem) {
+            @media (min-width: 48rem) {
 
-            .cd-max-width-adaptive-md,
-            .cd-max-width-adaptive-lg {
-                max-width: 64rem;
+                .cd-max-width-adaptive-sm,
+                .cd-max-width-adaptive-md,
+                .cd-max-width-adaptive-lg {
+                    max-width: 48rem;
+                }
             }
-        }
 
-        @media (min-width: 85.5rem) {
-            .cd-max-width-adaptive-lg {
-                max-width: 80rem;
+            @media (min-width: 64rem) {
+
+                .cd-max-width-adaptive-md,
+                .cd-max-width-adaptive-lg {
+                    max-width: 64rem;
+                }
             }
-        }
 
-        .cd-flex {
-            display: flex;
-        }
+            @media (min-width: 85.5rem) {
+                .cd-max-width-adaptive-lg {
+                    max-width: 80rem;
+                }
+            }
 
-        .cd-justify-end {
-            justify-content: end;
-        }
+            .cd-flex {
+                display: flex;
+            }
 
-        .cd-link {
-            text-decoration: none;
-            background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
-            background-size: 200% 1px;
-            background-repeat: no-repeat;
-            background-position: 100% 100%;
-            transition: background-position 0.2s;
-        }
+            .cd-justify-end {
+                justify-content: end;
+            }
 
-        .cd-link:hover {
-            background-position: 0% 100%;
-        }
+            .cd-link {
+                text-decoration: none;
+                background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
+                background-size: 200% 1px;
+                background-repeat: no-repeat;
+                background-position: 100% 100%;
+                transition: background-position 0.2s;
+            }
 
-        .cd-link--contrast-higher {
-            color: hsl(0, 0%, 100%);
-            background-image: linear-gradient(to right, hsl(230, 13%, 9%) 50%, hsla(230, 13%, 9%, 0.1) 50%);
-        }
+            .cd-link:hover {
+                background-position: 0% 100%;
+            }
 
-        .cd-line-height-lg {
-            line-height: 1.58;
-        }
-    </style>
-</head>
+            .cd-link--contrast-higher {
+                color: hsl(0, 0%, 100%);
+                background-image: linear-gradient(to right, hsl(230, 13%, 9%) 50%, hsla(230, 13%, 9%, 0.1) 50%);
+            }
 
-<body>
-    <div class="cd-intro-block">
-        <section class="hero  hero--full-screen"
-            style="background-image: url('https://d3ae4wrz2ljkbq.cloudfront.net/components/img-16-9-dark-1.svg')">
-            <div class="cd-container cd-max-width-adaptive-lg">
-                <div class="cd-max-width-xs">
-                    <h1 class="cd-margin-bottom-xs">Modelos 3D</h1>
+            .cd-line-height-lg {
+                line-height: 1.58;
+            }
+            .categoria_modelos{
+                font-weight: 600;
+                color:  #1a1919;
+                font-size: 13px;
+                margin-top: 6px;
+            }
+            .span1{
+                font-weight: normal;
+                color: black;
+                margin-left: 10px;
+            }
+        </style>
+    </head>
 
-                    <p class="cd-line-height-lg cd-margin-bottom-sm">Aqui encontraras todos los modelos 3D que
+    <body>
+        <div class="cd-intro-block">
+            <section class="hero  hero--full-screen"
+                     style="background-image: url('https://d3ae4wrz2ljkbq.cloudfront.net/components/img-16-9-dark-1.svg')">
+                <div class="cd-container cd-max-width-adaptive-lg">
+                    <div class="cd-max-width-xs">
+                        <h1 class="cd-margin-bottom-xs">Modelos 3D</h1>
 
-                        te ayudarán a tu aprendizaje en Copernicus
+                        <p class="cd-line-height-lg cd-margin-bottom-sm">Aqui encontraras todos los modelos 3D que
 
-                        System</p><br>
-                    <div class="hero__cta content-wrapper">
-                        <a href="#0" class='cd-btn' data-action="show-projects">Explorar</a>
+                            te ayudarán a tu aprendizaje en Copernicus
+
+                            System</p><br>
+                        <div class="hero__cta content-wrapper">
+                            <a href="#0" class='cd-btn' data-action="show-projects">Explorar</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> <!-- .cd-intro-block -->
+
+
+        <div class="cd-projects-wrapper">
+
+            <ul class="cd-slider">
+                <li class="current">
+                    <a href="#0">
+                        <img src="../../Img/modelos/card1.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Tierra</h2>
+
+                            <p class="categoria_modelos">Categoria: <span class="span1">Planeta</span></p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#0">
+                        <img src="../../Img/modelos/mercurio.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Mercurio</h2>
+                            <p class="categoria_modelos">Categoria: <span class="span1">Planeta</span></p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#0">
+                        <img src="../../Img/modelos/venus.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Venus</h2>
+                            <p class="categoria_modelos">Categoria: <span class="span1">Planeta</span></p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#0">
+                        <img src="../../Img/modelos/marte.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Marte</h2>
+                            <p class="categoria_modelos">Categoria: <span class="span1">Planeta</span></p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#0">
+                        <img src="../../Img/modelos/jupiter0.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Jupiter</h2>
+                            <p class="categoria_modelos">Categoria: <span class="span1">Planeta</span></p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#0">
+                        <img src="../../Img/modelos/saturno.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Saturno</h2>
+                            <p class="categoria_modelos">Categoria: <span class="span1">Planeta</span></p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#0">
+                        <img src="../../Img/modelos/urano.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Urano</h2>
+                            <p class="categoria_modelos">Categoria: <span class="span1">Planeta</span></p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#0">
+                        <img src="../../Img/modelos/neptuno.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Neptuno</h2>
+                            <p class="categoria_modelos">Categoria: <span class="span1">Planeta</span></p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#0" target="Modelo3D">
+                        <img src="../../Img/modelos/pluton.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Plutón</h2>
+                            <p class="categoria_modelos">Categoria: <span class="span1">Planeta enano</span></p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#0">
+                        <img src="../../Img/modelos/solar_system.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Sistema solar</h2>
+                            <p class="categoria_modelos">Categoria: <span class="span1">Sistema solar</span></p>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#0">
+                        <img src="../../Img/modelos/imgLuna.jpg" alt="project image">
+                        <div class="project-info">
+                            <h2>Luna</h2>
+                            <p class="categoria_modelos">Categoria: <span class="span1">Satelite natural / Luna</span></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="cd-slider-navigation cd-img-replace">
+                <li><a href="#0" class="prev inactive">Prev</a></li>
+                <li><a href="#0" class="next">Next</a></li>
+            </ul> <!-- .cd-slider-navigation -->
+        </div> <!-- .cd-projects-wrapper -->
+
+
+
+
+        <div class="cd-project-content">
+            <div>
+                <h2>Project title here</h2>
+                <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, ullam.</em>
+                <iframe name="Modelo3D" src="" ></iframe>
+                <div class="sketchfab-embed-wrapper">
+                    <div class="rh5-media-wrapper-16:9 ">
+                        <iframe name="Modelo3D" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                                webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                                execution-while-out-of-viewport execution-while-not-rendered web-share width="900" height="740"
+                                src=" ">
+
+                        </iframe>
                     </div>
                 </div>
             </div>
-        </section>
-    </div> <!-- .cd-intro-block -->
-
-    <div class="cd-projects-wrapper">
-        <ul class="cd-slider">
-            <li class="current">
-                <a href="#0">
-                    <img src="../../Img/modelos/card1.jpg" alt="project image">
-                    <div class="project-info">
-                        <h2>Tierra</h2>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="#0">
-                    <img src="../../Img/modelos/mercurio.jpg" alt="project image">
-                    <div class="project-info">
-                        <h2>Mercurio</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, dicta.</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="#0">
-                    <img src="../../Img/modelos/venus.jpg" alt="project image">
-                    <div class="project-info">
-                        <h2>Venus</h2>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="#0">
-                    <img src="../../Img/modelos/marte.jpg" alt="project image">
-                    <div class="project-info">
-                        <h2>Marte</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="#0">
-                    <img src="../../Img/modelos/jupiter0.jpg" alt="project image">
-                    <div class="project-info">
-                        <h2>Jupiter</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur.</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="#0">
-                    <img src="../../Img/modelos/saturn.jpg" alt="project image">
-                    <div class="project-info">
-                        <h2>Saturno</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat.</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="#0">
-                    <img src="../../Img/modelos/urano.jpg" alt="project image">
-                    <div class="project-info">
-                        <h2>Urano</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="#0">
-                    <img src="../../Img/modelos/neptuno.jpg" alt="project image">
-                    <div class="project-info">
-                        <h2>Neptuno</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="#0">
-                    <img src="img/img.png" alt="project image">
-                    <div class="project-info">
-                        <h2>Project 9</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    </div>
-                </a>
-            </li>
-        </ul>
-
-        <ul class="cd-slider-navigation cd-img-replace">
-            <li><a href="#0" class="prev inactive">Prev</a></li>
-            <li><a href="#0" class="next">Next</a></li>
-        </ul> <!-- .cd-slider-navigation -->
-    </div> <!-- .cd-projects-wrapper -->
-
-    <div class="cd-project-content">
-        <div>
-            <h2>Project title here</h2>
-            <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, ullam.</em>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae
-                ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur
-                quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea
-                amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-            </p>
-            <p>
-                Illum quaerat asperiores aliquam voluptate saepe omnis porro excepturi in atque veritatis sapiente ipsam
-                voluptates iste amet deserunt ullam error pariatur, magni consectetur optio nostrum minima dolorum.
-                Soluta animi nihil doloremque ipsa incidunt vitae architecto beatae, maxime libero, dolore corporis vero
-                porro tenetur ipsam modi repudiandae magnam enim, quibusdam sit.
-            </p>
-            <p>
-                Illum quaerat asperiores aliquam voluptate saepe omnis porro excepturi in atque veritatis sapiente ipsam
-                voluptates iste amet deserunt ullam error pariatur, magni consectetur optio nostrum minima dolorum.
-                Soluta animi nihil doloremque ipsa incidunt vitae architecto beatae, maxime libero, dolore corporis vero
-                porro tenetur ipsam modi repudiandae magnam enim, quibusdam sit.
-            </p>
-        </div>
-        <a href="#0" class="close cd-img-replace">Close</a>
-    </div> <!-- .cd-project-content -->
-    <script src="../../js/jquery-2.1.4.js"></script>
-    <script src="../../js/jquery.mobile.min.js"></script>
-    <script src="../../js/galeria_modelos2.js"></script> <!-- Resource jQuery -->
-</body>
+            <a href="#0" class="close cd-img-replace">Close</a>
+        </div> <!-- .cd-project-content -->
+        <script src="../../js/jquery-2.1.4.js"></script>
+        <script src="../../js/jquery.mobile.min.js"></script>
+        <script src="../../js/galeria_modelos2.js"></script> <!-- Resource jQuery -->
+    </body>
 
 </html>
