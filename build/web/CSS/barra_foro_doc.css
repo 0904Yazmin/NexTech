@@ -46,17 +46,20 @@ body.dark{
     top: 0;
     left: 0;
     height: 100%;
-    width: 270px;
+    width:88px;
     padding: 10px 14px;
     background: #242526;
     transition: var(--tran-05);
     z-index: 100;  
-    color: white;
+    color: #242526;
 }
-.sidebar.close{
+.sidebar{
     width: 88px;
 }
-
+.sidebar:hover{
+    width: 270px;
+    color: #fff;
+}
 /* ===== Reusable code - Here ===== */
 .sidebar li{
     height: 40px;
@@ -83,14 +86,15 @@ body.dark{
     transition: var(--tran-03);
 }
 
-.sidebar .text{
-    font-size: 14px;
+.sidebar:hover .text{
+    font-size: 18px;
     font-weight: 500;
     white-space: nowrap;
     opacity: 1;
 }
-.sidebar.close .text{
+.sidebar.text{
     opacity: 0;
+    color: #242526;
 }
 /* =========================== */
 

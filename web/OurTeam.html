@@ -12,6 +12,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="Img/logos/LogoCopernicus.png">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+  <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
+
   <title>Copernicus Team</title>
 </head>
 
@@ -22,32 +28,91 @@
     <div class="cd-container cd-max-width-adaptive-lg ">
       <h1 class="cd-margin-bottom-xs fonsizeTeam">Conoce al equipo detrás de Copernicus System</h1>
     </div>
-    
+
   </section>
+
+
+  <script>
+    var simplemde = new SimpleMDE();
+  </script>
+
+  <script>
+    var simplemde = new SimpleMDE({ element: document.getElementById("MyID") });
+  </script>
+  <script>
+    // Most options demonstrate the non-default behavior
+    var simplemde = new SimpleMDE({
+      autofocus: true,
+      autosave: {
+        enabled: true,
+        uniqueId: "MyUniqueID",
+        delay: 1000,
+      },
+      blockStyles: {
+        bold: "__",
+        italic: "_"
+      },
+      element: document.getElementById("MyID"),
+      forceSync: true,
+      hideIcons: ["guide", "heading"],
+      indentWithTabs: false,
+      initialValue: "Hello world!",
+      insertTexts: {
+        horizontalRule: ["", "\n\n-----\n\n"],
+        image: ["![](http://", ")"],
+        link: ["[", "](http://)"],
+        table: ["", "\n\n| Column 1 | Column 2 | Column 3 |\n| -------- | -------- | -------- |\n| Text     | Text      | Text     |\n\n"],
+      },
+      lineWrapping: false,
+      parsingConfig: {
+        allowAtxHeaderWithoutSpace: true,
+        strikethrough: false,
+        underscoresBreakWords: true,
+      },
+      placeholder: "Type here...",
+      previewRender: function (plainText) {
+        return customMarkdownParser(plainText); // Returns HTML from a custom parser
+      },
+      previewRender: function (plainText, preview) { // Async method
+        setTimeout(function () {
+          preview.innerHTML = customMarkdownParser(plainText);
+        }, 250);
+
+        return "Loading...";
+      },
+      promptURLs: true,
+      renderingConfig: {
+        singleLineBreaks: false,
+        codeSyntaxHighlighting: true,
+      },
+      shortcuts: {
+        drawTable: "Cmd-Alt-T"
+      },
+      showIcons: ["code", "table"],
+      spellChecker: false,
+      status: false,
+      status: ["autosave", "lines", "words", "cursor"], // Optional usage
+      status: ["autosave", "lines", "words", "cursor", {
+        className: "keystrokes",
+        defaultValue: function (el) {
+          this.keystrokes = 0;
+          el.innerHTML = "0 Keystrokes";
+        },
+        onUpdate: function (el) {
+          el.innerHTML = ++this.keystrokes + " Keystrokes";
+        }
+      }], // Another optional usage, with a custom status bar item that counts keystrokes
+      styleSelectedText: false,
+      tabSize: 4,
+      toolbar: false,
+      toolbarTips: false,
+    });
+  </script>
+
 
   <div>
     <a href="Jsp/Orion/historia1.html">Orioncito</a>
-    <div id="paypal-button-container-P-6DX034133K1094619MRTCMOQ"></div>
-<script src="https://www.paypal.com/sdk/js?client-id=AUpoqhBQzhL25FlYYtFlVNvcdYpXw37w8PNcPKhw38PNci358RLcUWvH_hzSeD94b3zDAX8gw15TOke2&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-<script>
-  paypal.Buttons({
-      style: {
-          shape: 'rect',
-          color: 'silver',
-          layout: 'vertical',
-          label: 'paypal'
-      },
-      createSubscription: function(data, actions) {
-        return actions.subscription.create({
-          /* Creates the subscription */
-          plan_id: 'P-6DX034133K1094619MRTCMOQ'
-        });
-      },
-      onApprove: function(data, actions) {
-        alert(data.subscriptionID); // You can add optional success message for the subscriber here
-      }
-  }).render('#paypal-button-container-P-6DX034133K1094619MRTCMOQ'); // Renders the PayPal button
-</script>
+    
   </div>
   <!--OurTeam Section-->
   <section class="team ty9-padding-y-xl">
@@ -133,17 +198,17 @@
         webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
         execution-while-out-of-viewport execution-while-not-rendered web-share
         src="https://sketchfab.com/models/0ee8157b24474555ae0de635793d337c/embed"> </iframe>
-      </div>
+    </div>
   </div>
+
 
 
   <!--Script Boots-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous">
-  </script>
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+    </script>
 
 </body>
 

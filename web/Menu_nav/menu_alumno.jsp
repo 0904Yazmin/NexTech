@@ -58,8 +58,8 @@
 		<nav class="cd-main-nav-wrapper">
 			<ul class="cd-main-nav">
 				<li><a href="menu_docente.jsp" target="seccion">Menú</a></li>
-				<li><a href="../Jsp/Clases/CrearClaseForm.html" target="seccion">Clases</a></li>
-				<li><a href="../Jsp/Foros/foro_A.jsp" target="seccion">Foro</a></li>
+				
+				<li><a href="../Jsp/Foros/foro_usuarioA.jsp" target="seccion">Foro de la clase</a></li>
 				<li><a href="../Jsp/Calificaciones/Lista_cal.jsp" target="seccion">Calificaciones</a></li>
                 <li><a href="../Jsp/Modelos/Modelos3D.jsp" target="seccion">Modelos3D</a></li>
                 <li><a href="../Jsp/Actividades/Actividades.html" target="seccion">Actividades/Material educativo</a></li>

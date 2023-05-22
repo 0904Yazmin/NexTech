@@ -35,7 +35,7 @@
         </style>
     </head>
 
-    <body style=" background:  none;">
+    <body style=" background-image: url('https://d3ae4wrz2ljkbq.cloudfront.net/components/img-16-9-dark-1.svg'); background-size: cover;">
         <!--   iframe que lleva al formulario donde se hacen posts -->
         <div style="display: table; float: left; border: none; width:35%;"  >
             <iframe name="postMenu" src="MenusPost.jsp?id_clase=<%=id_foro%>" id="frameMenu" scrolling="no" style=" position: sticky;  position: -webkit-sticky; top: 10%; border: none;"></iframe>

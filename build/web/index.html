@@ -13,8 +13,127 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Quicksand:wght@500;700&display=swap"
         rel="stylesheet">
-    
+
     <title>Copernicus</title>
+    <style>
+      
+        .feature__grid {
+            display: grid;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .feature__grid>* {
+            min-width: 0;
+        }
+
+        .feature__content {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+        }
+
+        .feature__label {
+            font-size: 0.9375rem;
+            color: hsl(240, 4%, 65%);
+            text-transform: capitalize;
+        }
+
+        .feature__actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature--center-x .feature__actions {
+            justify-content: center;
+        }
+
+        .feature__img {
+            width: 100%;
+            border-radius: 0.75em;
+        }
+
+        @media (min-width: 64rem) {
+            .feature__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature--invert .feature__grid>*:first-child {
+                order: 2;
+            }
+        }
+
+        /* -------------------------------- 
+
+Utilities 
+
+-------------------------------- */
+
+        .cd-container {
+            width: calc(100% - 3rem);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cd-max-width-adaptive-lg {
+            max-width: 32rem;
+        }
+
+        @media (min-width: 48rem) {
+            .cd-max-width-adaptive-lg {
+                max-width: 48rem;
+            }
+        }
+
+        @media (min-width: 64rem) {
+            .cd-max-width-adaptive-lg {
+                max-width: 64rem;
+            }
+        }
+
+        @media (min-width: 80rem) {
+            .cd-max-width-adaptive-lg {
+                max-width: 80rem;
+            }
+        }
+
+        .cd-position-relative {
+            position: relative;
+        }
+
+        .cd-z-index-1 {
+            z-index: 1;
+        }
+
+        .cd-margin-y-2xl {
+            margin-top: 8rem;
+            margin-bottom: 8rem;
+        }
+
+        .cd-text-center {
+            text-align: center;
+        }
+
+        .cd-line-height-lg {
+            line-height: 1.58;
+        }
+
+        .cd-link {
+            color: hsl(250, 84%, 54%);
+            text-decoration: none;
+            background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
+            background-size: 200% 1px;
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+            transition: background-position 0.2s;
+        }
+
+        .cd-link:hover {
+            background-position: 0% 100%;
+        }
+    </style>
 </head>
 
 <body style="font-family: 'Quicksand', sans-serif;">
@@ -38,11 +157,14 @@
                         <li class="header__item"><a href="Jsp/Help/Intro.html" class="header__link">Ayuda</a></li>
                         <li class="header__item"><a href="OurTeam.html" class="header__link">Nuestro Equipo</a></li>
                         <li class="header__item"><a href="#0" class="header__link">Blog</a></li>
-                        <li class="header__item"><a href="Jsp/Otros/Contactanos.html" class="header__link">Contacto</a></li>
+                        <li class="header__item"><a href="Jsp/Otros/Contactanos.html" class="header__link">Contacto</a>
+                        </li>
                         <li class="header__item"><a href="Sesiones/Registro.html"
-                             style="font-weight: 700; color:#481EA4; background-color: #eeeeea; padding: 9px; border-radius: 5px;" class="header__link">Crea una cuenta</a></li>
+                                style="font-weight: 700; color:#481EA4; background-color: #eeeeea; padding: 9px; border-radius: 5px;"
+                                class="header__link">Crea una cuenta</a></li>
                         <li class="header__item"><a href="Sesiones/Login.jsp"
-                             style="font-weight: 700; color:#481EA4; background-color: #eeeeea; padding: 9px; border-radius: 5px;" class="header__link">Iniciar sesión</a></li>
+                                style="font-weight: 700; color:#481EA4; background-color: #eeeeea; padding: 9px; border-radius: 5px;"
+                                class="header__link">Iniciar sesión</a></li>
                     </ul>
                 </div>
             </nav>
@@ -65,7 +187,7 @@
 
             <div class="col-lg-6">
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">¿Qué es Copernicus System?</h1>
-                <p class="lead txt">Copernicus System es una plataforma web educativa que busca promover la enseñanza de 
+                <p class="lead txt">Copernicus System es una plataforma web educativa que busca promover la enseñanza de
                     la astronomía a jóvenes de entre 8 y 18 años así como a adultos interesados.</p>
             </div>
 
@@ -217,7 +339,7 @@
                     <div class="feature-v7__sub-grid">
                         <div class="feature-v7__img-clone" aria-hidden="true"></div>
 
-                        <p class="feature-v7__description">Aprender sobre ciencia y astronomía no tiene porque 
+                        <p class="feature-v7__description">Aprender sobre ciencia y astronomía no tiene porque
                             ser aburrido, contamos con actividades que te ayudarán a comprender más sobre esta ciencia
                             mientras te diviertes.
                         </p>
@@ -245,7 +367,8 @@
                         <div class="feature-v7__img-clone" aria-hidden="true"></div>
 
                         <p class="feature-v7__description">
-                            Descubre nuestros modelos 3D del sistema solar y diviertete visitando cada uno de los planetas de nuestro sistema solar
+                            Descubre nuestros modelos 3D del sistema solar y diviertete visitando cada uno de los
+                            planetas de nuestro sistema solar
                         </p>
                     </div>
                 </li>
@@ -283,6 +406,35 @@
         </div>
     </section>
 
+    <!--Videito-->
+    <section class="feature feature--invert cd-position-relative cd-z-index-1 cd-margin-y-2xl" >
+        <div class="cd-container cd-max-width-adaptive-lg">
+            <div class="feature__grid">
+                <div>
+                    <div class="feature__content">
+                        <p class="feature__label">Pills &amp; potions</p>
+                        <h1>Que pongo ayuda</h1>
+                        <p class="cd-line-height-lg">pepe pica papas</p>
+
+                        <div class="feature__actions">
+                            <a href="#0" class="cd-btn cd-btn--primary">Download</a>
+                            <a href="#0" class="cd-link">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <figure>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/r8fhpA5p_YE" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; 
+                        autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                        </iframe>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!--Gallery-->
