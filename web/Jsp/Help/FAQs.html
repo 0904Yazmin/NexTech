@@ -18,386 +18,205 @@
 		* {
 			font-family: 'Quicksand', sans-serif;
 		}
+		body{
+			background-color: white;
+			
+		}
+		.cd-faq__item{
+			background-color: rgb(243, 243, 243);
+			color: black;
+		}
+		.cd-faq__trigger{
+			color: black;
+		}
 
 		h1 {
 			font-family: 'Poppins', sans-serif;
 		}
-
-		.parallax {
-			overflow: hidden;
-			/*perspective: 4000px; */
-			height: 45vh;
-			opacity: 0;
-			z-index: -7;
-			/* hide image while it is initialized in JS */
-		}
-
-		.parallax--loaded {
-			opacity: 1;
-			z-index: -3;
-		}
-
-		.parallax__wrapper {
+		.hero {
 			position: relative;
-			transform-style: preserve-3d;
-			transform: translateZ(0);
-			will-change: transform;
-			transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-
+			z-index: 1;
+			padding: 4.5rem 0;
+			background-color: hsl(240, 4%, 95%);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
 		}
 
-		.parallax__item {
-			display: block;
-			width: 100%;
+		.hero__label {
+			font-size: 0.9375rem;
+			color: hsla(230, 13%, 9%, 0.4);
 		}
 
-		.parallax__item:not(:first-of-type) {
+		.hero__cta {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.hero--center {
+			text-align: center;
+		}
+
+		.hero--center .hero__cta {
+			justify-content: center;
+		}
+
+		.hero--right {
+			text-align: right;
+		}
+
+		.hero--right .hero__cta {
+			justify-content: end;
+		}
+
+		.hero--overlay-layer::after {
+			content: "";
 			position: absolute;
 			top: 0;
 			left: 0;
-			z-index: -3;
+			height: 100%;
+			width: 100%;
+			background-color: hsla(0, 0%, 100%, 0.65);
+			z-index: 1;
 		}
 
-		.cd-container {
-			z-index: 5;
-			margin-left: auto;
-			margin-right: auto;
+		.hero--overlay-layer>* {
+			position: relative;
+			z-index: 2;
 		}
 
-		.cd-max-width-sm {
-			max-width: 90rem;
+		.hero--full-screen {
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
-		.cd-padding-y-3xl {
-			padding-top: 10.75rem;
-			padding-bottom: 10.75rem;
+		@media (min-width: 64rem) {
+			.hero {
+				padding: 7rem 0;
+			}
+		}
+
+		/* -------------------------------- 
+
+Utilities 
+
+-------------------------------- */
+
+		.cd-margin-bottom-2xs {
+			margin-bottom: 0.75rem;
+		}
+
+		.cd-margin-bottom-xs {
+			margin-bottom: 1rem;
 		}
 
 		.cd-margin-bottom-sm {
 			margin-bottom: 1.5rem;
 		}
 
-		.cd-text-center {
-			text-align: center;
-			line-height: normal;
-			margin-bottom: 40px;
-			z-index: 3;
+		.cd-container {
+			width: calc(100% - 3rem);
+			margin-left: auto;
+			margin-right: auto;
 		}
 
-		.cd-faq__trigger {
-			color: #020122;
-			font-size: 16px;
+		.cd-max-width-xs {
+			max-width: 32rem;
 		}
 
-
-
-		html {
-			height: 100%;
-			scroll-behavior: smooth;
+		.cd-max-width-adaptive-sm,
+		.cd-max-width-adaptive-md,
+		.cd-max-width-adaptive-lg {
+			max-width: 32rem;
 		}
 
-		body {
-			font-family: 'Eczar', sans-serif;
-			font-weight: 400;
+		@media (min-width: 48rem) {
+
+			.cd-max-width-adaptive-sm,
+			.cd-max-width-adaptive-md,
+			.cd-max-width-adaptive-lg {
+				max-width: 48rem;
+			}
 		}
 
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			font-family: "Eczar", sans-serif;
+		@media (min-width: 64rem) {
 
+			.cd-max-width-adaptive-md,
+			.cd-max-width-adaptive-lg {
+				max-width: 64rem;
+			}
 		}
 
-		h2 {
-			font-family: "Eczar", sans-serif;
-			font-size: 26px;
-			font-weight: 700;
-			padding: 0;
-			margin: 56px 0 24px -1.883px;
-			text-align: left;
-			line-height: 34.5px;
-			letter-spacing: -0.45px;
+		@media (min-width: 85.5rem) {
+			.cd-max-width-adaptive-lg {
+				max-width: 80rem;
+			}
 		}
 
-		p {
-			font-family: 'Gentium Basic', serif;
-			margin-top: 21px;
-			font-size: 21px;
-			letter-spacing: -0.03px;
-			line-height: 1.58;
+		.cd-flex {
+			display: flex;
 		}
 
-		a {
-			color: brown;
+		.cd-justify-end {
+			justify-content: end;
+		}
+
+		.cd-link {
+			color: hsl(250, 84%, 54%);
 			text-decoration: none;
-
-			&:hover {
-				font-weight: bold;
-			}
+			background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
+			background-size: 200% 1px;
+			background-repeat: no-repeat;
+			background-position: 100% 100%;
+			transition: background-position 0.2s;
 		}
 
-		.footer {
-			color: white;
-			background-color: #d0bcab;
-			padding: 24px;
+		.cd-link:hover {
+			background-position: 0% 100%;
 		}
 
-		.section {
-			margin: 0 auto;
-			max-width: 650px;
-			padding: 0 24px;
-
-			&__text {
-				&::first-letter {
-					font-size: 32px;
-				}
-			}
+		.cd-link--contrast-higher {
+			color: hsl(230, 13%, 9%);
+			background-image: linear-gradient(to right, hsl(230, 13%, 9%) 50%, hsla(230, 13%, 9%, 0.1) 50%);
 		}
 
-		/** 
-* Utils 
-*/
-		.group {
-			overflow: hidden;
-		}
-
-		.pull {
-			float: left;
-		}
-
-		.push {
-			float: right;
-		}
-
-		.container {
-			position: relative;
-
-			display: block;
-			width: 100%;
-			height: 100vh;
-		}
-
-		.hero {
-			position: relative;
-
-			display: block;
-			width: 100%;
-			height: 100vh;
-
-			&__image {
-				position: absolute;
-
-				width: 100%;
-				height: 100vh;
-
-				clip: rect(0, auto, auto, 0);
-
-				background-image: url(https://res.cloudinary.com/mihael/image/upload/v1548409393/codepen/hero.jpg);
-				background-attachment: fixed;
-				background-repeat: no-repeat;
-				background-size: cover;
-
-				&--overlay {
-					position: absolute;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					left: 0;
-					z-index: 1;
-
-					background: linear-gradient(to bottom, rgba(121, 85, 72, 0) 0%, rgba(121, 85, 72, 0.17) 21%, rgba(121, 85, 72, 0.5) 80%);
-				}
-			}
-
-			&__child {
-				position: fixed;
-
-				background-repeat: no-repeat;
-				backface-visibility: hidden;
-				opacity: .8;
-
-				&--primary {
-					top: -120px;
-					left: 50px;
-
-					width: 819px;
-					height: 1621px;
-
-					background-image: url(https://res.cloudinary.com/mihael/image/upload/v1548409393/codepen/cloud-2.png);
-				}
-
-				&--secondary {
-					top: 0;
-					right: 50px;
-
-					width: 300px;
-					height: 500px;
-
-					background-size: 300px auto;
-					background-image: url(https://res.cloudinary.com/mihael/image/upload/v1548409392/codepen/cloud-1.png);
-				}
-			}
-
-			&__title {
-				position: absolute;
-				bottom: 18vh;
-				left: 24vw;
-				right: 24vw;
-				z-index: 1;
-
-				opacity: 0;
-
-				font-size: calc(6px * 10);
-				line-height: calc(6px * 12);
-
-				color: white;
-
-				font-family: 'Eczar', sans-serif;
-				font-weight: 200;
-
-				text-align: center;
-
-				@media screen and (min-width: 768px) {
-					bottom: 15vh;
-					font-size: calc(6px * 16);
-					line-height: calc(6px * 18);
-				}
-			}
-
-			&__subtitle {
-				position: absolute;
-				bottom: 15vh;
-				left: 24vw;
-				right: 24vw;
-
-				color: white;
-
-				font-family: 'Gentium Basic', serif;
-				font-size: 24px;
-				line-height: 32px;
-				text-align: center;
-			}
-		}
-
-		/**
-* Animation 
-*/
-
-		.animation {
-			&--floating {
-				animation-name: floating;
-				animation-duration: 200000ms;
-				animation-iteration-count: infinite;
-			}
-
-			&--title-in {
-				animation: title-in 800ms forwards ease-in-out 750ms;
-			}
-
-			&--from-top {
-				animation: from-top 350ms forwards cubic-bezier(0.65, 0.05, 0.36, 1);
-			}
-
-			&--from-bottom {
-				animation: from-bottom 350ms forwards cubic-bezier(0.65, 0.05, 0.36, 1);
-			}
-		}
-
-		/**
-* Keyframes for specific animation
-*/
-		@keyframes floating {
-			0% {
-				transform: translateY(0%);
-			}
-
-			50% {
-				transform: translateY(50%);
-			}
-
-			100% {
-				transform: translateY(0%);
-			}
-		}
-
-		@keyframes title-in {
-			0% {
-				visibility: hidden;
-				opacity: 0;
-				transform: translateY(-25%);
-			}
-
-			100% {
-				opacity: 1;
-				visibility: visible;
-				transform: translateY(0);
-			}
-		}
-
-		@keyframes from-top {
-			0% {
-				visibility: hidden;
-				opacity: 0;
-				transform: translateY(-30%);
-			}
-
-			100% {
-				opacity: 1;
-				visibility: visible;
-				transform: translateY(0);
-			}
-		}
-
-		@keyframes from-bottom {
-			0% {
-				visibility: hidden;
-				opacity: 0;
-				transform: translateY(15%);
-			}
-
-			100% {
-				opacity: 1;
-				visibility: visible;
-				transform: translateY(0);
-			}
+		.cd-line-height-lg {
+			line-height: 1.58;
 		}
 	</style>
 </head>
 
 <body>
-	<section>
-		<div class="container">
-			<div class="hero">
-				<div class="hero__image">
-					<div class="hero__image--overlay"></div>
-					<div class="hero__child hero__child--primary animation--floating"></div>
-					<div class="hero__child hero__child--secondary animation--floating"></div>
-					<p class="hero__title animation--title-in">The flaming mountain</p>
-					<p class="hero__subtitle animation--title-in">by John Blaine</p>
-				</div>
+
+	<section class="hero hero--center hero--overlay-layer"
+		style="background-image: url('https://d3ae4wrz2ljkbq.cloudfront.net/components/img-16-9-light-1.svg')">
+		<div class="cd-container cd-max-width-adaptive-sm">
+			<div class="hero__label cd-margin-bottom-2xs">Centro de Ayuda de Copernicus System</div>
+
+			<h1 class="cd-margin-bottom-xs">FAQs</h1>
+
+			<p class="cd-line-height-lg cd-margin-bottom-sm">¿Con qué te podemos ayudar?
+			</p>
+
+			<div class="hero__cta">
+				<a href="Intro.html" style="font-weight: 700;" class="cd-link cd-link--contrast-higher">Regresar</a>
 			</div>
-		</div>
-		<div class="cd-text-center" style="z-index: 4;">
-			<h2>Preguntas frecuentes</h2>
 		</div>
 	</section>
 
 
-
-
-
 	<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
-
 		<ul class="cd-faq__categories">
 			<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#basics">Basics</a></li>
-			<li><a class="cd-faq__category truncate" href="#mobile">Mobile</a></li>
-			<li><a class="cd-faq__category truncate" href="#account">Account</a></li>
-			<li><a class="cd-faq__category truncate" href="#payments">Payments</a></li>
-			<li><a class="cd-faq__category truncate" href="#privacy">Privacy</a></li>
-			<li><a class="cd-faq__category truncate" href="#delivery">Delivery</a></li>
+			<li><a class="cd-faq__category truncate" href="#mobile">Sobre Copernicus System</a></li>
+			<li><a class="cd-faq__category truncate" href="#account">Seguridad</a></li>
+			<li><a class="cd-faq__category truncate" href="#payments">Pagos y suscripciones</a></li>
+			<li><a class="cd-faq__category truncate" href="#privacy">Comunidad</a></li>
+			<li><a class="cd-faq__category truncate" href="#delivery">Cuenta</a></li>
 		</ul> <!-- cd-faq__categories -->
 
 		<div class="cd-faq__items">
@@ -406,7 +225,7 @@
 					<h2>Basics</h2>
 				</li>
 				<li class="cd-faq__item">
-					<a class="cd-faq__trigger" href="#0"><span>¿</span></a>
+					<a class="cd-faq__trigger" href="#0"><span>How do I change my password?</span></a>
 					<div class="cd-faq__content">
 						<div class="text-component">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus
@@ -813,7 +632,6 @@
 
 		<div class="cd-faq__overlay" aria-hidden="true"></div>
 	</section> <!-- cd-faq -->
-
 
 	<script>
 		// Utility function

@@ -9,6 +9,7 @@
 }
 body{
     background-color:  #000;
+    overflow: hidden;
 }
 header{
     
@@ -48,16 +49,17 @@ header a{
 }
 .div1{
     position: absolute;
+    position: fixed;
     margin-bottom: 50%;
-    width: 31%;
-    top: 22%;
+    width: 35%;
+    top: 14%;
     bottom: 0;
     margin: 0;
-    left: 10%;
+    left: 7%;
     border-radius: 9px;
     border: 2px gray;
-    background-color: rgba(0, 0, 0, .08);
-    height: 68%;
+    background-color: rgba(0, 0, 0, .12);
+    height: 75%;
     padding: 20px;
     color: #afb2b8;
 }
@@ -126,17 +128,6 @@ h1{
     font-size: 27px;
 }
 
-.footer1{
-    align-items:  flex-start;
-    float: left;
-    padding-left: 170px;
-}
-.footer2{
-    align-items:   flex-end;
-    float: right;
-    padding-right: 170px;
-}
-
 
 
 
@@ -148,16 +139,6 @@ h1{
     font-size: 100%;
 }
 
-footer {
-    background-color: rgba(0, 0, 0, .08);
-    box-sizing: border-box;
-    left: 0;
-    padding: 10% 7%;
-    position: absolute;
-    width: 100%;
-    top: 99%;
-    color: white;
-}
 
 @media screen and (min-width: 768px) {
     footer {
@@ -239,3 +220,85 @@ footer {
         width: 70px;
     }
 }
+
+
+
+.cbx {
+    -webkit-perspective: 20;
+    perspective: 20;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -12px;
+    border: 2px solid #e8e8eb;
+    background: #e8e8eb;
+    border-radius: 4px;
+    transform: translate3d(0, 0, 0);
+    cursor: pointer;
+    transition: all 0.3s ease;
+   }
+   
+   .cbx:hover {
+    border-color: #0b76ef;
+   }
+   
+   .flip {
+    display: block;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 20px;
+    height: 20px;
+   }
+   
+   #cbx {
+    display: none;
+   }
+   
+   #cbx:checked + .cbx {
+    border-color: #0b76ef;
+   }
+   
+   #cbx:checked + .flip {
+    transform: rotateY(180deg);
+   }
+   
+   .front,
+   .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+   }
+   
+   .front {
+    background: #fff;
+    z-index: 1;
+   }
+   
+   .back {
+    transform: rotateY(180deg);
+    background: #0b76ef;
+    text-align: center;
+    color: #fff;
+    line-height: 20px;
+    box-shadow: 0 0 0 1px #0b76ef;
+   }
+   
+   .back svg {
+    margin-top: 3px;
+    fill: none;
+   }
+   
+   .back svg path {
+    stroke: #fff;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+   }
+   
+   
+   

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/index_estilos.css">
+    <link rel="stylesheet" href="../CSS/OurTeam.css">
+    <link rel="stylesheet" href="../CSS/estilitos/iframes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../../CSS/estilitos/style_manual.css"> <!-- Resource style -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Img/logos/LogoCopernicus.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <title>Términos y condiciones</title>
+    <style>
+        /* -------------------------------- 
+
+File#: _1_reading-progressbar
+Title: Reading Progress Bar
+Descr: A bar indicator displaying the current reading progress
+Usage: codyhouse.co/license
+
+-------------------------------- */
+        /* reset */
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        * {
+            font: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            background-color: hsl(0, 0%, 100%);
+            font-family: Poppins, sans-serif;
+            color: hsl(230, 7%, 23%);
+            padding: 0%;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            line-height: 1.2;
+            color: hsl(230, 13%, 9%);
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.0736rem;
+        }
+
+        h2 {
+            font-size: 1.728rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol,
+        ul,
+        menu {
+            list-style: none;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            background-color: transparent;
+            border-radius: 0;
+            color: inherit;
+            line-height: inherit;
+            appearance: none;
+        }
+
+        textarea {
+            resize: vertical;
+            overflow: auto;
+            vertical-align: top;
+        }
+
+        a {
+            color: hsl(250, 84%, 54%);
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        img,
+        video,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        @media (min-width: 64rem) {
+            body {
+                font-size: 1.25rem;
+            }
+
+            h1 {
+                font-size: 3.051rem;
+            }
+
+            h2 {
+                font-size: 2.44rem;
+            }
+
+            h3 {
+                font-size: 1.75rem;
+            }
+
+            h4 {
+                font-size: 1.5625rem;
+            }
+        }
+
+        /* variables */
+        :root {
+            /* colors */
+            --rw5-color-primary-hsl: 250, 84%, 54%;
+            --rw5-color-bg-hsl: 0, 0%, 100%;
+            --rw5-color-contrast-high-hsl: 230, 7%, 23%;
+            --rw5-color-contrast-higher-hsl: 230, 13%, 9%;
+            --rw5-color-accent-hsl: 342, 89%, 48%;
+            --rw5-color-contrast-lower-hsl: 240, 4%, 85%;
+
+            /* spacing */
+            --rw5-space-md: 1.25rem;
+            --rw5-space-lg: 2rem;
+            --rw5-space-sm: 0.75rem;
+            --rw5-space-xs: 0.5rem;
+
+            /* typography */
+            --rw5-text-sm: 0.833rem;
+        }
+
+        @media(min-width: 64rem) {
+            :root {
+                /* spacing */
+                --rw5-space-md: 2rem;
+                --rw5-space-lg: 3.125rem;
+                --rw5-space-sm: 1.125rem;
+                --rw5-space-xs: 0.75rem;
+
+                /* typography */
+                --rw5-text-sm: 1rem;
+            }
+        }
+
+        /* component */
+        .reading-progressbar {
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            color: hsl(var(--rw5-color-primary-hsl));
+            pointer-events: none;
+            display: none;
+            transition: -webkit-transform 0.2s;
+            transition: transform 0.2s;
+            transition: transform 0.2s, -webkit-transform 0.2s;
+        }
+
+        .reading-progressbar--is-out {
+            -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+        }
+
+        .reading-progressbar--is-active {
+            display: block;
+        }
+
+        .reading-progressbar::-webkit-progress-bar {
+            background-color: transparent;
+        }
+
+        .reading-progressbar::-webkit-progress-value {
+            background-color: currentColor;
+        }
+
+        .reading-progressbar::-moz-progress-bar {
+            background-color: currentColor;
+        }
+
+        .reading-progressbar__fallback {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-color: currentColor;
+        }
+
+        /* utility classes */
+        .rw5-article {
+            --rw5-heading-line-height: 1.22;
+            --rw5-body-line-height: 1.66;
+            --rw5-space-multiplier: 1.2;
+        }
+
+        .rw5-text-component :where(h1, h2, h3, h4) {
+            line-height: var(--rw5-heading-line-height, 1.2);
+            margin-top: calc(var(--rw5-space-md) * var(--rw5-space-multiplier, 1));
+            margin-bottom: calc(var(--rw5-space-sm) * var(--rw5-space-multiplier, 1));
+        }
+
+        .rw5-text-component :where(p, blockquote, ul li, ol li) {
+            line-height: var(--rw5-body-line-height, 1.4);
+        }
+
+        .rw5-text-component :where(ul, ol, p, blockquote, .rw5-text-component__block) {
+            margin-bottom: calc(var(--rw5-space-sm) * var(--rw5-space-multiplier, 1));
+        }
+
+        .rw5-text-component :where(ul, ol) {
+            padding-left: 1.25em;
+        }
+
+        .rw5-text-component ul :where(ul, ol),
+        .rw5-text-component ol :where(ul, ol) {
+            padding-left: 1em;
+            margin-bottom: 0;
+        }
+
+        .rw5-text-component ul {
+            list-style-type: disc;
+        }
+
+        .rw5-text-component ol {
+            list-style-type: decimal;
+        }
+
+        .rw5-text-component img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .rw5-text-component figcaption {
+            margin-top: calc(var(--rw5-space-xs) * var(--rw5-space-multiplier, 1));
+            font-size: var(--rw5-text-sm);
+            text-align: center;
+        }
+
+        .rw5-text-component em {
+            font-style: italic;
+        }
+
+        .rw5-text-component strong {
+            font-weight: bold;
+        }
+
+        .rw5-text-component s {
+            text-decoration: line-through;
+        }
+
+        .rw5-text-component u {
+            text-decoration: underline;
+        }
+
+        .rw5-text-component mark {
+            background-color: hsla(var(--rw5-color-accent-hsl), 0.2);
+            color: inherit;
+        }
+
+        .rw5-text-component blockquote {
+            padding-left: 1em;
+            border-left: 4px solid hsl(var(--rw5-color-contrast-lower-hsl));
+            font-style: italic;
+        }
+
+        .rw5-text-component hr {
+            margin: calc(var(--rw5-space-md) * var(--rw5-space-multiplier, 1)) auto;
+            background: hsl(var(--rw5-color-contrast-lower-hsl));
+            height: 1px;
+        }
+
+        .rw5-text-component>*:first-child {
+            margin-top: 0;
+        }
+
+        .rw5-text-component>*:last-child {
+            margin-bottom: 0;
+        }
+
+        .rw5-text-component.rw5-line-height-xs {
+            --rw5-heading-line-height: 1;
+            --rw5-body-line-height: 1.1;
+        }
+
+        .rw5-text-component.rw5-line-height-sm {
+            --rw5-heading-line-height: 1.1;
+            --rw5-body-line-height: 1.2;
+        }
+
+        .rw5-text-component.rw5-line-height-md {
+            --rw5-heading-line-height: 1.15;
+            --rw5-body-line-height: 1.4;
+        }
+
+        .rw5-text-component.rw5-line-height-lg {
+            --rw5-heading-line-height: 1.22;
+            --rw5-body-line-height: 1.58;
+        }
+
+        .rw5-text-component.rw5-line-height-xl {
+            --rw5-heading-line-height: 1.3;
+            --rw5-body-line-height: 1.72;
+        }
+
+        .rw5-padding-y-lg {
+            padding-top: var(--rw5-space-lg);
+            padding-bottom: var(--rw5-space-lg);
+        }
+
+        .rw5-max-width-sm {
+            max-width: 87%;
+        }
+
+        .rw5-container {
+            width: calc(100% - 2*var(--rw5-space-md));
+            margin: auto;
+            padding: 15%;
+            padding-top: 6%;
+        }
+    </style>
+</head>
+
+<body>
+    <progress aria-hidden="true" class="reading-progressbar js-reading-progressbar" max="100" value="0">
+        <div class="reading-progressbar__fallback js-reading-progressbar__fallback"></div>
+    </progress>
+
+    <section class="diagonal-section">
+        <div style="display: flex; color: #1E2028; height: 25vh; text-align: center; margin-top: 10px;
+         align-items: center; justify-content: center;">
+            <img src="../../Img/logos/LogoCopernicus.png" width="45px" height="45px" style="margin-right: 15px;">
+            <h1 style="font-size: 25px; ">Copernicus System</h1>
+        </div>
+    </section>
+
+    <div class="rw5-container rw5-max-width-sm rw5-padding-y-lg">
+
+        <h1>Términos y condiciones de servcio</h1><br>
+
+        Los sitios web de Duolingo ("Sitios web"), aplicaciones móviles ("Aplicaciones") y servicios
+        relacionados (junto con los Sitios web y las Aplicaciones, el "Servicio") son operados por
+        Duolingo, Inc. ("Duolingo", "nos" o "nosotros"). El acceso y uso del Servicio está sujeto a los
+        siguientes Términos y Condiciones de Servicio ("Términos y Condiciones"). Al acceder o utilizar
+        cualquier parte del Servicio, usted declara que ha leído, entendido y acepta estar sujeto a
+        estos Términos y condiciones, incluidas las modificaciones futuras. Duolingo puede modificar,
+        actualizar o cambiar estos Términos y condiciones. Si hacemos esto, publicaremos un aviso
+        de que hemos realizado cambios en estos Términos y Condiciones en los Sitios web durante
+        al menos 7 días después de que se publiquen los cambios e indicaremos en la parte inferior de
+        los Términos y Condiciones la fecha en que estos términos fueron revisados por última
+        vez. Cualquier revisión de estos Términos y Condiciones entrará en vigencia lo que ocurra
+        primero de (i) el final de dicho período de 7 días o (ii) la primera vez que acceda o
+        utilice el Servicio después de dichos cambios. Si no acepta cumplir con estos Términos y
+        condiciones, no está autorizado a usar, acceder o participar en el Servicio.
+
+        TENGA EN CUENTA QUE ESTOS TÉRMINOS Y CONDICIONES CONTIENEN UNA DISPOSICIÓN OBLIGATORIA DE ARBITRAJE DE
+        DISPUTAS QUE
+        REQUIERE EL USO DEL ARBITRAJE DE FORMA INDIVIDUAL PARA RESOLVER DISPUTAS EN CIERTAS CIRCUNSTANCIAS, EN LUGAR
+        DE JUICIOS CON JURADO O DEMANDAS COLECTIVAS. VEA ESTOS TÉRMINOS AQUÍ.
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A vitae atque minima, quam voluptatem saepe
+            deleniti, at numquam in commodi, quae possimus dicta sit magnam quasi vel repudiandae ea sunt est
+            sapiente maiores. Eius quo quos amet dignissimos quam vero incidunt aut magnam, inventore eos eum
+            provident, velit perferendis tempore.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ad veniam accusamus ea dolore quasi
+            quod illo, delectus magnam nihil harum doloremque ratione dolores, fugiat sint sequi id, sed non.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et iure iste, voluptatum repellendus!
+            Consequatur quos tenetur suscipit perspiciatis nesciunt, hic non quod magnam ullam aliquid, quas. Velit,
+            architecto, laborum! Labore numquam rem sint, cum itaque ut aperiam, ad veniam ea earum, saepe ipsam
+            magnam adipisci tempora neque quidem voluptatibus ab quod magni hic? Unde libero sapiente iure, numquam
+            officia soluta!</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa perspiciatis distinctio quis facere atque
+            saepe odio a, perferendis similique error?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A vitae atque minima, quam voluptatem saepe
+            deleniti, at numquam in commodi, quae possimus dicta sit magnam quasi vel repudiandae ea sunt est
+            sapiente maiores. Eius quo quos amet dignissimos quam vero incidunt aut magnam, inventore eos eum
+            provident, velit perferendis tempore.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ad veniam accusamus ea dolore quasi
+            quod illo, delectus magnam nihil harum doloremque ratione dolores, fugiat sint sequi id, sed non.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et iure iste, voluptatum repellendus!
+            Consequatur quos tenetur suscipit perspiciatis nesciunt, hic non quod magnam ullam aliquid, quas. Velit,
+            architecto, laborum! Labore numquam rem sint, cum itaque ut aperiam, ad veniam ea earum, saepe ipsam
+            magnam adipisci tempora neque quidem voluptatibus ab quod magni hic? Unde libero sapiente iure, numquam
+            officia soluta!</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa perspiciatis distinctio quis facere atque
+            saepe odio a, perferendis similique error?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa perspiciatis distinctio quis facere atque
+            saepe odio a, perferendis similique error?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A vitae atque minima, quam voluptatem saepe
+            deleniti, at numquam in commodi, quae possimus dicta sit magnam quasi vel repudiandae ea sunt est
+            sapiente maiores. Eius quo quos amet dignissimos quam vero incidunt aut magnam, inventore eos eum
+            provident, velit perferendis tempore.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ad veniam accusamus ea dolore quasi
+            quod illo, delectus magnam nihil harum doloremque ratione dolores, fugiat sint sequi id, sed non.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et iure iste, voluptatum repellendus!
+            Consequatur quos tenetur suscipit perspiciatis nesciunt, hic non quod magnam ullam aliquid, quas. Velit,
+            architecto, laborum! Labore numquam rem sint, cum itaque ut aperiam, ad veniam ea earum, saepe ipsam
+            magnam adipisci tempora neque quidem voluptatibus ab quod magni hic? Unde libero sapiente iure, numquam
+            officia soluta!</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa perspiciatis distinctio quis facere atque
+            saepe odio a, perferendis similique error?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A vitae atque minima, quam voluptatem saepe
+            deleniti, at numquam in commodi, quae possimus dicta sit magnam quasi vel repudiandae ea sunt est
+            sapiente maiores. Eius quo quos amet dignissimos quam vero incidunt aut magnam, inventore eos eum
+            provident, velit perferendis tempore.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ad veniam accusamus ea dolore quasi
+            quod illo, delectus magnam nihil harum doloremque ratione dolores, fugiat sint sequi id, sed non.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et iure iste, voluptatum repellendus!
+            Consequatur quos tenetur suscipit perspiciatis nesciunt, hic non quod magnam ullam aliquid, quas. Velit,
+            architecto, laborum! Labore numquam rem sint, cum itaque ut aperiam, ad veniam ea earum, saepe ipsam
+            magnam adipisci tempora neque quidem voluptatibus ab quod magni hic? Unde libero sapiente iure, numquam
+            officia soluta!</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa perspiciatis distinctio quis facere atque
+            saepe odio a, perferendis similique error?</p>
+        </article>
+    </div>
+
+</body>
+<script>
+    // utility functions
+    if (!Util) function Util() { };
+
+    Util.addClass = function (el, className) {
+        var classList = className.split(' ');
+        el.classList.add(classList[0]);
+        if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
+    };
+
+    Util.removeClass = function (el, className) {
+        var classList = className.split(' ');
+        el.classList.remove(classList[0]);
+        if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
+    };
+
+    Util.toggleClass = function (el, className, bool) {
+        if (bool) Util.addClass(el, className);
+        else Util.removeClass(el, className);
+    };
+
+    // File#: _1_reading-progressbar
+    // Usage: codyhouse.co/license
+    (function () {
+        var readingIndicator = document.getElementsByClassName('js-reading-progressbar')[0],
+            readingIndicatorContent = document.getElementsByClassName('js-reading-content')[0];
+
+        if (readingIndicator && readingIndicatorContent) {
+            var progressInfo = [],
+                progressEvent = false,
+                progressFallback = readingIndicator.getElementsByClassName('js-reading-progressbar__fallback')[0],
+                progressIsSupported = 'value' in readingIndicator;
+
+            var boundingClientRect = readingIndicatorContent.getBoundingClientRect();
+
+            progressInfo['height'] = readingIndicatorContent.offsetHeight;
+            progressInfo['top'] = boundingClientRect.top;
+            progressInfo['bottom'] = boundingClientRect.bottom;
+            progressInfo['window'] = window.innerHeight;
+            progressInfo['class'] = 'reading-progressbar--is-active';
+            progressInfo['hideClass'] = 'reading-progressbar--is-out';
+
+            //init indicator
+            setProgressIndicator();
+            // wait for font to be loaded - reset progress bar
+            if (document.fonts) {
+                document.fonts.ready.then(function () {
+                    triggerReset();
+                });
+            }
+            // listen to window resize - update progress
+            window.addEventListener('resize', function (event) {
+                triggerReset();
+            });
+
+            //listen to the window scroll event - update progress
+            window.addEventListener('scroll', function (event) {
+                if (progressEvent) return;
+                progressEvent = true;
+                (!window.requestAnimationFrame) ? setTimeout(function () { setProgressIndicator(); }, 250) : window.requestAnimationFrame(setProgressIndicator);
+            });
+
+            function setProgressIndicator() {
+                var boundingClientRect = readingIndicatorContent.getBoundingClientRect();
+                progressInfo['top'] = boundingClientRect.top;
+                progressInfo['bottom'] = boundingClientRect.bottom;
+
+                if (progressInfo['height'] <= progressInfo['window']) {
+                    // short content - hide progress indicator
+                    Util.removeClass(readingIndicator, progressInfo['class']);
+                    progressEvent = false;
+                    return;
+                }
+                // get new progress and update element
+                Util.addClass(readingIndicator, progressInfo['class']);
+                var value = (progressInfo['top'] >= 0) ? 0 : 100 * (0 - progressInfo['top']) / (progressInfo['height'] - progressInfo['window']);
+                readingIndicator.setAttribute('value', value);
+                if (!progressIsSupported && progressFallback) progressFallback.style.width = value + '%';
+                // hide progress bar when target is outside the viewport
+                Util.toggleClass(readingIndicator, progressInfo['hideClass'], progressInfo['bottom'] <= 0);
+                progressEvent = false;
+            };
+
+            function triggerReset() {
+                if (progressEvent) return;
+                progressEvent = true;
+                (!window.requestAnimationFrame) ? setTimeout(function () { resetProgressIndicator(); }, 250) : window.requestAnimationFrame(resetProgressIndicator);
+            };
+
+            function resetProgressIndicator() {
+                progressInfo['height'] = readingIndicatorContent.offsetHeight;
+                progressInfo['window'] = window.innerHeight;
+                setProgressIndicator();
+            };
+        }
+    }());
+</script>
+
+</html>

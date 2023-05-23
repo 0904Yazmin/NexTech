@@ -1,5 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Quicksand:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&display=swap');
+
+
+  /* Fonts */
+  @font-face {
+
+    font-family: FunCity;
+    
+    src: url(../Fonts/funcityfont.otf);
+    
+    }
+
+
+    @font-face {
+
+      font-family: Exarros;
+      
+      src: url(../Fonts/exarros.ttf);
+      
+      }
+
+      @font-face {
+
+        font-family: Lektron;
+        
+        src: url(../Fonts/lekton005_l.otf);
+        
+        }
 
 /* -------------------------------- 
 
@@ -18,7 +46,7 @@ Usage: codyhouse.co/license
 
 
 * {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   border: 0;
@@ -32,7 +60,7 @@ h4 {
   line-height: 1.2;
   color: hsl(230, 13%, 9%);
   font-weight: 700;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -91,7 +119,27 @@ svg {
   max-width: 100%;
 }
 
+@media (min-width: 64rem) {
+  body {
+    font-size: 1.25rem;
+  }
 
+  h1 {
+    font-size: 3.051rem;
+  }
+
+  h2 {
+    font-size: 2.44rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5625rem;
+  }
+}
 
 /* variables */
 :root {
@@ -453,8 +501,9 @@ Component Hero
 
 .hero {
   width: 100%;
-  height: 90vh;
-  background: url("../Img/Imagenes_index/purpleandstars.jpg") center no-repeat;
+  height: 100vh;
+  background: url("../Images/pexels-irina-iriser-1707213.jpg") center no-repeat;
+  background-color: black;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -472,11 +521,21 @@ Component Hero
   text-align: center;
   color: white;
 }
-
-.hero__label {
-  font-size: 0.9375rem;
-  color: hsla(0, 0%, 100%);
+.fontcity{
+  background: white;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 60px;
+  font-family: Exarros;
 }
+
+
+
+.fonsizep{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
 
 .hero__cta {
   display: flex;
@@ -526,13 +585,25 @@ Component Hero
   align-items: center;
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 1030px) {
   .hero {
     padding: 7rem 0;
   }
 
+  .fontcity{
+    background: white;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: 500;
+    font-size: 100px;
+    font-family: Exarros;
+    letter-spacing: 1cm;
+  }
+
+
   .fonsize {
-    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 90px;
   }
@@ -542,11 +613,13 @@ Component Hero
     font-size: 70px;
   }
 
-  .fonsizep {
-    font-family: 'Quicksand', sans-serif;
+  .fonsizep{
+    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
   }
 }
+
+
 
 
 /* -------------------------------- 
@@ -1705,7 +1778,7 @@ svg {
   line-height: var(--tm3-body-line-height, 1.4);
 }
 
-.tm3-text-component :where(ul, ol, p, blockquote), .tm3-text-component__block {
+.tm3-text-component :where(ul, ol, p, blockquote, .tm3-text-component__block) {
   margin-bottom: calc(var(--tm3-space-sm) * var(--tm3-space-multiplier, 1));
 }
 
