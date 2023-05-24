@@ -16,7 +16,7 @@
     FileOutputStream fileOut = null;
     String remoteAddr = request.getRemoteAddr();
     String serverName = request.getServerName();
-    String realPath = "C:\\NexTech\\web\\Img\\Img_posts\\";
+    String realPath = "E:\\NexTech\\web\\Img\\Img_posts\\";
     rootPath = realPath;
     String contentType = request.getContentType();
     String saveFile = "";

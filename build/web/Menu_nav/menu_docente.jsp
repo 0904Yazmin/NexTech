@@ -132,10 +132,10 @@
 		<nav class="cd-main-nav-wrapper">
 			<ul class="cd-main-nav">
 				<li><a href="menu_docente.jsp" target="seccion">Menú</a></li>
-				<li><a href="../Jsp/Clases/CrearClaseForm.html" target="seccion">Clases</a></li>
+				<li><a href="../Jsp/Clases/clasesitas.jsp" target="seccion">Clases</a></li>
 				<li><a href="../Jsp/Foros/foro_docente.jsp" target="seccion">Foro</a></li>
 				<li><a href="../Jsp/Calificaciones/Lista_cal.jsp" target="seccion">Calificaciones</a></li>
-                <li><a href="../Jsp/Modelos/Modelos3D.jsp" target="seccion">Modelos3D</a></li>
+                <li><a href="../Jsp/Modelos/Galeria_modelos.html" target="seccion">Modelos3D</a></li>
                 <li><a href="../Jsp/Actividades/Actividades.html" target="seccion">Actividades/Material educativo</a></li>
                 <li><a href="#0" target="seccion">Lecciones</a></li>
 				<li>
@@ -144,7 +144,7 @@
 						<li><a href="../Sesiones/perfil_usu.jsp" target="seccion">Perfil</a></li>
 						<li><a href="../Jsp/Otros/planes/precios_docente.html" target="seccion">Actualizar plan</a></li>
                         <li><a href="../Jsp/Help/Intro.html" target="seccion">Ayuda y soporte</a></li>
-						<li><a href="#0" target="seccion">Acerca de</a></li>
+						<li><a href="../nexTech/OurTeamCS.html" target="seccion">Acerca de</a></li>
 						<li><a href="../Sesiones/cerrarSesion.jsp">Cerrar sesión</a></li>
 						<li><a href="#0" class="placeholder">Placeholder</a></li>
 					</ul>
