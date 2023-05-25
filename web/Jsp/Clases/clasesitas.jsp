@@ -51,7 +51,7 @@
                         </span>
                         <span class="button-text"><a href="CrearClaseForm.html">Crear clase</a></span>
                     </button>
-                    <a href="#0" class="cd-link cd-link--contrast-higher">Learn more</a>
+                    
                 </div>
             </div>
         </section>
@@ -116,7 +116,7 @@
                         
                     %>
 
-                    <tr class="table__row">
+                    <!-- <tr class="table__row">
                         <td class="table__cell" role="cell">
                             <span class="table__label" aria-hidden="true">Name:</span> Joshua
                         </td>
@@ -144,7 +144,8 @@
                             <span class="table__label" aria-hidden="true">Action:</span>
                             <button class="tv5-btn tv5-btn--subtle">Button</button>
                         </td>
-                    </tr>
+                    </tr> -->
+                    
                 </tbody>
             </table>
         </section>

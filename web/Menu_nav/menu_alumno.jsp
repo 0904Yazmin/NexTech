@@ -61,8 +61,9 @@
 				
 				<li><a href="../Jsp/Foros/foro_usuarioA.jsp" target="seccion">Foro de la clase</a></li>
 				<li><a href="../Jsp/Calificaciones/Lista_cal.jsp" target="seccion">Calificaciones</a></li>
-                <li><a href="../Jsp/Modelos/Modelos3D.jsp" target="seccion">Modelos3D</a></li>
-                <li><a href="../Jsp/Actividades/Actividades.html" target="seccion">Actividades/Material educativo</a></li>
+                <li><a href="../Jsp/Modelos/Modelos3D.html" target="seccion">Modelos3D</a></li>
+ 
+                <li><a href="../Jsp/Modelos/Galeria_modelos.html" target="seccion">Actividades/Material educativo</a></li>
                 <li><a href="#0" target="seccion">Lecciones</a></li>
 				<li>
 					<a href="#0" class="cd-subnav-trigger"><span>Opciones </span></a>
