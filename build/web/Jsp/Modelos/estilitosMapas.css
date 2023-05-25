@@ -115,6 +115,9 @@ button{
 .card9{
     background-image: url("../../Img/modelos/jupiter0.jpg");
 }
+.card10{
+    background-image: url("../../Img/modelos/solecito.jpg");
+}
 .card:hover{
     transform: translateY(-10px);
 }

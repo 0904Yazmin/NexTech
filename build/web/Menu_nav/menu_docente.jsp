@@ -127,7 +127,7 @@
         </header>
     -->
     <header>
-		<div class="cd-logo"><a href="#0"><img src="../Img/logos/LogoCopernicus.png" width="30px" height="30px" alt="Logo"></a></div>
+		<div class="cd-logo"><a href="menu_docente.jsp"><img src="../Img/logos/LogoCopernicus.png" width="30px" height="30px" alt="Logo"></a></div>
 
 		<nav class="cd-main-nav-wrapper">
 			<ul class="cd-main-nav">
@@ -135,9 +135,9 @@
 				<li><a href="../Jsp/Clases/clasesitas.jsp" target="seccion">Clases</a></li>
 				<li><a href="../Jsp/Foros/foro_docente.jsp" target="seccion">Foro</a></li>
 				<li><a href="../Jsp/Calificaciones/Lista_cal.jsp" target="seccion">Calificaciones</a></li>
-                <li><a href="../Jsp/Modelos/Galeria_modelos.html" target="seccion">Modelos3D</a></li>
+                <li><a href="../Jsp/Modelos/Modelos3D.html" target="seccion">Modelos3D</a></li>
                 <li><a href="../Jsp/Actividades/Actividades.html" target="seccion">Actividades/Material educativo</a></li>
-                <li><a href="#0" target="seccion">Lecciones</a></li>
+                <li><a href="../Jsp/Modelos/Galeria_modelos.html" target="seccion">Lecciones</a></li>
 				<li>
 					<a href="#0" class="cd-subnav-trigger"><span>Opciones </span></a>
 					<ul style="color: white;">

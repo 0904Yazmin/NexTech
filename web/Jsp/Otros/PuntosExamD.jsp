@@ -96,6 +96,109 @@
             @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
         </style>
         <link rel="shorcut icon" href="../../Img/logos/LogoCopernicus.png">
+        <style>
+            .form {
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --main-color: #323232;
+    padding: 20px;
+    background: lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+  }
+  
+  .title {
+    color: var(--font-color);
+    font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .title span {
+    color: var(--font-color-sub);
+    font-weight: 600;
+    font-size: 17px;
+  }
+  
+  .input {
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+  }
+  
+  .input::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+  }
+  
+  .input:focus {
+    border: 2px solid var(--input-focus);
+  }
+  
+  .login-with {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .button-log {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    color: var(--font-color);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--main-color);
+  }
+  
+  .button-log:active, .button-confirm:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+  }
+  
+  .button-confirm {
+    margin: 50px auto 0 auto;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+  }
+  a:hover{
+    background: none;
+  }
+        </style>
     </head>
     <body>
         <div class="container div2" id="blur">
@@ -117,36 +220,48 @@
             </div>
         </div>
 
+        <div id="popup">
+        <form class="form" id="edadform" method="post" action="edad.jsp">
+            <div class="title">Edad<br><span>Ingresa tu edad para asignarte un foro adecuado a ti</span></div>
+            <input id="edad" class="input" type="number" name="edad" title="Inpit title" placeholder="Ingresa tu edad" required>
+            <input id="edad" class="input" type="hidden" name="nivel" title="Inpit title" value="<%=nivel%>">
+            <div class="login-with">
+              
+              <a href="../Help/terms_privacy.html">¿Por qué debo ingresar mi edad? Términos y condiciones</a>
+            </div>
+            <button class="button-confirm" >Enviar</button>
+          </form>
+        </div>   
+        
+        <!--
+               <%
+
+        %>
 
         <div id="popup">
-            <div class="modal2">
-                <form class="form" action="edad.jsp" method="POST" >
-                    <div class="separator">
-                        <hr class="line">
-                        <h3>Edad</h3> 
-                        <hr class="line">
-                    </div>
-                    <div class="credit-card-info--form">
-                        <div class="input_container">
-                            <label for="password_field" class="input_label">Ingresa tu edad para asignarte un foro adecuado a tu edad</label>
-                            <input id="edad" class="input_field" type="number" name="edad" title="Inpit title" placeholder="Ingresa tu edad" required>
-                            <input id="edad" class="input_field" type="hidden" name="nivel" title="Inpit title" value="<%=nivel%>">
-                        </div>
-                    </div>
-                    
-                    <div style="display: flex;">
-                        <button class="purchase--btn"  >Ok</button>
-                        
-                    </div>
-
-                </form>
-            </div>
-        </div>
-                        
+            <form class="form" id="edadform" method="post" action="edad.jsp">
+                <div class="title">m<br><span>cdfvgbhn</span></div>
+                <input id="edad" class="input_field" type="number" name="edad" title="Inpit title" placeholder="Ingresa tu edad" required>
+                                <input id="edad" class="input_field" type="hidden" name="nivel" title="Inpit title" value="<%=nivel%>">
+                <div class="login-with">
+                  
+                  <a href="../Help/terms_privacy.html">¿Por qué debo ingresar mi edad? Términos y condiciones</a>
+                </div>
+                <button class="button-confirm" onclick="toggle2()">Enviar</button>
+              </form>
+            </div>     
+        -->
+     
                         
                         
         <script type="text/javascript">
             function toggle() {
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+            }
+            function toggle2() {
                 var blur = document.getElementById('blur');
                 blur.classList.toggle('active');
                 var popup = document.getElementById('popup');

@@ -11,7 +11,9 @@ pass_usu varchar (40),
 foto_usu varchar (80),
 tipo_usu varchar(30),
 grado_usuario varchar (15),
-tipo_plan varchar(20)
+tipo_plan varchar(20),
+correoTutor varchar(20),
+claveID varchar(6)
 );
 
 create table Clases(
@@ -95,8 +97,11 @@ foreign key(id_post) references Post(id_post)
  insert into Foro (id_foro, id_clase) values (4, 4);
  insert into Foro (id_foro, id_clase) values (5, 5);
  insert into Foro (id_foro, id_clase) values (6, 6);
+ 
 
+# _______________________________________________________ Usuarios ya creados  ________________________________________________
 insert into Usuario (id_usu, nombre_usu, correo_usu, pass_usu, foto_usu, tipo_usu, tipo_plan) values (1,'Yazmin Reyes','reyes.yazmin.0904@gmail.com', '2E7550D6EAED279B4B6FC6A02B7A428BB9AFF123', 'fotoUsu_0.png', 'Docente', 'basico');
+insert into Usuario (id_usu, nombre_usu, correo_usu, pass_usu, foto_usu, tipo_usu, tipo_plan) values (2,'Ian Alejandro','cordero.cruz.ianalejandro@gmail.com', '4694D3A48D14BA6589C8CCBAF34620EF4D36AA55', 'fotoUsu_0.png', 'Independiente', 'basico'); #pass: cordero123
 
 
 select * from Usuario;

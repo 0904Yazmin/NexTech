@@ -59,20 +59,9 @@
         </center>
     </div>
 
-    <div class="tierra">
-        <iframe src='https://my.spline.design/tierracopy-75bc5b92c6c686be9d4697874f43f6f1/' frameborder='0' width='1500' height='1000'></iframe>
+    <div class="tierra" style="overflow-x: hidden; overflow-y: hidden;">
+        <iframe src='https://my.spline.design/tierracopy-75bc5b92c6c686be9d4697874f43f6f1/' frameborder='0' width='1800' height='1000' ></iframe>
     </div>
 
-    <footer>
-        <div class="footer1">
-            <p>
-                Copernicus System
-            </p>
-        </div>
-        <div class="footer2">
-            <p>Equipo 1</p>
-
-        </div>
-    </footer>
 </body>
 </html>

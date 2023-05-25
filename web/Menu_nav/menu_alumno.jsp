@@ -53,11 +53,11 @@
 </head>
 <body>
     <header>
-		<div class="cd-logo"><a href="#0"><img src="../Img/logos/LogoCopernicus.png" width="30px" height="30px" alt="Logo"></a></div>
+		<div class="cd-logo"><a href="menu_alumno.jsp"><img src="../Img/logos/LogoCopernicus.png" width="30px" height="30px" alt="Logo"></a></div>
 
 		<nav class="cd-main-nav-wrapper">
 			<ul class="cd-main-nav">
-				<li><a href="menu_docente.jsp" target="seccion">Menú</a></li>
+				<li><a href="menu_alumno.jsp" target="seccion">Menú</a></li>
 				
 				<li><a href="../Jsp/Foros/foro_usuarioA.jsp" target="seccion">Foro de la clase</a></li>
 				<li><a href="../Jsp/Calificaciones/Lista_cal.jsp" target="seccion">Calificaciones</a></li>
