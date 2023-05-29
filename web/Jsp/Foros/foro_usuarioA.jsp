@@ -78,13 +78,13 @@
                 <div class="menu">
                     <ul class="menu-links">
                         <li class="nav-link">
-                            <a href="../../Menu_nav/menu_docente.jsp">
+                            <a href="../../Menu_nav/menu_alumno.jsp">
                                 <i class='bx bx-home-alt icon' ></i>
                                 <span class="text nav-text">Menú principal</span>
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a href="../../Menu_nav/menu_docente.jsp">
+                            <a href="../../Jsp/Foros/foro_usuarioA.jsp">
                                 <i class='bx bx-message icon' ></i>
                                 <span class="text nav-text">Mis posts</span>
                             </a>

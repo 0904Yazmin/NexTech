@@ -77,6 +77,7 @@
     String pass2 = request.getParameter("txtPass2");
 
     try {
+         base.conectar();
         // String strQry = "insert into imgUsu(id_usuario, imagen) values ( '" + id + " ' , ' " + saveFile + " ' ) ";
         // ---------------------String str = "insert into Estudiante(foto_usuario) values ( '" + saveFile + " ' ) where id_usuario='" + id + "'";
         //String strQry = "insert into imgUsu(id_usuario, imagen) values ( '" + id + " ' , ' " + saveFile + " ' ) ";

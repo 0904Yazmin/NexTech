@@ -19,7 +19,7 @@
             base.conectar();
             // Parametros del form CrearPost
             String texto = request.getParameter("textoPost");
-           // String img = request.getParameter("fileImg");
+            // String img = request.getParameter("fileImg");
             String date = request.getParameter("hora");
             String idclase = request.getParameter("idclase");
             String nombre = "";
@@ -99,29 +99,31 @@
                         nombre = rsDatosPer.getString(2);
                         foto = rsDatosPer.getString(5);
                         String dato = "insert into Post(autor_post, msj, id_usu, id_foro,  img_autor, hora_post)" + "values( ' " + nombre + " ' , ' " + texto + "','" + id + "','" + idclase + "','" + foto + "','" + date + "' )";
-                     //   String dato = "insert into Post(autor_post, msj, id_usu, id_foro, img_post, img_autor, hora_post)" + "values( ' " + nombre + " ' , ' " + texto + "','" + id + "','" + idclase + "','" + saveFile + "','" + foto + "','" + date + "' )";
+                        //   String dato = "insert into Post(autor_post, msj, id_usu, id_foro, img_post, img_autor, hora_post)" + "values( ' " + nombre + " ' , ' " + texto + "','" + id + "','" + idclase + "','" + saveFile + "','" + foto + "','" + date + "' )";
                         int resultadoEdita = base.insertar(dato);
-                        
+
                     }
-                        
-                        String select = "Select max(id_post) from Post where id_foro = '" + idclase + "'"; 
-                        ResultSet resultado = base.consulta(select);
-                        String id_publi = resultado.getString(1);
-                        String str = "update Post set img_post= ' " + saveFile + " '  where id_post=' " + id_publi + " ";
-                        base.edita(str);
-                        int actualizacion = base.edita(str);
-                        
-                        //out.print("hola" + saveFile);
-                        if (actualizacion == 1) {
+
+                    String select = "Select max(id_post) from Post where id_foro = '" + idclase + "'";
+                    ResultSet resultado = base.consulta(select);
+                    String id_publi = resultado.getString(1);
+                    String str = "update Post set img_post= ' " + saveFile + " '  where id_post=' " + id_publi + " ";
+                    base.edita(str);
+                    int actualizacion = base.edita(str);
+
+                    //out.print("hola" + saveFile);
+                    if (actualizacion == 1) {
         %>
         <script>
             window.alert(saveFile);
         </script>
 
         <%
-                        }
-                    
+                    }
+
                 }
+                response.sendRedirect("Posts_doc.jsp?id_clase=" + idclase);
+                base.cierraConexion();
             } catch (Exception XD) {
 
             }
@@ -129,9 +131,9 @@
 
         %>
 
-
        
-      
+
+
 
 
 

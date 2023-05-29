@@ -4,6 +4,7 @@
     Author     : kim53
 --%>
 
+<%@page import="java.sql.ResultSet"%>
 <%@page import="Conexion.BD"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,15 +20,37 @@
             BD base = new BD();
             base.conectar();
             // Parametros del form CrearPost
-            String texto = request.getParameter("textoPost");
-            String img = request.getParameter("fileImg");
-            String date = request.getParameter("hora");
-            String idclase = request.getParameter("idclase");
-            String nombre = "";
-            String foto = "";
-            String tipo = "";
-        
-        
+            String texto = request.getParameter("textarea");
+
+            try {
+                String UsuarioInfo = "Select * from Usuario where id_usu = '" + id + "'"; //selecionamos los datos del usuario de la tabla Usuario
+                ResultSet rsDatosPer = base.consulta(UsuarioInfo);
+
+                String datitos = "Select * from Usuario_Clase where id_usu = '" + id + "'"; // seleccionamos los datos de la clase de la tabla Usuario_Clase
+                ResultSet Datos = base.consulta(datitos);
+
+                if (rsDatosPer.next()) {
+                    String nombre_usu = rsDatosPer.getString(2);
+                    while (Datos.next()) {
+                        int id_clase = Datos.getInt(2);
+                        String posts = "Select * from Post where id_foro = '" + id_clase + "'"; // seleccionamos los datos de la clase de la tabla Usuario_Clase
+                        ResultSet rsPOST = base.consulta(posts);
+                        if (rsPOST.next()) {
+                            int id_postito = rsPOST.getInt(1);
+                            String dato = "INSERT into Comentarios (autor_com, comentario, id_usu, id_post)" + "values( ' " + nombre_usu + " ' , ' " + texto + "','" + id + "','"  + id_postito + "' )";
+
+                            base.insertar(dato);
+
+                        }
+                    }
+                }
+                response.sendRedirect("../foro_usuarioA.jsp");
+                base.cierraConexion();
+            } catch (Exception XD) {
+            }
+        %>
+
+
         %>
     </body>
 </html>

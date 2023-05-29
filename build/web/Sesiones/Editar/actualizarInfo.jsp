@@ -18,19 +18,24 @@
 
             int id = (int) (miSessiondelUsuario.getAttribute("id_usu") == null ? 0 : miSessiondelUsuario.getAttribute("id_usu"));
             BD base = new BD();
-            
+
             String nombre = request.getParameter("txtN");
 
             try {
                 base.conectar();
-                
+
                 String dato = "update Usuario set nombre_usu ='" + nombre + "'where id_usu='" + id + "'";
                 int resultadoEdita = base.edita(dato);
+                String dato2 = "update Post set autor_post ='" + nombre + "'where id_usu='" + id + "'";
+                base.edita(dato2);
+                String dato3 = "update Comentarios set autor_com ='" + nombre + "'where id_usu='" + id + "'";
+                base.edita(dato3);
                 /**
-                  out.println("Instrucción en SQL a realizar " + dato);
-                  out.println("Resultado de la modificación " +
-                  resultadoEdita); **/
-                
+                 * out.println("Instrucción en SQL a realizar " + dato);
+                 * out.println("Resultado de la modificación " +
+                 * resultadoEdita); *
+                 */
+
                 if (resultadoEdita == 1) {
         %>
         <script>
@@ -39,6 +44,7 @@
 
         <%
                 }
+                response.sendRedirect("editaInfo.jsp");
             } catch (Exception ex) {
                 out.println(ex.getMessage());
             }

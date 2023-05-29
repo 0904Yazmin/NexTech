@@ -22,7 +22,7 @@
             String tipoUsu = request.getParameter("SelectUsu");
             String pass = request.getParameter("TxtPass");
             String tipoPlan = "basico";
-            String fotoUsu = "fotoUsu_0.png";
+            String fotoUsu = "Orion_foto.png";
             
             String pswd = Digest.bytesToHex(Digest.createSha1(pass));
             

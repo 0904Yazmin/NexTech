@@ -13,7 +13,6 @@ Usage: codyhouse.co/license
   }
   
   * {
-    font: inherit;
     margin: 0;
     padding: 0;
     border: 0;
@@ -26,7 +25,7 @@ Usage: codyhouse.co/license
   
   body {
     background-color: hsl(0, 0%, 100%);
-    font-family: system-ui, sans-serif;
+    font-family: Poppins, sans-serif;
     color: hsl(230, 7%, 23%);
     font-size: 1.125rem; /* 18px */
     line-height: 1.4;
@@ -158,6 +157,7 @@ Usage: codyhouse.co/license
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    height: 10vh;
   }
   
   .hero__label {
@@ -302,3 +302,11 @@ Usage: codyhouse.co/license
   .cd-line-height-lg {
     line-height:normal;
   }
+
+
+
+
+
+
+
+  

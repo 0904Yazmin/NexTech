@@ -8,7 +8,7 @@ id_usu int not null auto_increment primary key,
 nombre_usu varchar (40),
 correo_usu varchar(40),
 pass_usu varchar (40),
-foto_usu varchar (80),
+foto_usu mediumblob,
 tipo_usu varchar(30),
 grado_usuario varchar (15),
 tipo_plan varchar(20),
@@ -109,6 +109,7 @@ select * from Clases;
 select * from Usuario_Clase;
 select * from Foro;
 select * from Post;
+select * from Comentarios;
 
 #Select max(id_clase) from Clases where id_docen =1;
 

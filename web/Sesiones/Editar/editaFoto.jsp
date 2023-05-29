@@ -137,7 +137,7 @@
     </head>
 
     <body id="Principal">
-        <form name="datosEdit" action="guardar_img.jsp" method="post" enctype="MULTIPART/FORM-DATA">
+        <form name="datosEdit" action="Guardarfoto_perfil.jsp" method="post" enctype="multipart/form-data">
             <div id="cuadro4" style="background-color: white; color: black;">
                 <div class="modal">
                     <h1>Foto de perfil</h1>
