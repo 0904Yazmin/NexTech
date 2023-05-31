@@ -274,6 +274,11 @@
         </nav> <!-- .cd-main-nav-wrapper -->
         <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
     </header>
+    <div class="cd-main-content" >
+        <!-- main content here -->
+    </div>
+
+
     <%
         if (rsDatosPer.getString(9) == null) {
     %>

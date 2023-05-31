@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../Img/logos/LogoCopernicus.png">
+    <link rel="stylesheet" href="../CSS/Blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Mulish&family=Outfit:wght@300;400&family=Poppins:wght@300;600&family=Quicksand:wght@500;700&family=Red+Hat+Display&display=swap"
+        rel="stylesheet">
+    <title>Blog</title>
+    <style>
+        /* -------------------------------- 
+
+File#: _2_article-gallery
+Title: Article Gallery
+Descr: A gallery of blog articles
+Usage: codyhouse.co/license
+
+-------------------------------- */
+        /* reset */
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            background-color: hsl(0, 0%, 100%);
+            font-family: 'Outfit', sans-serif;
+            color: hsl(230, 7%, 23%);
+            font-weight: 350;
+            text-align: justify;
+        }
+
+        a {
+            color: hsl(0, 0%, 3%);
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .story__title {
+            font-size: 25px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .story__category {
+            font-size: 15px;
+            background-color: #e7c6ff;
+            padding: 3.5px;
+            border-radius: 7px;
+        }
+
+        @media (min-width: 64rem) {
+            body {
+                font-size: 1.25rem;
+            }
+
+            h1 {
+                font-size: 3.051rem;
+            }
+
+            h2 {
+                font-size: 2.44rem;
+            }
+
+            h3 {
+                font-size: 1.75rem;
+            }
+
+            h4 {
+                font-size: 1.5625rem;
+            }
+        }
+
+        /* variables */
+        :root {
+            /* colors */
+            --ar0-color-primary-hsl: 250, 84%, 54%;
+            --ar0-color-bg-hsl: 0, 0%, 100%;
+            --ar0-color-contrast-high-hsl: 230, 7%, 23%;
+            --ar0-color-contrast-higher-hsl: 230, 13%, 9%;
+            --ar0-color-accent-hsl: 342, 89%, 48%;
+            --ar0-color-contrast-lower-hsl: 240, 4%, 85%;
+
+            /* spacing */
+            --ar0-space-3xs: 0.25rem;
+            --ar0-space-xs: 0.5rem;
+            --ar0-space-sm: 0.75rem;
+            --ar0-space-md: 1.25rem;
+            --ar0-space-lg: 2rem;
+            --ar0-space-xl: 3.25rem;
+            --ar0-space-2xl: 5.25rem;
+
+            /* typography */
+            --ar0-text-sm: 0.833rem;
+        }
+
+        @media(min-width: 64rem) {
+            :root {
+                /* spacing */
+                --ar0-space-3xs: 0.375rem;
+                --ar0-space-xs: 0.75rem;
+                --ar0-space-sm: 1.125rem;
+                --ar0-space-md: 2rem;
+                --ar0-space-lg: 3.125rem;
+                --ar0-space-xl: 5.125rem;
+                --ar0-space-2xl: 8.25rem;
+
+                /* typography */
+                --ar0-text-sm: 1rem;
+            }
+        }
+
+        /* icons */
+        .ar0-icon {
+            height: var(--ar0-size, 1em);
+            width: var(--ar0-size, 1em);
+            display: inline-block;
+            color: inherit;
+            fill: currentColor;
+            line-height: 1;
+            flex-shrink: 0;
+            max-width: initial;
+        }
+
+        .Author_pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .story__author {
+            display: flex;
+            font-size: 17px;
+        }
+
+        .ar0-icon--xs {
+            --ar0-size: 16px;
+        }
+
+        /* component */
+
+
+        /* utility classes */
+        .ar0-margin-left-3xs {
+            margin-left: var(--ar0-space-3xs);
+        }
+
+        @media not all and (min-width: 48rem) {
+            .ar0-display\@sm {
+                display: none !important;
+            }
+        }
+
+        .ar0-flip-x {
+            transform: scaleX(-1);
+        }
+
+        .ar0-margin-right-3xs {
+            margin-right: var(--ar0-space-3xs);
+        }
+
+        .ar0-justify-center {
+            justify-content: center;
+        }
+
+        .ar0-gap-3xs {
+            gap: var(--ar0-space-3xs);
+        }
+
+        .ar0-flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .ar0-flex {
+            display: flex;
+        }
+
+        .ar0-margin-top-2xl {
+            margin-top: var(--ar0-space-2xl);
+        }
+
+        .ar0-line-height-xs {
+            line-height: 1.1;
+        }
+
+        .ar0-margin-top-sm {
+            margin-top: var(--ar0-space-sm);
+        }
+
+        .ar0-text-component :where(h1, h2, h3, h4) {
+            line-height: var(--ar0-heading-line-height, 1.2);
+            margin-top: calc(var(--ar0-space-md) * var(--ar0-space-multiplier, 1));
+            margin-bottom: calc(var(--ar0-space-sm) * var(--ar0-space-multiplier, 1));
+        }
+
+        .ar0-text-component :where(p, blockquote, ul li, ol li) {
+            line-height: var(--ar0-body-line-height, 1.4);
+        }
+
+        .ar0-text-component :where(ul, ol, p, blockquote, .ar0-text-component__block) {
+            margin-bottom: calc(var(--ar0-space-sm) * var(--ar0-space-multiplier, 1));
+        }
+
+        .ar0-text-component :where(ul, ol) {
+            padding-left: 1.25em;
+        }
+
+        .ar0-text-component ul :where(ul, ol),
+        .ar0-text-component ol :where(ul, ol) {
+            padding-left: 1em;
+            margin-bottom: 0;
+        }
+
+        .ar0-text-component ul {
+            list-style-type: disc;
+        }
+
+        .ar0-text-component ol {
+            list-style-type: decimal;
+        }
+
+        .ar0-text-component img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .ar0-text-component figcaption {
+            margin-top: calc(var(--ar0-space-xs) * var(--ar0-space-multiplier, 1));
+            font-size: var(--ar0-text-sm);
+            text-align: center;
+        }
+
+        .ar0-text-component em {
+            font-style: italic;
+        }
+
+        .ar0-text-component strong {
+            font-weight: bold;
+        }
+
+        .ar0-text-component s {
+            text-decoration: line-through;
+        }
+
+        .ar0-text-component u {
+            text-decoration: underline;
+        }
+
+        .ar0-text-component mark {
+            background-color: hsla(var(--ar0-color-accent-hsl), 0.2);
+            color: inherit;
+        }
+
+        .ar0-text-component blockquote {
+            padding-left: 1em;
+            border-left: 4px solid hsl(var(--ar0-color-contrast-lower-hsl));
+            font-style: italic;
+        }
+
+        .ar0-text-component hr {
+            margin: calc(var(--ar0-space-md) * var(--ar0-space-multiplier, 1)) auto;
+            background: hsl(var(--ar0-color-contrast-lower-hsl));
+            height: 1px;
+        }
+
+        .ar0-text-component>*:first-child {
+            margin-top: 0;
+        }
+
+        .ar0-text-component>*:last-child {
+            margin-bottom: 0;
+        }
+
+        .ar0-text-component.ar0-line-height-xs {
+            --ar0-heading-line-height: 1;
+            --ar0-body-line-height: 1.1;
+        }
+
+        .ar0-text-component.ar0-line-height-sm {
+            --ar0-heading-line-height: 1.1;
+            --ar0-body-line-height: 1.2;
+        }
+
+        .ar0-text-component.ar0-line-height-md {
+            --ar0-heading-line-height: 1.15;
+            --ar0-body-line-height: 1.4;
+        }
+
+        .ar0-text-component.ar0-line-height-lg {
+            --ar0-heading-line-height: 1.22;
+            --ar0-body-line-height: 1.58;
+        }
+
+        .ar0-text-component.ar0-line-height-xl {
+            --ar0-heading-line-height: 1.3;
+            --ar0-body-line-height: 1.72;
+        }
+
+        .ar0-margin-bottom-xs {
+            margin-bottom: var(--ar0-space-xs);
+        }
+
+        :where(.ar0-media-wrapper-4\:3) {
+            position: relative;
+            height: 0;
+        }
+
+        .ar0-media-wrapper-4\:3 {
+            padding-bottom: 75%;
+        }
+
+        .ar0-media-wrapper-4\:3>* {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ar0-media-wrapper-4\:3>*:not(iframe) {
+            object-fit: cover;
+        }
+
+        .ar0-radius-md {
+            border-radius: 0.25em;
+        }
+
+        .ar0-gap-y-lg {
+            row-gap: var(--ar0-space-lg);
+        }
+
+        .ar0-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+        }
+
+        .ar0-grid>* {
+            min-width: 0;
+            grid-column-end: span 12;
+        }
+
+        .ar0-max-width-adaptive-lg {
+            max-width: 32rem;
+        }
+
+        @media(min-width: 48rem) {
+            .ar0-max-width-adaptive-lg {
+                max-width: 48rem;
+            }
+        }
+
+        @media(min-width: 64rem) {
+            .ar0-max-width-adaptive-lg {
+                max-width: 64rem;
+            }
+        }
+
+        @media(min-width: 80rem) {
+            .ar0-max-width-adaptive-lg {
+                max-width: 80rem;
+            }
+        }
+
+        .ar0-container {
+            width: calc(100% - 2*var(--ar0-space-md));
+            margin-left: auto;
+            margin-right: auto;
+            padding: 7%;
+        }
+
+        .ar0-padding-y-xl {
+            padding-top: var(--ar0-space-xl);
+            padding-bottom: var(--ar0-space-xl);
+        }
+
+        .ar0-z-index-1 {
+            z-index: 1;
+        }
+
+        .ar0-position-relative {
+            position: relative;
+        }
+
+        @media(min-width: 64rem) {
+            .ar0-gap-lg\@md {
+                gap: var(--ar0-space-lg);
+            }
+
+            .ar0-col-4\@md {
+                grid-column-end: span 4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="back-to-top js-back-to-top" href="#" data-offset="100">
+        <svg class="cd-icon" viewBox="0 0 20 20">
+            <polyline points="2 13 10 5 18 13" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2" />
+        </svg>
+
+        <section class="cha-section cd-position-relative cd-padding-y-3xl js-cha-section">
+            <div class="cha-header-clip js-cha-header-clip">
+                <header class="cha-header js-cha-header">
+                    <div class="cd-container cd-max-width-lg cd-height-100%">
+                        <div class="cd-flex cd-justify-between cd-items-center cd-height-100%">
+                            <a href="#0">
+                                <img src="../../Img/logos/LogoCopernicus.png" alt="Logo" class="cha-header__logo">
+                            </a>
+
+                            <nav class="cha-header__nav js-cha-header__nav">
+                                <ul class="cha-header__nav-list">
+                                    <li><a href="#0" class="cha-header__nav-link">Lecciones</a></li>
+                                    <li><a href="#0" class="cha-header__nav-link">Noticias</a></li>
+                                    <li><a href="#0" class="cha-header__nav-link">Articulos</a></li>
+                                    <li><a href="#0" class="cha-header__nav-link"></a></li>
+                                </ul>
+                            </nav>
+
+                            <button class="cha-header__trigger js-cha-header__trigger" aria-label="Open navigation"
+                                aria-expanded="false" aria-controls="cha-header-mobile">
+                                <svg class="cd-icon" viewBox="0 0 24 24">
+                                    <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="2"
+                                        stroke="currentColor" fill="none" stroke-miterlimit="10">
+                                        <line x1="1" y1="12" x2="23" y2="12"></line>
+                                        <line stroke-miterlimit="10" x1="1" y1="5" x2="23" y2="5"></line>
+                                        <line stroke-miterlimit="10" x1="1" y1="19" x2="23" y2="19"></line>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="pre-header pj6-padding-y-xs js-pre-header">
+                        <div class="pj6-container pj6-max-width-lg pj6-position-relative">
+                            <div class="pj6-text-component pj6-text-sm pj6-padding-right-lg">
+                                <p>Únete a nuestra comunidad de futuros astrónomos <a
+                                        href="../../Sesiones/Registro.html"
+                                        class="pj6-color-inherit pj6-text-underline">Regístrate</a></p>
+                            </div>
+
+                            <button class="pre-header__close-btn js-pre-header__close-btn js-tab-focus">
+                                <svg class="pre-header__icon pj6-icon" viewBox="0 0 20 20">
+                                    <title>Close header banner</title>
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2">
+                                        <line x1="4" y1="4" x2="16" y2="16" />
+                                        <line x1="16" y1="4" x2="4" y2="16" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+            </div>
+
+            <div class="ar0-position-relative ar0-z-index-1 ar0-padding-y-xl">
+                <div class="ar0-container ar0-max-width-adaptive-lg">
+                    <div class="ar0-grid ar0-gap-y-lg ar0-gap-lg@md">
+
+                        <article class="story story--featured">
+                            <a class="story__img ar0-radius-md" href="#0">
+                                <figure class="ar0-media-wrapper-4:3">
+                                    <img src="../../Img/blog/pluton_1.jfif" alt="Saturno en blanco y negro">
+                                </figure>
+                            </a>
+
+                            <div class="story__content">
+                                <div class="ar0-margin-bottom-xs">
+                                    <a class="story__category" href="#0">
+                                        <svg class="ar0-icon ar0-margin-right-3xs" aria-hidden="true"
+                                            viewBox="0 0 16 16">
+                                            <g stroke-width='1' stroke='currentColor' fill='none' stroke-linecap='round'
+                                                stroke-linejoin='round'>
+                                                <circle cx='8' cy='7' r='1.5'></circle>
+                                                <path d='M12.121,14.263a7.5,7.5,0,1,0-8.242,0'></path>
+                                                <path d='M12.377,11.32a5.5,5.5,0,1,0-8.754,0'></path>
+                                                <path
+                                                    d='M6.605,10.5H9.4a1,1,0,0,1,1,1.1L10,15.5H6l-.39-3.9A1,1,0,0,1,6.605,10.5Z'>
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        <i>Podcast</i>
+                                    </a>
+                                </div>
+
+                                <div class="ar0-text-component">
+                                    <h2 class="story__title"><a href="#0">Lorem ipsum dolor sit, amet consectetur
+                                            adipisicing elit</a></h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto sit quasi
+                                        aliquam quod laboriosam. Nobis, modi repellendus.</p>
+                                </div>
+
+                                <div class="story__author ar0-margin-top-sm">
+                                    <a class="block" href="#0">
+                                        <img src="../../nexTech/Images/Horacio.jpg" alt="Author picture"
+                                            class="Author_pic">
+                                    </a>
+
+                                    <div class="ar0-line-height-xs">
+                                        <address class="story__author-name"><a href="#0" rel="author">Horacio
+                                                Zaldivar</a>
+                                        </address>
+                                        <p class="story__meta"><time>May 16</time> &mdash; 5 min read</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="story ar0-col-4@md">
+                            <a class="story__img ar0-radius-md" href="#0">
+                                <figure class="ar0-media-wrapper-4:3">
+                                    <img src="../../Img/blog/Laika.jfif" alt="Image description">
+                                </figure>
+                            </a>
+
+                            <div class="story__content">
+                                <div class="ar0-margin-bottom-xs">
+                                    <a class="story__category" href="#0">
+                                        <svg class="ar0-icon ar0-margin-right-3xs" aria-hidden="true"
+                                            viewBox="0 0 16 16">
+                                            <g stroke-width='1' fill='none' stroke='currentColor' stroke-linecap='round'
+                                                stroke-linejoin='round'>
+                                                <rect x='0.5' y='1.5' width='15' height='13' rx='1' ry='1'></rect>
+                                                <polygon points='5.5 4.5 11 8 5.5 11.5 5.5 4.5'></polygon>
+                                            </g>
+                                        </svg>
+                                        <i>Video</i>
+                                    </a>
+                                </div>
+
+                                <div class="ar0-text-component">
+                                    <h2 class="story__title"><a href="#0">¿Sabes quíen fue Laika?</a></h2>
+
+                                </div>
+
+                                <div class="story__author ar0-margin-top-sm">
+                                    <a class="block" href="#0">
+                                        <img src="../../nexTech/Images/Nai.jpg" alt="Author picture" class="Author_pic">
+                                    </a>
+
+                                    <div class="ar0-line-height-xs">
+                                        <address class="story__author-name"><a href="#0" rel="author">Naian Montes</a>
+                                        </address>
+                                        <p class="story__meta"><time>May 12</time> &mdash; 5 min read</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="story ar0-col-4@md">
+                            <a class="story__img ar0-radius-md" href="#0">
+                                <figure class="ar0-media-wrapper-4:3">
+                                    <img src="../../Img/blog/rings.jfif" alt="Image description">
+                                </figure>
+                            </a>
+
+                            <div class="story__content">
+                                <div class="ar0-margin-bottom-xs">
+                                    <a class="story__category" href="#0">
+                                        <svg class="ar0-icon ar0-margin-right-3xs" aria-hidden="true"
+                                            viewBox="0 0 16 16">
+                                            <g stroke-width='1' fill='none' stroke='currentColor' stroke-linecap='round'
+                                                stroke-linejoin='round'>
+                                                <rect x='0.5' y='1.5' width='15' height='13' rx='1' ry='1'></rect>
+                                                <polygon points='5.5 4.5 11 8 5.5 11.5 5.5 4.5'></polygon>
+                                            </g>
+                                        </svg>
+                                        <i>Video</i>
+                                    </a>
+                                </div>
+
+                                <div class="ar0-text-component">
+                                    <h2 class="story__title"><a href="#0">Lorem ipsum, dolor sit amet consectetur
+                                            adipisicing elit. Quis hic veniam harum?</a></h2>
+
+                                </div>
+
+                                <div class="story__author ar0-margin-top-sm">
+                                    <a class="block" href="#0">
+                                        <img src="../../nexTech/Images/Ale.JPG" alt="Author picture" class="Author_pic">
+                                    </a>
+
+                                    <div class="ar0-line-height-xs">
+                                        <address class="story__author-name"><a href="#0" rel="author">Alejandro Cruz</a>
+                                        </address>
+                                        <p class="story__meta"><time>May 8</time> &mdash; 5 min read</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="story ar0-col-4@md">
+                            <a class="story__img ar0-radius-md" href="#0">
+                                <figure class="ar0-media-wrapper-4:3">
+                                    <img src="../../Img/blog/earth_1.jpg" alt="Image description">
+                                </figure>
+                            </a>
+
+                            <div class="story__content">
+                                <div class="ar0-margin-bottom-xs">
+                                    <a class="story__category" href="#0">
+                                        <svg class="ar0-icon ar0-margin-right-3xs" aria-hidden="true"
+                                            viewBox="0 0 16 16">
+                                            <g stroke-width='1' stroke='currentColor' fill='none' stroke-linecap='round'
+                                                stroke-linejoin='round'>
+                                                <circle cx='8' cy='7' r='1.5'></circle>
+                                                <path d='M12.121,14.263a7.5,7.5,0,1,0-8.242,0'></path>
+                                                <path d='M12.377,11.32a5.5,5.5,0,1,0-8.754,0'></path>
+                                                <path
+                                                    d='M6.605,10.5H9.4a1,1,0,0,1,1,1.1L10,15.5H6l-.39-3.9A1,1,0,0,1,6.605,10.5Z'>
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        <i>Podcast</i>
+                                    </a>
+                                </div>
+
+                                <div class="ar0-text-component">
+                                    <h2 class="story__title"><a href="#0">Lorem ipsum dolor sit amet consectetur</a>
+                                    </h2>
+
+                                </div>
+
+                                <div class="story__author ar0-margin-top-sm">
+                                    <a class="block" href="#0">
+                                        <img src="../../nexTech/Images/Yaz.JPG" alt="Author picture" class="Author_pic">
+                                    </a>
+
+                                    <div class="ar0-line-height-xs">
+                                        <address class="story__author-name"><a href="#0" rel="author">Yazmin Reyes</a>
+                                        </address>
+                                        <p class="story__meta"><time>May 5</time> &mdash; 5 min read</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <nav class="pagination ar0-margin-top-2xl" aria-label="Pagination">
+                        <ol class="pagination__list ar0-flex ar0-flex-wrap ar0-gap-3xs ar0-justify-center">
+                            <li>
+                                <a href="#0" class="pagination__item pagination__item--disabled"
+                                    aria-label="Go to previous page">
+                                    <svg class="ar0-icon ar0-icon--xs ar0-margin-right-3xs ar0-flip-x"
+                                        viewBox="0 0 16 16">
+                                        <polyline points="6 2 12 8 6 14" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                    </svg>
+                                    <span>Prev</span>
+                                </a>
+                            </li>
+
+                            <li class="ar0-display@sm">
+                                <a href="#0" class="pagination__item" aria-label="Go to page 1">1</a>
+                            </li>
+
+                            <li class="ar0-display@sm">
+                                <a href="#0" class="pagination__item" aria-label="Go to page 2">2</a>
+                            </li>
+
+                            <li class="ar0-display@sm">
+                                <a href="#0" class="pagination__item pagination__item--selected"
+                                    aria-label="Current Page, page 3" aria-current="page">3</a>
+                            </li>
+
+                            <li class="ar0-display@sm">
+                                <a href="#0" class="pagination__item" aria-label="Go to page 4">4</a>
+                            </li>
+
+                            <li class="ar0-display@sm" aria-hidden="true">
+                                <span class="pagination__item pagination__item--ellipsis">...</span>
+                            </li>
+
+                            <li class="ar0-display@sm">
+                                <a href="#0" class="pagination__item" aria-label="Go to page 20">20</a>
+                            </li>
+
+                            <li>
+                                <a href="#0" class="pagination__item" aria-label="Go to next page">
+                                    <span>Next</span>
+                                    <svg class="ar0-icon ar0-icon--xs ar0-margin-left-3xs" viewBox="0 0 16 16">
+                                        <polyline points="6 2 12 8 6 14" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+
+
+            <!-- your section content 👇-->
+            <div class="cd-container cd-max-width-sm">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus et fugiat reiciendis maiores. Illo,
+                    ex magnam, soluta, accusamus rerum incidunt provident deserunt enim neque tempora dicta asperiores
+                    expedita veritatis rem perferendis modi! Eos, aperiam delectus itaque repudiandae sit necessitatibus
+                    mollitia nostrum maiores? Perspiciatis commodi sunt voluptates similique! Dolorem nobis repellat
+                    laborum praesentium maxime fugit id non eius doloremque? Corporis suscipit cupiditate eaque vitae
+                    voluptates tempora repellat? Laboriosam facere architecto illo repellat. Reprehenderit odio iure
+                    nihil obcaecati esse, laboriosam rerum quod quidem natus perferendis, officiis tempore eos veritatis
+                    aspernatur cumque corrupti a, minima non tempora! Nam adipisci at repellendus optio earum.</p>
+            </div>
+        </section>
+
+        <section data-theme="dark" class="cha-section cd-position-relative cd-padding-y-3xl js-cha-section">
+            <!-- your section content 👇-->
+            <section class="feature-v6 cd-padding-y-xl">
+                <div class="cd-container cd-max-width-adaptive-lg">
+                    <div class="feature-v6__grid">
+                        <div>
+                            <img class="feature-v6__img"
+                                src="https://d3ae4wrz2ljkbq.cloudfront.net/components/img-16-9-dark-5.svg"
+                                alt="Image description">
+
+                            <h4 class="cd-margin-bottom-2xs">Nothing is cheap</h4>
+
+                            <p class="feature-v6__description cd-margin-bottom-xs">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Praesentium assumenda doloribus eos provident modi.</p>
+
+                            <p><a href="#0" class="cd-link">Learn more</a></p>
+                        </div>
+
+                        <div>
+                            <img class="feature-v6__img"
+                                src="https://d3ae4wrz2ljkbq.cloudfront.net/components/img-16-9-dark-5.svg"
+                                alt="Image description">
+
+                            <h4 class="cd-margin-bottom-2xs">The quick brown fox jumps over the lazy dog</h4>
+
+                            <p class="feature-v6__description cd-margin-bottom-xs">Lorem ipsum dolor, sit amet
+                                consectetur adipisicing elit. Quibusdam distinctio inventore architecto.</p>
+
+                            <p><a href="#0" class="cd-link">Learn more</a></p>
+                        </div>
+
+                        <div>
+                            <img class="feature-v6__img"
+                                src="https://d3ae4wrz2ljkbq.cloudfront.net/components/img-16-9-dark-5.svg"
+                                alt="Image description">
+
+                            <h4 class="cd-margin-bottom-2xs">Welcome to the Web Academy</h4>
+
+                            <p class="feature-v6__description cd-margin-bottom-xs">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Praesentium assumenda doloribus eos provident modi.</p>
+
+                            <p><a href="#0" class="cd-link">Learn more</a></p>
+                        </div>
+
+                        <div>
+                            <img class="feature-v6__img"
+                                src="https://d3ae4wrz2ljkbq.cloudfront.net/components/img-16-9-dark-5.svg"
+                                alt="Image description">
+
+                            <h4 class="cd-margin-bottom-2xs">Strength does not come from winning</h4>
+
+                            <p class="feature-v6__description cd-margin-bottom-xs">Lorem ipsum dolor, sit amet
+                                consectetur adipisicing elit. Quibusdam distinctio inventore architecto.</p>
+
+                            <p><a href="#0" class="cd-link">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <section class="cha-section cd-position-relative cd-padding-y-3xl js-cha-section">
+            <!-- your section content 👇-->
+            <div class="cd-container cd-max-width-sm">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatum provident sequi maxime
+                    architecto. Molestiae sunt perspiciatis tenetur in, consequatur, dolorum dignissimos illo recusandae
+                    earum enim dolorem! Adipisci odio, eum, ad voluptatum quia facilis itaque, temporibus commodi at
+                    officia corrupti animi amet excepturi veniam voluptate delectus aliquid quos doloremque maxime
+                    repudiandae deserunt culpa. Repellat dolor amet, porro eveniet laudantium veniam quaerat corrupti
+                    quod expedita nobis autem, vitae in, voluptates ducimus. Voluptas inventore eos excepturi impedit,
+                    hic repudiandae pariatur, consectetur esse est vel, enim nobis tempore? Cupiditate consectetur,
+                    porro perspiciatis architecto, sit nemo deleniti quos nisi, cum asperiores eos! Suscipit distinctio
+                    quis consequatur et reprehenderit beatae enim iusto sequi ipsam unde. Aut quidem ullam quo
+                    consequatur! Quos mollitia in ipsum tempora animi eum maxime optio, quasi voluptatem quae, illum
+                    quidem, perferendis quis sequi dolore excepturi nesciunt. Quibusdam dicta alias odit tenetur facere
+                    eaque nemo ut, deleniti ipsam laborum fugit, consequuntur incidunt qui assumenda adipisci beatae
+                    ullam eum omnis recusandae distinctio eveniet consequatur repellat? Aliquam illum, magni repellat
+                    ducimus tenetur architecto vero neque error laborum? Laudantium, magnam? Harum nobis perspiciatis
+                    ipsam, cumque explicabo voluptatum molestias voluptate laudantium sapiente esse perferendis
+                    reiciendis soluta eaque vero officiis voluptatibus deleniti voluptates culpa architecto hic totam,
+                    at aut quo amet. Excepturi explicabo, adipisci quaerat dicta nesciunt possimus incidunt ipsa
+                    debitis, fuga accusamus veniam animi? Praesentium aperiam non dolor voluptatibus illo modi id
+                    molestiae eius, temporibus enim, totam maiores velit atque soluta consectetur porro magnam nobis
+                    vero voluptates magni ipsa illum. Fugit atque laborum necessitatibus adipisci. Cupiditate dolorum,
+                    in amet veritatis facilis minus exercitationem quasi ipsum consectetur optio voluptatum! Enim saepe,
+                    ducimus, odit ad quia temporibus doloribus inventore aliquid repellendus optio blanditiis numquam
+                    aut expedita iusto! Ullam est culpa, sapiente placeat enim aliquid nostrum obcaecati laudantium?
+                    Facere hic doloribus autem nesciunt, libero porro officiis provident aliquam tempore animi quia,
+                    tempora laborum consequuntur! Mollitia enim porro harum, molestiae dicta exercitationem veritatis a
+                    odit repellendus dolor ipsam possimus aliquam iusto cupiditate accusantium! Illum corrupti
+                    architecto eum fuga, nostrum neque dolorum itaque ex accusantium dolor placeat laboriosam modi
+                    voluptas at expedita cum maxime quis recusandae aut molestiae! Doloribus, sapiente suscipit quas,
+                    dolor illum ea reprehenderit quibusdam dolorum rem harum adipisci. Laboriosam sit natus est error
+                    molestias culpa. Accusantium necessitatibus est fuga omnis dolor provident consequuntur ipsum iusto
+                    at corporis pariatur placeat dolorem ex dolorum ullam cumque, corrupti facilis perspiciatis maxime
+                    voluptates! At, officiis quia sit maiores incidunt eligendi magnam totam!</p>
+            </div>
+        </section>
+
+
+
+        <!-- mobile navigation -->
+        <div class="cha-modal js-cha-modal" id="cha-modal">
+            <nav class="cha-modal__inner">
+                <div class="cha-modal__header">
+                    <div class="cd-flex cd-justify-between cd-items-center cd-height-100%">
+                        <p class="cha-modal__label">Menu</p>
+
+                        <button class="cha-modal__close js-cha-modal__close" aria-label="Close navigation">
+                            <svg class="cd-icon" viewBox="0 0 24 24">
+                                <g stroke-linecap="square" stroke-linejoin="miter" fill="none" stroke-width="2"
+                                    stroke="currentColor" stroke-miterlimit="10">
+                                    <line x1="19" y1="5" x2="5" y2="19"></line>
+                                    <line x1="19" y1="19" x2="5" y2="5"></line>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cha-modal__nav">
+                    <ul class="cha-modal__nav-list">
+                        <li><a href="#0" class="cha-modal__nav-link">Featfdfrgthyures</a></li>
+                        <li><a href="#0" class="cha-modal__nav-link">Pricing</a></li>
+                        <li><a href="#0" class="cha-modal__nav-link">About</a></li>
+                        <li><a href="#0" class="cha-modal__nav-link">Learn &amp; Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </a>
+</body>
+<script src="blog.js"></script>
+
+</html>

@@ -141,6 +141,7 @@
                 <li>
                     <a href="#0" class="cd-subnav-trigger"><span>Opciones </span></a>
                     <ul style="color: white;">
+                        <li class="go-back"><a href="#0">Menu</a></li>
                         <li><a href="../Sesiones/perfil_usu.jsp" target="seccion">Perfil</a></li>
                         <li><a href="../Jsp/Otros/planes/precios_docente.html" target="seccion">Actualizar plan</a></li>
                         <li><a href="../Jsp/Help/Intro.html" target="seccion">Ayuda y soporte</a></li>
@@ -153,6 +154,10 @@
         </nav> <!-- .cd-main-nav-wrapper -->
         <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
     </header>
+    <div class="cd-main-content" >
+        <!-- main content here -->
+    </div>
+
 
     <div >
         <iframe name="seccion" src="bienvenido.jsp" width="100%" height="860vh"></iframe>
