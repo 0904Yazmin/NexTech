@@ -134,7 +134,7 @@
                 <li><a href="menu_docente.jsp" target="seccion">Menú</a></li>
                 <li><a href="../Jsp/Clases/clasesitas.jsp" target="seccion">Clases</a></li>
                 <li><a href="../Jsp/Foros/foro_docente.jsp" >Foro</a></li>
-                <li><a href="../Jsp/Calificaciones/Lista_cal.jsp" target="seccion">Calificaciones</a></li>
+              
                 <li><a href="../Jsp/Modelos/Modelos3D.html" target="seccion">Modelos3D</a></li>
                 <li><a href="../Jsp/Actividades/Actividades.html" target="seccion">Actividades/Material educativo</a></li>
                 <li><a href="../Jsp/Modelos/Galeria_modelos.html" target="seccion">Lecciones</a></li>

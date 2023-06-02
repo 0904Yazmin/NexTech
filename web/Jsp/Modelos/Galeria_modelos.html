@@ -1,203 +1,206 @@
 <!doctype html>
 <html lang="en" class="no-js">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
-        </style>
-        <link rel="stylesheet" href="../../CSS/reset.css"> <!-- CSS reset -->
-        <link rel="stylesheet" href="../../CSS/estilitos/iframes.css">
-        <link rel="stylesheet" href="../../CSS/galeria_modelos.css"> <!-- CSS reset -->
-        <link rel="stylesheet" href="../../CSS/partials/_galeria_modelos.scss"> <!-- Resource style -->
-        <link rel="stylesheet" href="../../CSS/partials/_layout.scss"> <!-- Resource style -->
-        <script src="../../js/galeria_modelos.js"></script> <!-- Modernizr -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+    </style>
+    <link rel="stylesheet" href="../../CSS/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../CSS/estilitos/iframes.css">
+    <link rel="stylesheet" href="../../CSS/galeria_modelos.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../CSS/partials/_galeria_modelos.scss"> <!-- Resource style -->
+    <link rel="stylesheet" href="../../CSS/partials/_layout.scss"> <!-- Resource style -->
+    <script src="../../js/galeria_modelos.js"></script> <!-- Modernizr -->
 
-        <title>Squeezebox Portfolio Template | CodyHouse</title>
-        <style>
-            /* -------------------------------- 
+    <title>Squeezebox Portfolio Template | CodyHouse</title>
+    <style>
+        /* -------------------------------- 
     
     Component 
     
     -------------------------------- */
-            .hero {
-                position: relative;
-                z-index: 1;
-                font-family: 'Poppins', sans-serif;
-                color: white;
-                padding-top: 18%;
-                background-color: hsl(240, 4%, 95%);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center center;
-            }
+        .hero {
+            position: relative;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            padding-top: 18%;
+            background-color: hsl(240, 4%, 95%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
 
-            .hero__label {
-                font-size: 0.9375rem;
-                color: hsla(0, 0%, 100%, 0.966);
-            }
+        .hero__label {
+            font-size: 0.9375rem;
+            color: hsla(0, 0%, 100%, 0.966);
+        }
 
-            .hero__cta {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: left;
-                gap: 1rem;
-            }
+        .hero__cta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: left;
+            gap: 1rem;
+        }
 
-            .hero--right {
-                text-align: left;
-            }
+        .hero--right {
+            text-align: left;
+        }
 
-            .hero--right .hero__cta {
-                justify-content: end;
-            }
+        .hero--right .hero__cta {
+            justify-content: end;
+        }
 
-            .hero--overlay-layer::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                background-color: hsl(0, 0%, 100%);
-                z-index: 1;
-            }
+        .hero--overlay-layer::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: hsl(0, 0%, 100%);
+            z-index: 1;
+        }
 
-            .hero--overlay-layer>* {
-                position: relative;
-                z-index: 2;
-            }
+        .hero--overlay-layer>* {
+            position: relative;
+            z-index: 2;
+        }
 
-            .hero--full-screen {
-                min-height: 100vh;
-                display: flex;
-            }
+        .hero--full-screen {
+            min-height: 100vh;
+            display: flex;
+        }
 
 
 
-            .cd-margin-bottom-2xs {
-                margin-bottom: 0.75rem;
-            }
+        .cd-margin-bottom-2xs {
+            margin-bottom: 0.75rem;
+        }
 
-            .cd-margin-bottom-xs {
-                margin-bottom: 1rem;
-            }
+        .cd-margin-bottom-xs {
+            margin-bottom: 1rem;
+        }
 
-            .cd-margin-bottom-sm {
-                margin-bottom: 1.5rem;
-            }
+        .cd-margin-bottom-sm {
+            margin-bottom: 1.5rem;
+        }
 
-            .cd-container {
-                width: calc(100% - 3rem);
-                margin-left: auto;
-                margin-right: auto;
-            }
+        .cd-container {
+            width: calc(100% - 3rem);
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-            .cd-max-width-xs {
-                max-width: 32rem;
-            }
+        .cd-max-width-xs {
+            max-width: 32rem;
+        }
+
+        .cd-max-width-adaptive-sm,
+        .cd-max-width-adaptive-md,
+        .cd-max-width-adaptive-lg {
+            max-width: 32rem;
+        }
+
+        @media (min-width: 48rem) {
 
             .cd-max-width-adaptive-sm,
             .cd-max-width-adaptive-md,
             .cd-max-width-adaptive-lg {
-                max-width: 32rem;
+                max-width: 48rem;
             }
+        }
 
-            @media (min-width: 48rem) {
+        @media (min-width: 64rem) {
 
-                .cd-max-width-adaptive-sm,
-                .cd-max-width-adaptive-md,
-                .cd-max-width-adaptive-lg {
-                    max-width: 48rem;
-                }
+            .cd-max-width-adaptive-md,
+            .cd-max-width-adaptive-lg {
+                max-width: 64rem;
             }
+        }
 
-            @media (min-width: 64rem) {
+        @media (min-width: 85.5rem) {
+            .cd-max-width-adaptive-lg {
+                max-width: 80rem;
+            }
+        }
 
-                .cd-max-width-adaptive-md,
-                .cd-max-width-adaptive-lg {
-                    max-width: 64rem;
-                }
-            }
+        .cd-flex {
+            display: flex;
+        }
 
-            @media (min-width: 85.5rem) {
-                .cd-max-width-adaptive-lg {
-                    max-width: 80rem;
-                }
-            }
+        .cd-justify-end {
+            justify-content: end;
+        }
 
-            .cd-flex {
-                display: flex;
-            }
+        .cd-link {
+            text-decoration: none;
+            background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
+            background-size: 200% 1px;
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+            transition: background-position 0.2s;
+        }
 
-            .cd-justify-end {
-                justify-content: end;
-            }
+        .cd-link:hover {
+            background-position: 0% 100%;
+        }
 
-            .cd-link {
-                text-decoration: none;
-                background-image: linear-gradient(to right, hsl(250, 84%, 54%) 50%, hsla(250, 84%, 54%, 0.2) 50%);
-                background-size: 200% 1px;
-                background-repeat: no-repeat;
-                background-position: 100% 100%;
-                transition: background-position 0.2s;
-            }
+        .cd-link--contrast-higher {
+            color: hsl(0, 0%, 100%);
+            background-image: linear-gradient(to right, hsl(230, 13%, 9%) 50%, hsla(230, 13%, 9%, 0.1) 50%);
+        }
 
-            .cd-link:hover {
-                background-position: 0% 100%;
-            }
+        .cd-line-height-lg {
+            line-height: 1.58;
+        }
 
-            .cd-link--contrast-higher {
-                color: hsl(0, 0%, 100%);
-                background-image: linear-gradient(to right, hsl(230, 13%, 9%) 50%, hsla(230, 13%, 9%, 0.1) 50%);
-            }
+        .categoria_modelos {
+            font-weight: 600;
+            color: #1a1919;
+            font-size: 13px;
+            margin-top: 6px;
+        }
 
-            .cd-line-height-lg {
-                line-height: 1.58;
-            }
-            .categoria_modelos{
-                font-weight: 600;
-                color:  #1a1919;
-                font-size: 13px;
-                margin-top: 6px;
-            }
-            .span1{
-                font-weight: normal;
-                color: black;
-                margin-left: 10px;
-            }
-        </style>
-    </head>
+        .span1 {
+            font-weight: normal;
+            color: black;
+            margin-left: 10px;
+        }
+    </style>
+</head>
 
-    <body>
+<body>
+    <!--
         <div class="cd-intro-block">
-            <section class="hero  hero--full-screen"
-                     style="background-image: url('https://d3ae4wrz2ljkbq.cloudfront.net/components/img-16-9-dark-1.svg')">
-                <div class="cd-container cd-max-width-adaptive-lg">
-                    <div class="cd-max-width-xs">
-                        <h1 class="cd-margin-bottom-xs">Lecciones</h1>
+        <section class="hero  hero--full-screen"
+            style="background-image: url('https://d3ae4wrz2ljkbq.cloudfront.net/components/img-16-9-dark-1.svg')">
+            <div class="cd-container cd-max-width-adaptive-lg">
+                <div class="cd-max-width-xs">
+                    <h1 class="cd-margin-bottom-xs">Lecciones</h1>
 
-                        <p class="cd-line-height-lg cd-margin-bottom-sm">Aqui encontraras todos las lecciones que
+                    <p class="cd-line-height-lg cd-margin-bottom-sm">Aqui encontraras todos las lecciones que
 
-                            te ayudarán a tu aprendizaje en Copernicus
+                        te ayudarán a tu aprendizaje en Copernicus
 
-                            System</p><br>
-                        <div class="hero__cta content-wrapper">
-                            <a href="#0" class='cd-btn' data-action="show-projects">Explorar</a>
-                        </div>
+                        System</p><br>
+                    <div class="hero__cta content-wrapper">
+                        <a href="#0" class='cd-btn' data-action="show-projects">Explorar</a>
                     </div>
                 </div>
-            </section>
-        </div> <!-- .cd-intro-block -->
-
-
-        <div class="cd-projects-wrapper">
+            </div>
+        </section>
+    </div>  .cd-intro-block
+-->
+    <!--
+    <div class="cd-projects-wrapper">
 
             <ul class="cd-slider">
                 <li class="current">
-                    <a href="#0">
+                    <a href="Modelos3D.html">
                         <img src="../../Img/modelos/card1.jpg" alt="project image">
                         <div class="project-info">
                             <h2>Unidad 1</h2>
@@ -315,32 +318,241 @@
                 <li><a href="#0" class="prev inactive">Prev</a></li>
                 <li><a href="#0" class="next">Next</a></li>
             </ul> <!-- .cd-slider-navigation -->
-        </div> <!-- .cd-projects-wrapper -->
+    <!-- .cd-projects-wrapper -->
+    <!--
+        </div>
+    -->
+    <section class="diagonal-section">
+        <div class="cd-container cd-max-width-sm cd-padding-y-3xl">
+            <div class="cd-text-center">
+                <h1 class="cd-margin-bottom-sm">Lecciones</h1>
+                <p>Aqui encontraras todos las lecciones que
 
+                    te ayudarán a tu aprendizaje en Copernicus
 
-
-
-        <div class="cd-project-content">
-            <div>
-                <h2>Unidad 1: Conceptos básicos de astronomía</h2>
-                <em>Nivel básico</em>
-                <div>
-                    <ul style="margin-bottom: 10px;">
-                        <li><a href="../../leccionB_1_1.html">Lección 1: Introducción a la astronomia</a></li>
-                        <li><a href="../../leccionB_2_1.html">Lección 2: ¿Qué es la astronomía?</a></li>
-                        <li><a href="../../leccionB_1_1.html">Lección 3: Origen del universo</a></li>
-                        <li><a href="../../leccionB_1_1.html">Lección 1: El sol</a></li>
-                        <li><a href="../../leccionB_1_1.html">Lección 1: ¿Qué es un planeta?</a></li>
-                        <li><a href="../Lecciones/Lineas_tiempo/timelineVertical.html">Linea del tiempo: inventos y teorías de astronomía </a></li>
-                    </ul>
-                </div>
+                    System</p>
             </div>
-            <a href="#0" class="close cd-img-replace">Close</a>
-        </div> <!-- .cd-project-content -->
+        </div>
+    </section>
 
-        <script src="../../js/jquery-2.1.4.js"></script>
-        <script src="../../js/jquery.mobile.min.js"></script>
-        <script src="../../js/galeria_modelos2.js"></script> <!-- Resource jQuery -->
-    </body>
+    <section class="unidades">
+        <a href="../Lecciones/Lineas_tiempo/Unidad_01/Temario_U1.html" class="card card--link" aria-label="Link description">
+            <figure class="card__img-wrapper">
+                <img src="../../Img/actividades/lecciones/3.png" alt="Image description">
+
+                <div class="card__link-icon-wrapper" aria-hidden="true">
+                    <svg class="cd-icon" viewBox="0 0 32 32">
+                        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-miterlimit="10">
+                            <path d="M21,5s-4.333-1.667-7,1L6,14c-2.667,2.667-1,7-1,7"></path>
+                            <path d="M27,11s1.667,4.333-1,7l-8,8c-2.667,2.667-7,1-7,1"></path>
+                            <line x1="12" y1="20" x2="4" y2="28"></line>
+                            <line x1="28" y1="4" x2="20" y2="12"></line>
+                        </g>
+                    </svg>
+                </div>
+            </figure>
+
+            <div class="card__content">
+                <h4>Lección 01</h4>
+
+                <p class="card__description">Unidad 01</p>
+            </div>
+        </a>
+
+        <a href="../Lecciones/Lineas_tiempo/Unidad_01/Temario_U2.html" class="card card--link" aria-label="Link description">
+            <figure class="card__img-wrapper">
+                <img src="../../Img/actividades/lecciones/4.png" alt="Image description">
+
+                <div class="card__link-icon-wrapper" aria-hidden="true">
+                    <svg class="cd-icon" viewBox="0 0 32 32">
+                        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-miterlimit="10">
+                            <path d="M21,5s-4.333-1.667-7,1L6,14c-2.667,2.667-1,7-1,7"></path>
+                            <path d="M27,11s1.667,4.333-1,7l-8,8c-2.667,2.667-7,1-7,1"></path>
+                            <line x1="12" y1="20" x2="4" y2="28"></line>
+                            <line x1="28" y1="4" x2="20" y2="12"></line>
+                        </g>
+                    </svg>
+                </div>
+            </figure>
+
+            <div class="card__content">
+                <h4>Lección 02</h4>
+
+                <p class="card__description">Unidad 01</p>
+            </div>
+        </a>
+
+        <a href="#0" class="card card--link" aria-label="Link description">
+            <figure class="card__img-wrapper">
+                <img src="../../Img/actividades/lecciones/5.png" alt="Image description">
+
+                <div class="card__link-icon-wrapper" aria-hidden="true">
+                    <svg class="cd-icon" viewBox="0 0 32 32">
+                        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-miterlimit="10">
+                            <path d="M21,5s-4.333-1.667-7,1L6,14c-2.667,2.667-1,7-1,7"></path>
+                            <path d="M27,11s1.667,4.333-1,7l-8,8c-2.667,2.667-7,1-7,1"></path>
+                            <line x1="12" y1="20" x2="4" y2="28"></line>
+                            <line x1="28" y1="4" x2="20" y2="12"></line>
+                        </g>
+                    </svg>
+                </div>
+            </figure>
+
+            <div class="card__content">
+                <h4>Lección 03</h4>
+
+                <p class="card__description">Unidad 01</p>
+            </div>
+        </a>
+
+        <a href="#0" class="card card--link" aria-label="Link description">
+            <figure class="card__img-wrapper">
+                <img src="../../Img/actividades/lecciones/6.png" alt="Image description">
+
+                <div class="card__link-icon-wrapper" aria-hidden="true">
+                    <svg class="cd-icon" viewBox="0 0 32 32">
+                        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-miterlimit="10">
+                            <path d="M21,5s-4.333-1.667-7,1L6,14c-2.667,2.667-1,7-1,7"></path>
+                            <path d="M27,11s1.667,4.333-1,7l-8,8c-2.667,2.667-7,1-7,1"></path>
+                            <line x1="12" y1="20" x2="4" y2="28"></line>
+                            <line x1="28" y1="4" x2="20" y2="12"></line>
+                        </g>
+                    </svg>
+                </div>
+            </figure>
+
+            <div class="card__content">
+                <h4>Lección 04</h4>
+
+                <p class="card__description">Unidad 01</p>
+            </div>
+        </a>
+
+        
+    </section>
+    <section class="unidades">
+        <a href="#0" class="card card--link" aria-label="Link description">
+            <figure class="card__img-wrapper">
+                <img src="../../Img/actividades/lecciones/02.png" alt="Image description">
+
+                <div class="card__link-icon-wrapper" aria-hidden="true">
+                    <svg class="cd-icon" viewBox="0 0 32 32">
+                        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-miterlimit="10">
+                            <path d="M21,5s-4.333-1.667-7,1L6,14c-2.667,2.667-1,7-1,7"></path>
+                            <path d="M27,11s1.667,4.333-1,7l-8,8c-2.667,2.667-7,1-7,1"></path>
+                            <line x1="12" y1="20" x2="4" y2="28"></line>
+                            <line x1="28" y1="4" x2="20" y2="12"></line>
+                        </g>
+                    </svg>
+                </div>
+            </figure>
+
+            <div class="card__content">
+                <h4>Lección 01</h4>
+
+                <p class="card__description">Unidad 2</p>
+            </div>
+        </a>
+        <a href="#0" class="card card--link" aria-label="Link description">
+            <figure class="card__img-wrapper">
+                <img src="../../Img/actividades/lecciones/03.png" alt="Image description">
+
+                <div class="card__link-icon-wrapper" aria-hidden="true">
+                    <svg class="cd-icon" viewBox="0 0 32 32">
+                        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-miterlimit="10">
+                            <path d="M21,5s-4.333-1.667-7,1L6,14c-2.667,2.667-1,7-1,7"></path>
+                            <path d="M27,11s1.667,4.333-1,7l-8,8c-2.667,2.667-7,1-7,1"></path>
+                            <line x1="12" y1="20" x2="4" y2="28"></line>
+                            <line x1="28" y1="4" x2="20" y2="12"></line>
+                        </g>
+                    </svg>
+                </div>
+            </figure>
+
+            <div class="card__content">
+                <h4>Lección 02</h4>
+
+                <p class="card__description">Unidad 2</p>
+            </div>
+        </a>
+        <a href="#0" class="card card--link" aria-label="Link description">
+            <figure class="card__img-wrapper">
+                <img src="../../Img//actividades/lecciones/04.png" alt="Image description">
+
+                <div class="card__link-icon-wrapper" aria-hidden="true">
+                    <svg class="cd-icon" viewBox="0 0 32 32">
+                        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-miterlimit="10">
+                            <path d="M21,5s-4.333-1.667-7,1L6,14c-2.667,2.667-1,7-1,7"></path>
+                            <path d="M27,11s1.667,4.333-1,7l-8,8c-2.667,2.667-7,1-7,1"></path>
+                            <line x1="12" y1="20" x2="4" y2="28"></line>
+                            <line x1="28" y1="4" x2="20" y2="12"></line>
+                        </g>
+                    </svg>
+                </div>
+            </figure>
+
+            <div class="card__content">
+                <h4>Lección 03</h4>
+
+                <p class="card__description">Unidad 2</p>
+            </div>
+        </a>
+        <a href="#0" class="card card--link" aria-label="Link description">
+            <figure class="card__img-wrapper">
+                <img src="../../Img/actividades/lecciones/05.png" alt="Image description">
+
+                <div class="card__link-icon-wrapper" aria-hidden="true">
+                    <svg class="cd-icon" viewBox="0 0 32 32">
+                        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-miterlimit="10">
+                            <path d="M21,5s-4.333-1.667-7,1L6,14c-2.667,2.667-1,7-1,7"></path>
+                            <path d="M27,11s1.667,4.333-1,7l-8,8c-2.667,2.667-7,1-7,1"></path>
+                            <line x1="12" y1="20" x2="4" y2="28"></line>
+                            <line x1="28" y1="4" x2="20" y2="12"></line>
+                        </g>
+                    </svg>
+                </div>
+            </figure>
+
+            <div class="card__content">
+                <h4>Lección 04</h4>
+
+                <p class="card__description">Unidad 2</p>
+            </div>
+        </a>
+    </section>
+
+
+    <!--<div class="cd-project-content">
+        <div>
+            <h2>Unidad 1: Conceptos básicos de astronomía</h2>
+            <em>Nivel básico</em>
+            <div>
+                <ul style="margin-bottom: 10px;">
+                    <li><a href="../../leccionB_1_1.html">Lección 1: Introducción a la astronomia</a></li>
+                    <li><a href="../../leccionB_2_1.html">Lección 2: ¿Qué es la astronomía?</a></li>
+                    <li><a href="../../leccionB_1_1.html">Lección 3: Origen del universo</a></li>
+                    <li><a href="../../leccionB_1_1.html">Lección 1: El sol</a></li>
+                    <li><a href="../../leccionB_1_1.html">Lección 1: ¿Qué es un planeta?</a></li>
+                    <li><a href="../Lecciones/Lineas_tiempo/timelineVertical.html">Linea del tiempo: inventos y teorías
+                            de astronomía </a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#0" class="close cd-img-replace">Close</a>
+    </div> <!-- .cd-project-content -->
+
+
+    <script src="../../js/jquery-2.1.4.js"></script>
+    <script src="../../js/jquery.mobile.min.js"></script>
+    <script src="../../js/galeria_modelos2.js"></script> <!-- Resource jQuery -->
+</body>
 
 </html>
