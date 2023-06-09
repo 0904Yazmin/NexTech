@@ -14,15 +14,23 @@ html {
 body {
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
-    color: #ffffff;
-    background-color: #262423;
+    color: #000000;
+    background-color: #ffffff;
+    
+}
+.feature{
+  padding: 10%;
+  margin: auto;
 }
 
 a {
     color: #a8ae7e;
     text-decoration: none;
 }
-
+.feature__img{
+  width: 90%;
+  height: auto;
+}
 
 /* -------------------------------- 
   

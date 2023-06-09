@@ -20,7 +20,7 @@ public class BD {
         // Agregar datos para conectarse
         this.usrBD = "root";
         this.passBD = "n0m3l0"; //1234
-        this.urlBD = "jdbc:mysql://localhost:3306/nexTech";  // ruta del servidor de la base de datos
+        this.urlBD = "jdbc:mysql://localhost:3308/nexTech";  // ruta del servidor de la base de datos
         this.driverClassName = "com.mysql.jdbc.Driver"; //inicializamos driver
     }
 

@@ -3,6 +3,8 @@ create database nexTech;
 SET NAMES 'utf8mb4';
 use nexTech;
 
+# Derechos Reservados sobre el código presentado y realizado por la empresa NexTech 
+
 create table Usuario(
 id_usu int not null auto_increment primary key,
 nombre_usu varchar (40),

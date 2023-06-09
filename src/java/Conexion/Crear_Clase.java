@@ -21,3 +21,5 @@ public class Crear_Clase {
         System.out.println(generarClase(len));
     }
 }
+
+// Derechos Reservados sobre el código presentado y realizado por la empresa NexTech 

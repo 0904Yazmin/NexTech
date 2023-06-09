@@ -72,7 +72,7 @@
                         <li><a href="../Sesiones/perfil_usu.jsp" target="seccion">Perfil</a></li>
                         <li><a href="../Jsp/Otros/planes/precios_docente.html" target="seccion">Actualizar plan</a></li>
                         <li><a href="../Jsp/Help/Intro.html" target="seccion">Ayuda y soporte</a></li>
-                        <li><a href="#0" target="seccion">Acerca de</a></li>
+                        <li><a href="../nexTech/OurTeamCS.html" target="seccion">Acerca de</a></li>
                         <li><a href="../Sesiones/cerrarSesion.jsp">Cerrar sesión</a></li>
                         <li><a href="#0" class="placeholder">Placeholder</a></li>
                     </ul>
